@@ -44,3 +44,10 @@ sortedchains = sorted(depchains.items(), key=operator.itemgetter(1))
 
 for chain in sortedchains:
     print("%s: %d" % (chain[0], chain[1]))
+    for req in requiredict[chain[0]]:
+        try:
+            print("|-- %s: %d" % (req, depchains[req]))
+        except KeyError:
+            # Skip unknown requirements
+            pass
+    print()
