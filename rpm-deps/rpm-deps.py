@@ -44,10 +44,19 @@ sortedchains = sorted(depchains.items(), key=operator.itemgetter(1))
 
 for chain in sortedchains:
     print("%s: %d" % (chain[0], chain[1]))
+
+    dup_detect = {}
     for req in requiredict[chain[0]]:
-        try:
-            print("|-- %s: %d" % (req, depchains[req]))
-        except KeyError:
-            # Skip unknown requirements
-            pass
+        mi = ts.dbMatch('provides', req)
+        for h in mi:
+            realreq = h[rpm.RPMTAG_NAME]
+            if realreq in dup_detect:
+                continue
+
+            dup_detect[realreq] = None
+            try:
+                print("|-- %s: %d" % (realreq, depchains[realreq]))
+            except KeyError:
+                # Skip unknown requirements
+                pass
     print()
