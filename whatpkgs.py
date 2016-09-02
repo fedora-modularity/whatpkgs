@@ -47,7 +47,7 @@ def get_pkg_by_name(q, pkgname):
     This function will return exactly one result. If it finds zero or multiple
     packages that match the name, it will throw an error.
     """
-    matched = q.filter(name=pkgname, arch='x86_64')
+    matched = q.filter(name=pkgname, latest=True, arch='x86_64')
     if len(matched) > 1:
         raise TooManyPackagesException(pkgname)
 
@@ -58,7 +58,7 @@ def get_pkg_by_name(q, pkgname):
         # yet.
         return matched[0]
 
-    matched = q.filter(name=pkgname, arch='noarch')
+    matched = q.filter(name=pkgname, latest=True, arch='noarch')
     if len(matched) > 1:
         raise TooManyPackagesException(pkgname)
 
@@ -79,7 +79,7 @@ def recurse_package_deps(pkg, dependencies, query, choose, follow_recommends):
     dependencies[pkg.name] = pkg
 
     for require in pkg.requires:
-        required_packages = query.filter(provides=require)
+        required_packages = query.filter(provides=require, latest=True)
 
         # TODO: handle 'choose' list
         # For now, we'll just pick the first entry
