@@ -69,7 +69,52 @@ def get_pkg_by_name(q, pkgname):
     raise NoSuchPackageException(pkgname)
 
 
-def recurse_package_deps(pkg, dependencies, query, choose, follow_recommends):
+def process_requirements(reqs, dependencies, query, hints,
+                         follow_recommends):
+    """
+    Share code for recursing into requires or recommends
+    """
+    for require in reqs:
+        required_packages = query.filter(provides=require, latest=True)
+
+        # If there are no dependencies, just return
+        if len(required_packages) == 0:
+            return
+
+        # Check for multiple possible packages
+        if len(required_packages) > 1:
+            # Handle 'hints' list
+            found = False
+            for choice in hints:
+                for rpkg in required_packages:
+                    if rpkg.name == choice:
+                        # This has been disambiguated; use this one
+                        found = True
+                        recurse_package_deps(rpkg,
+                                             dependencies, query, hints,
+                                             follow_recommends)
+                        break
+                if found:
+                    # Don't keep looking once we find a match
+                    break
+
+            if not found:
+                # Packages not solved by 'hints' list
+                # should be printed in red and we will cease
+                # recursing here.
+                for multichoice in required_packages:
+                    dependencies[Fore.RED +
+                                 multichoice.name +
+                                 Style.RESET_ALL] = multichoice
+
+            continue
+
+        # Exactly one package matched, so proceed down into it.
+        recurse_package_deps(required_packages[0], dependencies, query,
+                             hints, follow_recommends)
+
+
+def recurse_package_deps(pkg, dependencies, query, hints, follow_recommends):
     """
     Recursively search through dependencies and add them to the list
     """
@@ -78,25 +123,12 @@ def recurse_package_deps(pkg, dependencies, query, choose, follow_recommends):
         return
     dependencies[pkg.name] = pkg
 
-    for require in pkg.requires:
-        required_packages = query.filter(provides=require, latest=True)
-
-        # TODO: handle 'choose' list
-        # For now, we'll just pick the first entry
-
-        recurse_package_deps(required_packages[0], dependencies, query,
-                             choose, follow_recommends)
-
+    # Process Requires:
+    process_requirements(pkg.requires, dependencies, query, hints,
+                         follow_recommends)
     if follow_recommends:
-        for recommend in pkg.recommends:
-            recommended_packages = query.filter(provides=recommend)
-
-            # TODO: handle 'choose' list
-            # For now, we'll just pick the first entry
-
-            recurse_package_deps(recommended_packages[0], dependencies, query,
-                                 choose, follow_recommends)
-
+        process_requirements(pkg.recommends, dependencies, query, hints,
+                             follow_recommends)
 
 @click.group()
 def main():
@@ -105,15 +137,15 @@ def main():
 
 @main.command(short_help="Get package dependencies")
 @click.argument('pkgnames', nargs=-1)
-@click.option('--choose',
+@click.option('--hint', multiple=True,
               help="""
 Specify a package to be selected when more than one package could satisfy a
 dependency. This option may be specified multiple times.
 
-For example, it is recommended to use --choose=glibc-minimal-langpack
+For example, it is recommended to use --hint=glibc-minimal-langpack
 """)
 @click.option('--recommends/--no-recommends', default=True)
-def neededby(pkgnames, choose, recommends):
+def neededby(pkgnames, hint, recommends):
     """
     Look up the dependencies for each specified package and
     display them in a human-parseable format.
@@ -129,7 +161,7 @@ def neededby(pkgnames, choose, recommends):
             pkg.name, pkg.arch) + Style.RESET_ALL)
 
         dependencies = {}
-        recurse_package_deps(pkg, dependencies, q, choose, recommends)
+        recurse_package_deps(pkg, dependencies, q, hint, recommends)
 
         for key in sorted(dependencies, key=dependencies.get):
             # Skip the initial package
