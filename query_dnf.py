@@ -2,13 +2,20 @@ import dnf
 import click
 from colorama import Fore, Back, Style
 
+
 class NoSuchPackageException(Exception):
+    """
+    Exception class for requested packages that do not exist
+    """
     def __init__(self, pkgname):
         Exception.__init__(self,
                            "Package name %s returned no packages" % pkgname)
 
 
 class TooManyPackagesException(Exception):
+    """
+    Exception class for packages that appear multiple times in the repos
+    """
     def __init__(self, pkgname):
         Exception.__init__(self,
                            "Too many packages returned for %s" % pkgname)
@@ -62,7 +69,7 @@ def get_pkg_by_name(q, pkgname):
     raise NoSuchPackageException(pkgname)
 
 
-def recurse_packages(pkg, dependencies, query, choose, follow_recommends):
+def recurse_package_deps(pkg, dependencies, query, choose, follow_recommends):
     """
     Recursively search through dependencies and add them to the list
     """
@@ -77,8 +84,8 @@ def recurse_packages(pkg, dependencies, query, choose, follow_recommends):
         # TODO: handle 'choose' list
         # For now, we'll just pick the first entry
 
-        recurse_packages(required_packages[0], dependencies, query,
-                         choose, follow_recommends)
+        recurse_package_deps(required_packages[0], dependencies, query,
+                             choose, follow_recommends)
 
     if follow_recommends:
         for recommend in pkg.recommends:
@@ -87,11 +94,16 @@ def recurse_packages(pkg, dependencies, query, choose, follow_recommends):
             # TODO: handle 'choose' list
             # For now, we'll just pick the first entry
 
-            recurse_packages(recommended_packages[0], dependencies, query,
-                             choose, follow_recommends)
+            recurse_package_deps(recommended_packages[0], dependencies, query,
+                                 choose, follow_recommends)
 
 
-@click.command()
+@click.group()
+def main():
+    pass
+
+
+@main.command(short_help="Get package dependencies")
 @click.argument('pkgnames', nargs=-1)
 @click.option('--choose',
               help="""
@@ -99,7 +111,7 @@ Specify a package to be selected when more than one package could satisfy a
 dependency. This option may be specified multiple times
 """)
 @click.option('--recommends/--no-recommends', default=True)
-def main(pkgnames, choose, recommends):
+def neededby(pkgnames, choose, recommends):
     """
     Look up the dependencies for each specified package and
     display them in a human-parseable format.
@@ -116,7 +128,7 @@ def main(pkgnames, choose, recommends):
         print(Style.RESET_ALL, end='')
 
         dependencies = {}
-        recurse_packages(pkg, dependencies, q, choose, recommends)
+        recurse_package_deps(pkg, dependencies, q, choose, recommends)
 
         for key in sorted(dependencies, key=dependencies.get):
             # Skip the initial package
