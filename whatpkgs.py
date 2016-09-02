@@ -126,8 +126,7 @@ def neededby(pkgnames, choose, recommends):
         pkg = get_pkg_by_name(q, pkgname)
 
         print(Fore.GREEN + Back.BLACK + "=== %s.%s ===" % (
-            pkg.name, pkg.arch))
-        print(Style.RESET_ALL, end='')
+            pkg.name, pkg.arch) + Style.RESET_ALL)
 
         dependencies = {}
         recurse_package_deps(pkg, dependencies, q, choose, recommends)
