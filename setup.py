@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-    name='query_dnf',
+    name='whatpkgs',
     version='0.1',
-    py_modules=['query_dnf'],
+    py_modules=['whatpkgs'],
     install_requires=[
         'Click',
         'colorama',
@@ -15,6 +15,6 @@ setup(
     description='Package to recursively identify RPM package dependencies',
     entry_points='''
         [console_scripts]
-        query_dnf=query_dnf:main
+        whatpkgs=whatpkgs:main
     '''
 )

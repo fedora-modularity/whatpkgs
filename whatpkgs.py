@@ -108,7 +108,9 @@ def main():
 @click.option('--choose',
               help="""
 Specify a package to be selected when more than one package could satisfy a
-dependency. This option may be specified multiple times
+dependency. This option may be specified multiple times.
+
+For example, it is recommended to use --choose=glibc-minimal-langpack
 """)
 @click.option('--recommends/--no-recommends', default=True)
 def neededby(pkgnames, choose, recommends):
