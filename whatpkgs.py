@@ -1,5 +1,6 @@
 import dnf
 import click
+from rpmUtils.miscutils import splitFilename
 from colorama import Fore, Back, Style
 
 
@@ -21,12 +22,12 @@ class TooManyPackagesException(Exception):
                            "Too many packages returned for %s" % pkgname)
 
 
-def setup_repo():
+def setup_base_repo():
     """
     Enable only the official Fedora repositories
 
     Returns: dnf.Base containing all the package metadata from the standard
-             repositories
+             repositories for binary RPMs
     """
     base = dnf.Base()
     base.read_all_repos()
@@ -35,6 +36,26 @@ def setup_repo():
     r = base.repos.get_matching("fedora")
     r.enable()
     r = base.repos.get_matching("updates")
+    r.enable()
+
+    base.fill_sack(load_system_repo=False, load_available_repos=True)
+    return base
+
+
+def setup_source_repo():
+    """
+    Enable only the official Fedora source repositories
+
+    Returns: dnf.Base containing all the package metadata from the standard
+             repositories for SRPMs
+    """
+    base = dnf.Base()
+    base.read_all_repos()
+    r = base.repos.all()
+    r.disable()
+    r = base.repos.get_matching("fedora-source")
+    r.enable()
+    r = base.repos.get_matching("updates-source")
     r.enable()
 
     base.fill_sack(load_system_repo=False, load_available_repos=True)
@@ -59,6 +80,25 @@ def get_pkg_by_name(q, pkgname):
         return matched[0]
 
     matched = q.filter(name=pkgname, latest=True, arch='noarch')
+    if len(matched) > 1:
+        raise TooManyPackagesException(pkgname)
+
+    if len(matched) == 1:
+        # Exactly one package matched
+        return matched[0]
+    raise NoSuchPackageException(pkgname)
+
+
+def get_srpm_for_package(bq, sq, pkgname):
+    """
+    For a given package, retrieve a reference to its source RPM
+    """
+    pkg = get_pkg_by_name(bq, pkgname)
+
+    # Get just the base name of the SRPM
+    (sourcename, _, _, _, _) = splitFilename(pkg.sourcerpm)
+
+    matched = sq.filter(name=sourcename, latest=True, arch='src')
     if len(matched) > 1:
         raise TooManyPackagesException(pkgname)
 
@@ -151,7 +191,7 @@ def neededby(pkgnames, hint, recommends):
     display them in a human-parseable format.
     """
 
-    base = setup_repo()
+    base = setup_base_repo()
     q = base.sack.query()
 
     for pkgname in pkgnames:
@@ -168,3 +208,29 @@ def neededby(pkgnames, hint, recommends):
             if key == pkgname:
                 continue
             print(key)
+
+
+@main.command(short_help="Get Source RPM")
+@click.argument('pkgnames', nargs=-1)
+def getsourcerpm(pkgnames):
+    """
+    Look up the SRPMs from which these binary RPMs were generated.
+
+    This list will be displayed deduplicated and sorted.
+    """
+    base = setup_base_repo()
+    bq = base.sack.query()
+
+    sources = setup_source_repo()
+    sq = sources.sack.query()
+
+    sources = setup_source_repo()
+
+    srpm_names = {}
+    for pkgname in pkgnames:
+        pkg = get_srpm_for_package(bq, sq, pkgname)
+
+        srpm_names[pkg.name] = pkg
+
+    for key in sorted(srpm_names, key=srpm_names.get):
+        print(key)
