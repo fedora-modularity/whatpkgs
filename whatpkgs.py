@@ -221,9 +221,6 @@ def neededby(pkgnames, hint, recommends, merge):
     if merge:
         # Print the complete set of dependencies together
         for key in sorted(dependencies, key=dependencies.get):
-            # Skip the initial package
-            if key == pkgname:
-                continue
             print(key)
 
 
