@@ -185,7 +185,8 @@ dependency. This option may be specified multiple times.
 For example, it is recommended to use --hint=glibc-minimal-langpack
 """)
 @click.option('--recommends/--no-recommends', default=True)
-def neededby(pkgnames, hint, recommends):
+@click.option('--merge/--no-merge', default=False)
+def neededby(pkgnames, hint, recommends, merge):
     """
     Look up the dependencies for each specified package and
     display them in a human-parseable format.
@@ -194,15 +195,31 @@ def neededby(pkgnames, hint, recommends):
     base = setup_base_repo()
     q = base.sack.query()
 
+
+    dependencies = {}
     for pkgname in pkgnames:
         pkg = get_pkg_by_name(q, pkgname)
 
-        print(Fore.GREEN + Back.BLACK + "=== %s.%s ===" % (
-            pkg.name, pkg.arch) + Style.RESET_ALL)
+        if not merge:
+            # empty the dependencies list and start over
+            dependencies = {}
 
-        dependencies = {}
         recurse_package_deps(pkg, dependencies, q, hint, recommends)
 
+        if not merge:
+            # If we're printing individually, create a header
+            print(Fore.GREEN + Back.BLACK + "=== %s.%s ===" % (
+                pkg.name, pkg.arch) + Style.RESET_ALL)
+
+            # Print just this package's dependencies
+            for key in sorted(dependencies, key=dependencies.get):
+                # Skip the initial package
+                if key == pkgname:
+                    continue
+                print(key)
+
+    if merge:
+        # Print the complete set of dependencies together
         for key in sorted(dependencies, key=dependencies.get):
             # Skip the initial package
             if key == pkgname:
