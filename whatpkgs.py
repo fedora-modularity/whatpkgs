@@ -1,3 +1,4 @@
+import sys
 import dnf
 import click
 from rpmUtils.miscutils import splitFilename
@@ -143,9 +144,7 @@ def process_requirements(reqs, dependencies, query, hints,
                 # should be printed in red and we will cease
                 # recursing here.
                 for multichoice in required_packages:
-                    dependencies[Fore.RED +
-                                 multichoice.name +
-                                 Style.RESET_ALL] = multichoice
+                    dependencies["_MULTI_:" + multichoice.name] = multichoice
 
             continue
 
@@ -170,6 +169,30 @@ def recurse_package_deps(pkg, dependencies, query, hints, follow_recommends):
         process_requirements(pkg.recommends, dependencies, query, hints,
                              follow_recommends)
 
+
+def print_package_name(pkgname, dependencies, full):
+    """
+    Parse the package name for the error state and
+    print it with the correct verbosity.
+    """
+
+    printpkg = dependencies[pkgname]
+
+    if pkgname.startswith("_MULTI_:"):
+        pkgname = pkgname[8:]
+        sys.stdout.write(Fore.RED)
+
+    if full:
+        print("%d:%s-%s-%s.%s" % (printpkg.epoch,
+                                  printpkg.name,
+                                  printpkg.version,
+                                  printpkg.release,
+                                  printpkg.arch))
+    else:
+        print(printpkg.name)
+
+    sys.stdout.write(Style.RESET_ALL)
+
 @click.group()
 def main():
     pass
@@ -186,7 +209,8 @@ For example, it is recommended to use --hint=glibc-minimal-langpack
 """)
 @click.option('--recommends/--no-recommends', default=True)
 @click.option('--merge/--no-merge', default=False)
-def neededby(pkgnames, hint, recommends, merge):
+@click.option('--full-name/--no-full-name', default=False)
+def neededby(pkgnames, hint, recommends, merge, full_name):
     """
     Look up the dependencies for each specified package and
     display them in a human-parseable format.
@@ -216,17 +240,18 @@ def neededby(pkgnames, hint, recommends, merge):
                 # Skip the initial package
                 if key == pkgname:
                     continue
-                print(key)
+                print_package_name(key, dependencies, full_name)
 
     if merge:
         # Print the complete set of dependencies together
         for key in sorted(dependencies, key=dependencies.get):
-            print(key)
+            print_package_name(key, dependencies, full_name)
 
 
 @main.command(short_help="Get Source RPM")
 @click.argument('pkgnames', nargs=-1)
-def getsourcerpm(pkgnames):
+@click.option('--full-name/--no-full-name', default=False)
+def getsourcerpm(pkgnames, full_name):
     """
     Look up the SRPMs from which these binary RPMs were generated.
 
@@ -247,4 +272,4 @@ def getsourcerpm(pkgnames):
         srpm_names[pkg.name] = pkg
 
     for key in sorted(srpm_names, key=srpm_names.get):
-        print(key)
+        print_package_name(key, srpm_names, full_name)
