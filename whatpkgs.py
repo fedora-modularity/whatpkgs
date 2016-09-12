@@ -178,7 +178,9 @@ def print_package_name(pkgname, dependencies, full):
 
     printpkg = dependencies[pkgname]
 
+    end_color = False
     if pkgname.startswith("_MULTI_:"):
+        end_color = True
         pkgname = pkgname[8:]
         sys.stdout.write(Fore.RED)
 
@@ -191,7 +193,8 @@ def print_package_name(pkgname, dependencies, full):
     else:
         print(printpkg.name)
 
-    sys.stdout.write(Style.RESET_ALL)
+    if end_color:
+        sys.stdout.write(Style.RESET_ALL)
 
 @click.group()
 def main():
