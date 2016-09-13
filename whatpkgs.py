@@ -63,6 +63,17 @@ def setup_source_repo():
     return base
 
 
+def get_query_objects():
+    """
+    Get query objects for binary packages and source packages
+
+    Returns: tuple of (binary_query, sources_query)
+    """
+    binaries = setup_base_repo()
+    sources = setup_source_repo()
+    return (binaries.sack.query(), sources.sack.query())
+
+
 def get_pkg_by_name(q, pkgname):
     """
     Try to find the package name as x86_64 and then noarch.
@@ -219,19 +230,19 @@ def neededby(pkgnames, hint, recommends, merge, full_name):
     display them in a human-parseable format.
     """
 
-    base = setup_base_repo()
-    q = base.sack.query()
+    (binary_query, _) = get_query_objects()
 
 
     dependencies = {}
     for pkgname in pkgnames:
-        pkg = get_pkg_by_name(q, pkgname)
+        pkg = get_pkg_by_name(binary_query, pkgname)
 
         if not merge:
             # empty the dependencies list and start over
             dependencies = {}
 
-        recurse_package_deps(pkg, dependencies, q, hint, recommends)
+        recurse_package_deps(pkg, dependencies, binary_query,
+                             hint, recommends)
 
         if not merge:
             # If we're printing individually, create a header
@@ -260,15 +271,11 @@ def getsourcerpm(pkgnames, full_name):
 
     This list will be displayed deduplicated and sorted.
     """
-    base = setup_base_repo()
-    bq = base.sack.query()
-
-    sources = setup_source_repo()
-    sq = sources.sack.query()
+    (binary_query, source_query) = get_query_objects()
 
     srpm_names = {}
     for pkgname in pkgnames:
-        pkg = get_srpm_for_package(bq, sq, pkgname)
+        pkg = get_srpm_for_package(binary_query, source_query, pkgname)
 
         srpm_names[pkg.name] = pkg
 
