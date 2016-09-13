@@ -266,8 +266,6 @@ def getsourcerpm(pkgnames, full_name):
     sources = setup_source_repo()
     sq = sources.sack.query()
 
-    sources = setup_source_repo()
-
     srpm_names = {}
     for pkgname in pkgnames:
         pkg = get_srpm_for_package(bq, sq, pkgname)
