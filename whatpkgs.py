@@ -121,7 +121,7 @@ def get_srpm_for_package(bq, sq, pkgname):
     raise NoSuchPackageException(pkgname)
 
 
-def process_requirements(reqs, dependencies, query, hints,
+def process_requirements(reqs, dependencies, query, hints, pick_first,
                          follow_recommends):
     """
     Share code for recursing into requires or recommends
@@ -144,13 +144,20 @@ def process_requirements(reqs, dependencies, query, hints,
                         found = True
                         recurse_package_deps(rpkg,
                                              dependencies, query, hints,
-                                             follow_recommends)
+                                             pick_first, follow_recommends)
                         break
                 if found:
                     # Don't keep looking once we find a match
                     break
 
             if not found:
+                if pick_first:
+                    # The user instructed processing to just take the first
+                    # entry in the list.
+                    recurse_package_deps(required_packages[0], dependencies,
+                                         query, hints, pick_first,
+                                         follow_recommends)
+                    continue
                 # Packages not solved by 'hints' list
                 # should be printed in red and we will cease
                 # recursing here.
@@ -161,10 +168,11 @@ def process_requirements(reqs, dependencies, query, hints,
 
         # Exactly one package matched, so proceed down into it.
         recurse_package_deps(required_packages[0], dependencies, query,
-                             hints, follow_recommends)
+                             hints, pick_first, follow_recommends)
 
 
-def recurse_package_deps(pkg, dependencies, query, hints, follow_recommends):
+def recurse_package_deps(pkg, dependencies, query, hints,
+                         pick_first, follow_recommends):
     """
     Recursively search through dependencies and add them to the list
     """
@@ -174,11 +182,11 @@ def recurse_package_deps(pkg, dependencies, query, hints, follow_recommends):
     dependencies[pkg.name] = pkg
 
     # Process Requires:
-    process_requirements(pkg.requires, dependencies, query, hints,
+    process_requirements(pkg.requires, dependencies, query, hints, pick_first,
                          follow_recommends)
     if follow_recommends:
         process_requirements(pkg.recommends, dependencies, query, hints,
-                             follow_recommends)
+                             pick_first, follow_recommends)
 
 
 def print_package_name(pkgname, dependencies, full):
@@ -224,14 +232,21 @@ For example, it is recommended to use --hint=glibc-minimal-langpack
 @click.option('--recommends/--no-recommends', default=True)
 @click.option('--merge/--no-merge', default=False)
 @click.option('--full-name/--no-full-name', default=False)
-def neededby(pkgnames, hint, recommends, merge, full_name):
+@click.option('--pick-first/--no-pick-first', default=False,
+              help="""
+If multiple packages could satisfy a dependency and no --hint package will 
+fulfill the requirement, automatically select one from the list.
+
+Note: this result may differ between runs depending upon how the list is
+sorted. It is recommended to use --hint instead, where practical.
+""")
+def neededby(pkgnames, hint, recommends, merge, full_name, pick_first):
     """
     Look up the dependencies for each specified package and
     display them in a human-parseable format.
     """
 
     (binary_query, _) = get_query_objects()
-
 
     dependencies = {}
     for pkgname in pkgnames:
@@ -242,7 +257,7 @@ def neededby(pkgnames, hint, recommends, merge, full_name):
             dependencies = {}
 
         recurse_package_deps(pkg, dependencies, binary_query,
-                             hint, recommends)
+                             hint, pick_first, recommends)
 
         if not merge:
             # If we're printing individually, create a header
