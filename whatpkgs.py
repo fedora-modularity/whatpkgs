@@ -101,24 +101,32 @@ def get_pkg_by_name(q, pkgname):
     raise NoSuchPackageException(pkgname)
 
 
-def get_srpm_for_package(bq, sq, pkgname):
-    """
-    For a given package, retrieve a reference to its source RPM
-    """
-    pkg = get_pkg_by_name(bq, pkgname)
-
+def get_srpm_for_package(source_query, pkg):
     # Get just the base name of the SRPM
-    (sourcename, _, _, _, _) = splitFilename(pkg.sourcerpm)
+    try:
+        (sourcename, _, _, _, _) = splitFilename(pkg.sourcerpm)
+    except Exception:
+        print("Failure: %s(%s)" % (pkg.sourcerpm, pkg.name))
+        raise
 
-    matched = sq.filter(name=sourcename, latest=True, arch='src')
+    matched = source_query.filter(name=sourcename, latest=True, arch='src')
     if len(matched) > 1:
-        raise TooManyPackagesException(pkgname)
+        raise TooManyPackagesException(pkg.name)
 
     if len(matched) == 1:
         # Exactly one package matched
         return matched[0]
 
-    raise NoSuchPackageException(pkgname)
+    raise NoSuchPackageException(pkg.name)
+
+
+def get_srpm_for_package_name(binary_query, source_query, pkgname):
+    """
+    For a given package, retrieve a reference to its source RPM
+    """
+    pkg = get_pkg_by_name(binary_query, pkgname)
+
+    return get_srpm_for_package(source_query, pkg)
 
 
 def process_requirements(reqs, dependencies, query, hints, pick_first,
@@ -127,7 +135,7 @@ def process_requirements(reqs, dependencies, query, hints, pick_first,
     Share code for recursing into requires or recommends
     """
     for require in reqs:
-        required_packages = query.filter(provides=require, latest=True)
+        required_packages = query.filter(provides=str(require), latest=True)
 
         # If there are no dependencies, just return
         if len(required_packages) == 0:
@@ -188,6 +196,58 @@ def recurse_package_deps(pkg, dependencies, query, hints,
         process_requirements(pkg.recommends, dependencies, query, hints,
                              pick_first, follow_recommends)
 
+def recurse_srpm_deps(source_pkg, dependencies, sources, query, hints,
+                      pick_first, follow_recommends):
+    """
+    Recursively search through dependencies and add them to the list
+    """
+    # Process Requires:
+    # There is no BuildRecommends concept, so we don't
+    # need to worry about that.
+    process_requirements(source_pkg.requires, dependencies, query, hints,
+                         pick_first,
+                         follow_recommends)
+
+
+def recurse_build_deps(source_pkg, binaries, sources,
+                       binary_query, source_query,
+                       hints, pick_first,
+                       follow_recommends):
+    """
+    Recursively determine all build dependencies for this package
+    """
+
+    if source_pkg.name in sources:
+        # Don't process the same Source RPM twice
+        return
+
+    sources[source_pkg.name] = source_pkg
+
+    # Recursively get all of the Requires for building this
+    # SRPM. There is no BuildRecommends concept, so we don't
+    # need to worry about that.
+    saved_binaries = binaries.copy()
+    recurse_srpm_deps(source_pkg, binaries, sources, binary_query,
+                      hints, pick_first, follow_recommends)
+
+    deplist = sorted(binaries, key=binaries.get)
+    for dep in deplist:
+        if dep in saved_binaries:
+            # Don't needlessly recurse into binaries we've
+            # already processed.
+            continue
+
+        if dep.startswith("_MULTI_:"):
+            print("Skipping: %s (Use --hint to disambiguate)" % dep[8:])
+            continue
+
+        # Get the source RPM for this binary and recurse
+        # into it.
+        spkg = get_srpm_for_package(source_query, binaries[dep])
+        recurse_build_deps(spkg, binaries, sources,
+                           binary_query, source_query,
+                           hints, pick_first,
+                           follow_recommends)
 
 def print_package_name(pkgname, dependencies, full):
     """
@@ -214,6 +274,7 @@ def print_package_name(pkgname, dependencies, full):
 
     if end_color:
         sys.stdout.write(Style.RESET_ALL)
+
 
 @click.group()
 def main():
@@ -290,9 +351,85 @@ def getsourcerpm(pkgnames, full_name):
 
     srpm_names = {}
     for pkgname in pkgnames:
-        pkg = get_srpm_for_package(binary_query, source_query, pkgname)
+        pkg = get_srpm_for_package_name(binary_query, source_query, pkgname)
 
         srpm_names[pkg.name] = pkg
 
     for key in sorted(srpm_names, key=srpm_names.get):
         print_package_name(key, srpm_names, full_name)
+
+
+@main.command(short_help="Get build dependencies")
+@click.argument('pkgnames', nargs=-1)
+@click.option('--hint', multiple=True,
+              help="""
+Specify a package to be selected when more than one package could satisfy a
+dependency. This option may be specified multiple times.
+
+For example, it is recommended to use --hint=glibc-minimal-langpack
+
+For build dependencies, the default is to exclude Recommends: from the
+dependencies of the BuildRequires.
+""")
+@click.option('--recommends/--no-recommends', default=False)
+@click.option('--merge/--no-merge', default=False)
+@click.option('--full-name/--no-full-name', default=False)
+@click.option('--sources/--no-sources', default=True)
+@click.option('--pick-first/--no-pick-first', default=False,
+              help="""
+If multiple packages could satisfy a dependency and no --hint package will
+fulfill the requirement, automatically select one from the list.
+
+Note: this result may differ between runs depending upon how the list is
+sorted. It is recommended to use --hint instead, where practical.
+""")
+def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
+                     pick_first, sources):
+    """
+    Look up the build dependencies for each specified package
+    and all of their dependencies, recursively and display them
+    in a human-parseable format.
+    """
+
+    (binary_query, source_query) = get_query_objects()
+
+    binary_pkgs = {}
+    source_pkgs = {}
+    for pkgname in pkgnames:
+        pkg = get_pkg_by_name(binary_query, pkgname)
+
+        if not merge:
+            binary_pkgs = {}
+            source_pkgs = {}
+
+        # Get the source RPM for this package
+        spkg = get_srpm_for_package(source_query, pkg)
+        recurse_build_deps(spkg, binary_pkgs, source_pkgs,
+                           binary_query, source_query,
+                           hint, pick_first, recommends)
+        if not merge:
+            # If we're printing individually, create a header
+            print(Fore.GREEN + Back.BLACK + "=== %s.%s ===" % (
+                pkg.name, pkg.arch) + Style.RESET_ALL)
+
+            # Print just this package's dependencies
+            if sources:
+                for key in sorted(source_pkgs, key=source_pkgs.get):
+                    # Skip the initial package
+                    if key == pkgname:
+                        continue
+                    print_package_name(key, source_pkgs, full_name)
+            else:
+                for key in sorted(binary_pkgs, key=binary_pkgs.get):
+                    # Skip the initial package
+                    if key == pkgname:
+                        continue
+                    print_package_name(key, binary_pkgs, full_name)
+
+    if merge:
+        if sources:
+            for key in sorted(source_pkgs, key=source_pkgs.get):
+                print_package_name(key, source_pkgs, full_name)
+        else:
+            for key in sorted(binary_pkgs, key=binary_pkgs.get):
+                print_package_name(key, binary_pkgs, full_name)
