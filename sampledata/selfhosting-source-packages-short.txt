@@ -233,7 +233,6 @@ curl
 curvesapi
 cyrus-sasl
 dain-snappy
-datefudge
 dblatex
 dbus
 dbus-c++
@@ -255,7 +254,6 @@ diffstat
 diffutils
 ding-libs
 dirac
-discount
 disruptor
 djvulibre
 dlm
@@ -273,7 +271,6 @@ doxygen
 dwz
 e2fsprogs
 easymock
-ebtables
 ecj
 eclipse
 eclipse-cdt
@@ -308,7 +305,6 @@ emacs
 emma
 enca
 enchant
-epstool
 epydoc
 erlang
 esound
@@ -377,7 +373,6 @@ fribidi
 ftgl
 fuse
 fusesource-pom
-g2clib
 game-music-emu
 gamin
 gawk
@@ -435,7 +430,6 @@ glassfish-master-pom
 glassfish-pfl
 glassfish-servlet-api
 glassfish-toplink-essentials
-glassfish-websocket-api
 glew
 glib
 glib-networking
@@ -560,7 +554,6 @@ intltool
 invokebinder
 ipcalc
 iproute
-ipset
 iptables
 iputils
 ironjacamar
@@ -735,7 +728,6 @@ jq
 jruby
 js
 js-jquery
-js-jquery1
 js-sizzle
 jsch
 jsch-agent-proxy
@@ -796,7 +788,6 @@ libICE
 libIDL
 libSM
 libX11
-libXNVCtrl
 libXScrnSaver
 libXau
 libXaw
@@ -964,7 +955,6 @@ librepo
 libreport
 librevenge
 librsvg2
-librx
 libsamplerate
 libseccomp
 libsecret
@@ -1160,7 +1150,6 @@ mimepull
 mina-ftpserver
 miniz
 minlog
-moarvm
 mocha
 mockito
 modello
@@ -1208,9 +1197,7 @@ netty3
 newt
 nfs-utils
 nghttp2
-nginx
 ninja-build
-nkf
 nodejs
 nodejs-abbrev
 nodejs-ansi-font
@@ -1221,7 +1208,6 @@ nodejs-array-differ
 nodejs-array-union
 nodejs-array-uniq
 nodejs-arrify
-nodejs-asap
 nodejs-assertion-error
 nodejs-async
 nodejs-balanced-match
@@ -1252,9 +1238,6 @@ nodejs-concat-stream
 nodejs-console-dot-log
 nodejs-constantinople
 nodejs-core-util-is
-nodejs-css
-nodejs-css-parse
-nodejs-css-stringify
 nodejs-d
 nodejs-dateformat
 nodejs-debug
@@ -1388,7 +1371,6 @@ nodejs-paperboy
 nodejs-path-is-absolute
 nodejs-pretty-bytes
 nodejs-process-nextick-args
-nodejs-promise
 nodejs-proxyquire
 nodejs-qs
 nodejs-read-package-json
@@ -1459,7 +1441,6 @@ nodejs-yargs
 nodeunit
 noggit
 npth
-nqp
 nspr
 nss
 nss-pem
@@ -1493,7 +1474,6 @@ opensm
 opensp
 openssh
 openssl
-openwebbeans
 options
 optipng
 opus
@@ -2228,7 +2208,6 @@ pyserial
 pytest
 python
 python-BeautifulSoup
-python-IPy
 python-WSGIProxy2
 python-backports_abc
 python-beaker
@@ -2248,8 +2227,6 @@ python-cryptography
 python-cryptography-vectors
 python-cssselect
 python-cups
-python-dateutil
-python-decorator
 python-docutils
 python-dtopt
 python-empy
@@ -2258,8 +2235,6 @@ python-extras
 python-fixtures
 python-flask
 python-funcsigs
-python-gflags
-python-google-apputils
 python-html5lib
 python-http-parser
 python-hypothesis
@@ -2281,7 +2256,6 @@ python-markdown
 python-markupsafe
 python-mimeparse
 python-mock
-python-mox
 python-nose
 python-paste
 python-paste-deploy
@@ -2314,7 +2288,6 @@ python-setuptools
 python-setuptools_scm
 python-singledispatch
 python-six
-python-slip
 python-snowballstemmer
 python-socketpool
 python-sphinx
@@ -2355,7 +2328,6 @@ qjson
 qpdf
 qpid-proton-java
 qrencode
-qrupdate
 qscintilla
 qt
 qt-assistant-adp
@@ -2419,49 +2391,11 @@ rsh
 rsync
 rsyslog
 ruby
-rubygem-ZenTest
-rubygem-aruba
-rubygem-builder
-rubygem-childprocess
-rubygem-coderay
-rubygem-cucumber
-rubygem-cucumber-core
-rubygem-cucumber-wire
-rubygem-diff-lcs
 rubygem-execjs
-rubygem-fattr
-rubygem-ffi
-rubygem-flexmock
-rubygem-gherkin
-rubygem-hoe
-rubygem-introspection
 rubygem-json
-rubygem-json_pure
-rubygem-kramdown
-rubygem-metaclass
-rubygem-minitest
-rubygem-minitest4
-rubygem-mocha
-rubygem-multi_json
-rubygem-multi_test
-rubygem-nokogiri
-rubygem-pkg-config
-rubygem-power_assert
 rubygem-rake
 rubygem-rdoc
-rubygem-rr
-rubygem-rspec
-rubygem-rspec-core
-rubygem-rspec-expectations
-rubygem-rspec-mocks
-rubygem-rspec-support
-rubygem-rspec2
-rubygem-rspec2-core
-rubygem-rspec2-expectations
-rubygem-rspec2-mocks
-rubygem-session
 rubygem-test-unit
-rubygem-thread_order
 rubygem-uglifier
 rubypick
 rxjava
@@ -2509,7 +2443,6 @@ snakeyaml
 snappy
 snappy-java
 snowball-java
-softhsm
 sombok
 sonar
 sonar-update-center
@@ -2590,7 +2523,6 @@ tre
 tree
 treelayout
 trilead-ssh2
-trousers
 truth
 tslib
 ttembed
@@ -2621,7 +2553,6 @@ uthash
 util-linux
 uucp
 uuid
-uw-imap
 v4l-utils
 vala
 valgrind
@@ -2631,7 +2562,6 @@ vim
 volume_key
 vorbis-java
 vsftpd
-w3m
 wavpack
 wayland
 wayland-protocols
@@ -2681,7 +2611,6 @@ xml-commons-apis
 xml-commons-resolver
 xml-maven-plugin
 xml-security
-xml-stylebook
 xmlbeans
 xmlbeans-maven-plugin
 xmlgraphics-commons
@@ -2697,8 +2626,6 @@ xmpcore
 xmvn
 xnio
 xom
-xorg-x11-apps
-xorg-x11-drv-dummy
 xorg-x11-font-utils
 xorg-x11-fonts
 xorg-x11-proto-devel

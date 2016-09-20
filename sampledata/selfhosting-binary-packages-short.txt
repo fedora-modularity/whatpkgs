@@ -133,7 +133,6 @@ apache-commons-jxpath
 apache-commons-lang
 apache-commons-lang3
 apache-commons-logging
-apache-commons-logging-javadoc
 apache-commons-math
 apache-commons-net
 apache-commons-ognl
@@ -172,25 +171,9 @@ aries-proxy-impl
 aries-quiesce-api
 aries-util
 armadillo
-armadillo-devel
 arpack
 arpack-devel
 arquillian-bom
-arquillian-config-api
-arquillian-config-impl-base
-arquillian-container-impl-base
-arquillian-container-spi
-arquillian-container-test-api
-arquillian-container-test-impl-base
-arquillian-container-test-spi
-arquillian-core-api
-arquillian-core-impl-base
-arquillian-core-spi
-arquillian-junit-container
-arquillian-junit-core
-arquillian-test-api
-arquillian-test-impl-base
-arquillian-test-spi
 artemis-commons
 artemis-journal
 artemis-native
@@ -219,10 +202,8 @@ attica-devel
 attr
 audiofile
 audiofile-devel
-audit
 audit-libs
 audit-libs-devel
-audit-libs-python3
 augeas
 augeas-devel
 augeas-libs
@@ -233,9 +214,7 @@ auto-value
 autoconf
 autoconf-archive
 autoconf213
-autogen
 autogen-libopts
-autogen-libopts-devel
 automake
 automoc
 autotrace
@@ -427,7 +406,6 @@ cyrus-sasl
 cyrus-sasl-devel
 cyrus-sasl-lib
 dain-snappy
-datefudge
 dblatex
 dbus
 dbus-c++
@@ -471,7 +449,6 @@ diffstat
 diffutils
 dirac-devel
 dirac-libs
-discount
 disruptor
 djvulibre-devel
 djvulibre-libs
@@ -497,7 +474,6 @@ e2fsprogs
 e2fsprogs-devel
 e2fsprogs-libs
 easymock
-ebtables
 ecj
 eclipse-cdt
 eclipse-cdt-parsers
@@ -556,7 +532,6 @@ enca
 enca-devel
 enchant
 enchant-devel
-epstool
 epydoc
 erlang
 erlang-asn1
@@ -711,7 +686,6 @@ fuse
 fuse-devel
 fuse-libs
 fusesource-pom
-g2clib-devel
 game-music-emu
 game-music-emu-devel
 gamin
@@ -738,8 +712,6 @@ gdisk
 gdk-pixbuf2
 gdk-pixbuf2-devel
 gdk-pixbuf2-modules
-gdk-pixbuf2-xlib
-gdk-pixbuf2-xlib-devel
 geoclue2
 geoclue2-devel
 geoclue2-libs
@@ -779,7 +751,6 @@ git-core
 git-core-doc
 gl-manpages
 gl2ps
-gl2ps-devel
 glassfish-annotation-api
 glassfish-dtd-parser
 glassfish-el
@@ -827,7 +798,6 @@ glassfish-master-pom
 glassfish-pfl
 glassfish-servlet-api
 glassfish-toplink-essentials
-glassfish-websocket-api
 glew-devel
 glib
 glib-devel
@@ -870,7 +840,6 @@ gmp-devel
 gnat-srpm-macros
 gnome-common
 gnome-doc-utils
-gnome-doc-utils-stylesheets
 gnome-online-accounts
 gnome-online-accounts-devel
 gnome-vfs2
@@ -1085,8 +1054,6 @@ intltool
 invokebinder
 ipcalc
 iproute
-ipset
-ipset-libs
 iptables
 iptables-devel
 iptables-libs
@@ -1233,7 +1200,6 @@ jdepend
 jdependency
 jdo-api
 jdom
-jdom-javadoc
 jdom2
 je
 jemalloc
@@ -1360,7 +1326,6 @@ js
 js-coffee-script
 js-devel
 js-jquery
-js-jquery1
 js-sizzle
 js-uglify
 js-uglify-1
@@ -1468,8 +1433,6 @@ libSM-devel
 libX11
 libX11-common
 libX11-devel
-libXNVCtrl
-libXNVCtrl-devel
 libXScrnSaver
 libXScrnSaver-devel
 libXau
@@ -1573,7 +1536,6 @@ libbs2b
 libbs2b-devel
 libbytesize
 libbytesize-devel
-libc-client
 libcanberra
 libcanberra-devel
 libcanberra-gtk2
@@ -1614,7 +1576,6 @@ libcurl-devel
 libdaemon
 libdaemon-devel
 libdap
-libdap-devel
 libdatrie
 libdatrie-devel
 libdb
@@ -1681,7 +1642,6 @@ libgdata-devel
 libgdiplus
 libgdiplus-devel
 libgeotiff
-libgeotiff-devel
 libgfortran
 libglade2
 libglade2-devel
@@ -1701,7 +1661,6 @@ libgphoto2-devel
 libgsasl
 libgsasl-devel
 libgta
-libgta-devel
 libgudev
 libgudev-devel
 libgusb
@@ -1741,7 +1700,6 @@ libkadm5
 libkate
 libkate-devel
 libkml
-libkml-devel
 libksba
 libksba-devel
 libldb
@@ -1755,7 +1713,6 @@ liblognorm-devel
 liblzf
 liblzf-devel
 libmalaga
-libmarkdown
 libmbim
 libmbim-devel
 libmbim-utils
@@ -1874,8 +1831,6 @@ librevenge
 librevenge-devel
 librsvg2
 librsvg2-devel
-librx
-librx-devel
 libsamplerate
 libsamplerate-devel
 libseccomp
@@ -1884,11 +1839,9 @@ libsecret
 libsecret-devel
 libselinux
 libselinux-devel
-libselinux-python3
 libselinux-utils
 libsemanage
 libsemanage-devel
-libsemanage-python3
 libsemanage-static
 libsepol
 libsepol-devel
@@ -1909,7 +1862,6 @@ libsolv-devel
 libsoup
 libsoup-devel
 libspatialite
-libspatialite-devel
 libspiro
 libspiro-devel
 libsrtp
@@ -2056,7 +2008,6 @@ lksctp-tools
 lksctp-tools-devel
 llvm
 llvm-devel
-llvm-libs
 lm_sensors-devel
 lm_sensors-libs
 lockdev
@@ -2258,8 +2209,6 @@ mesa-libGLES
 mesa-libGLES-devel
 mesa-libGLU
 mesa-libGLU-devel
-mesa-libOSMesa
-mesa-libOSMesa-devel
 mesa-libgbm
 mesa-libgbm-devel
 mesa-libglapi
@@ -2277,8 +2226,6 @@ miniz-devel
 minizip
 minizip-devel
 minlog
-moarvm
-moarvm-devel
 mocha
 mockito
 modello
@@ -2290,13 +2237,10 @@ mojo-parent
 mongo-java-driver
 mono-core
 mono-data
-mono-data-sqlite
 mono-devel
 mono-extras
-mono-mvc
 mono-wcf
 mono-web
-mono-winforms
 monodoc
 monodoc-devel
 morfologik-stemming
@@ -2362,9 +2306,7 @@ newt-devel
 newt-python3
 nfs-utils
 nghttp2
-nginx-filesystem
 ninja-build
-nkf
 nodejs
 nodejs-abbrev
 nodejs-ansi-font
@@ -2375,7 +2317,6 @@ nodejs-array-differ
 nodejs-array-union
 nodejs-array-uniq
 nodejs-arrify
-nodejs-asap
 nodejs-assertion-error
 nodejs-async
 nodejs-balanced-match
@@ -2406,9 +2347,6 @@ nodejs-concat-stream
 nodejs-console-dot-log
 nodejs-constantinople
 nodejs-core-util-is
-nodejs-css
-nodejs-css-parse
-nodejs-css-stringify
 nodejs-d
 nodejs-dateformat
 nodejs-debug
@@ -2544,7 +2482,6 @@ nodejs-paperboy
 nodejs-path-is-absolute
 nodejs-pretty-bytes
 nodejs-process-nextick-args
-nodejs-promise
 nodejs-proxyquire
 nodejs-qs
 nodejs-read-package-json
@@ -2617,7 +2554,6 @@ noggit
 npm
 npth
 npth-devel
-nqp-jvm
 nscd
 nspr
 nspr-devel
@@ -2648,7 +2584,6 @@ ocaml-srpm-macros
 octave
 octave-devel
 ogdi
-ogdi-devel
 oniguruma
 oniguruma-devel
 openal-soft
@@ -2687,8 +2622,6 @@ openssh-server
 openssl
 openssl-devel
 openssl-libs
-openwebbeans-impl
-openwebbeans-spi
 options
 optipng
 opus
@@ -3112,7 +3045,6 @@ perl-MooseX-Types-Stringlike
 perl-Mouse
 perl-MouseX-Types
 perl-Mozilla-CA
-perl-NKF
 perl-NTLM
 perl-Net-HTTP
 perl-Net-IDN-Encode
@@ -3456,8 +3388,6 @@ pmd-build-tools
 po4a
 policycoreutils
 policycoreutils-devel
-policycoreutils-python-utils
-policycoreutils-python3
 polkit
 polkit-devel
 polkit-docs
@@ -3536,7 +3466,6 @@ pyparsing
 pyserial
 python
 python-BeautifulSoup
-python-IPy-python3
 python-WSGIProxy2
 python-beaker
 python-beautifulsoup4
@@ -3554,10 +3483,7 @@ python-empy
 python-enum34
 python-extras
 python-fixtures
-python-gluster
 python-gobject
-python-gobject-base
-python-google-apputils
 python-html5lib
 python-http-parser
 python-idna
@@ -3577,7 +3503,6 @@ python-magic
 python-mako
 python-markupsafe
 python-mimeparse
-python-mox
 python-nose
 python-paste
 python-paste-deploy
@@ -3625,11 +3550,9 @@ python2-cryptography
 python2-cryptography-vectors
 python2-cssselect
 python2-cups
-python2-dateutil
 python2-flask
 python2-fonttools
 python2-funcsigs
-python2-gflags
 python2-hawkey
 python2-hypothesis
 python2-imagesize
@@ -3702,18 +3625,14 @@ python3-crypto
 python3-cryptography
 python3-cryptography-vectors
 python3-cssselect
-python3-dateutil
 python3-dbus
-python3-decorator
 python3-devel
 python3-dnf
 python3-docutils
 python3-extras
-python3-firewall
 python3-fixtures
 python3-flask
 python3-funcsigs
-python3-gflags
 python3-gobject
 python3-gobject-base
 python3-hawkey
@@ -3774,8 +3693,6 @@ python3-setuptools_scm
 python3-sip
 python3-sip-devel
 python3-six
-python3-slip
-python3-slip-dbus
 python3-snowballstemmer
 python3-sphinx
 python3-sphinx-theme-alabaster
@@ -3819,8 +3736,6 @@ qpdf-libs
 qpid-proton-java
 qrencode-devel
 qrencode-libs
-qrupdate
-qrupdate-devel
 qscintilla
 qscintilla-devel
 qt
@@ -3970,51 +3885,11 @@ ruby
 ruby-devel
 ruby-irb
 ruby-libs
-rubygem-ZenTest
-rubygem-aruba
-rubygem-bigdecimal
-rubygem-builder
-rubygem-childprocess
-rubygem-coderay
-rubygem-cucumber
-rubygem-cucumber-core
-rubygem-cucumber-wire
-rubygem-diff-lcs
 rubygem-execjs
-rubygem-fattr
-rubygem-ffi
-rubygem-flexmock
-rubygem-gherkin
-rubygem-hoe
-rubygem-introspection
 rubygem-json
-rubygem-json_pure
-rubygem-kramdown
-rubygem-metaclass
-rubygem-minitest
-rubygem-minitest4
-rubygem-mocha
-rubygem-multi_json
-rubygem-multi_test
-rubygem-nokogiri
-rubygem-pkg-config
-rubygem-power_assert
-rubygem-psych
 rubygem-rake
 rubygem-rdoc
-rubygem-rr
-rubygem-rspec
-rubygem-rspec-core
-rubygem-rspec-expectations
-rubygem-rspec-mocks
-rubygem-rspec-support
-rubygem-rspec2
-rubygem-rspec2-core
-rubygem-rspec2-expectations
-rubygem-rspec2-mocks
-rubygem-session
 rubygem-test-unit
-rubygem-thread_order
 rubygem-uglifier
 rubygems
 rubygems-devel
@@ -4091,7 +3966,6 @@ snappy
 snappy-devel
 snappy-java
 snowball-java
-softhsm
 sombok
 sombok-devel
 sonar
@@ -4200,7 +4074,6 @@ testng
 texi2html
 texinfo
 texinfo-tex
-texlive
 texlive-12many
 texlive-FAQ-en-doc
 texlive-MemoirChapStyles-doc
@@ -4325,7 +4198,6 @@ texlive-begingreek
 texlive-begriff
 texlive-bera
 texlive-betababel
-texlive-beton
 texlive-bgreek
 texlive-bguq
 texlive-bib-fr
@@ -5168,7 +5040,6 @@ texlive-relsize
 texlive-reotex
 texlive-repere
 texlive-resumemac
-texlive-revtex4
 texlive-ribbonproofs
 texlive-rmathbr
 texlive-roex
@@ -5182,7 +5053,6 @@ texlive-sansmath
 texlive-sansmathaccent
 texlive-sauerj
 texlive-schemabloc
-texlive-scheme-basic
 texlive-scheme-tetex
 texlive-section
 texlive-sectsty
@@ -5462,8 +5332,6 @@ tre-devel
 tree
 treelayout
 trilead-ssh2
-trousers-devel
-trousers-lib
 truth
 tslib
 tslib-devel
@@ -5483,7 +5351,6 @@ uima-addons
 uima-parent-pom
 uima-pear-maven-plugin
 uimaj
-unbound-devel
 unbound-libs
 undertow
 unicode-ucd
@@ -5503,7 +5370,6 @@ uthash-devel
 util-linux
 uuid
 uuid-devel
-uw-imap-devel
 vala
 vala-devel
 vala-tools
@@ -5518,7 +5384,6 @@ volume_key-libs
 vorbis-java
 vorbis-java-tika
 vsftpd
-w3m
 wavpack
 wavpack-devel
 wayland-devel
@@ -5562,7 +5427,6 @@ wxGTK3-devel
 wxGTK3-gl
 wxGTK3-media
 xalan-j2
-xapian-bindings
 xapian-bindings-python
 xapian-core
 xapian-core-devel
@@ -5604,7 +5468,6 @@ xml-commons-apis
 xml-commons-resolver
 xml-maven-plugin
 xml-security
-xml-stylebook
 xmlbeans
 xmlbeans-maven-plugin
 xmlgraphics-commons
@@ -5639,18 +5502,14 @@ xmvn-resolve
 xmvn-subst
 xnio
 xom
-xorg-x11-apps
-xorg-x11-drv-dummy
 xorg-x11-font-utils
 xorg-x11-fonts-ISO8859-1-100dpi
 xorg-x11-fonts-ISO8859-1-75dpi
 xorg-x11-fonts-Type1
 xorg-x11-fonts-misc
 xorg-x11-proto-devel
-xorg-x11-server-Xorg
 xorg-x11-server-Xvfb
 xorg-x11-server-common
-xorg-x11-server-devel
 xorg-x11-server-utils
 xorg-x11-util-macros
 xorg-x11-utils

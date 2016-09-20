@@ -233,7 +233,6 @@
 0:curvesapi-1.03-2.fc25.src
 0:cyrus-sasl-2.1.26-26.2.fc24.src
 0:dain-snappy-0.4-2.fc25.src
-0:datefudge-1.20-3.fc24.src
 0:dblatex-0.3.8-1.fc25.src
 1:dbus-1.11.4-1.fc25.src
 0:dbus-c++-0.9.0-11.fc24.src
@@ -255,7 +254,6 @@
 0:diffutils-3.3-13.fc24.src
 0:ding-libs-0.6.0-29.fc25.src
 0:dirac-1.0.2-19.fc24.src
-0:discount-2.1.8-3.fc24.src
 0:disruptor-3.3.4-1.fc25.src
 0:djvulibre-3.5.27-1.fc25.src
 0:dlm-4.0.6-2.fc25.src
@@ -273,7 +271,6 @@
 0:dwz-0.12-2.fc24.src
 0:e2fsprogs-1.43.1-2.fc25.src
 0:easymock-3.4-2.fc25.src
-0:ebtables-2.0.10-21.fc25.src
 1:ecj-4.6-1.fc25.src
 1:eclipse-4.6.0-7.fc25.src
 1:eclipse-cdt-9.0.0-1.fc25.src
@@ -308,7 +305,6 @@
 0:emma-2.0.5312-17.fc24.src
 0:enca-1.18-1.fc24.src
 1:enchant-1.6.0-14.fc25.src
-0:epstool-3.08-9.fc24.src
 0:epydoc-3.0.1.20090203svn-4.fc25.src
 0:erlang-19.0.5-1.fc25.src
 1:esound-0.2.41-15.fc24.src
@@ -377,7 +373,6 @@
 0:ftgl-2.1.3-0.14.rc5.fc24.src
 0:fuse-2.9.7-1.fc25.src
 0:fusesource-pom-1.9-13.fc25.src
-0:g2clib-1.4.0-12.fc25.src
 0:game-music-emu-0.6.0-8.fc24.src
 0:gamin-0.1.10-23.fc25.src
 0:gawk-4.1.3-3.fc24.src
@@ -435,7 +430,6 @@
 0:glassfish-pfl-3.2.0-0.10.b001.fc24.src
 0:glassfish-servlet-api-3.1.0-11.fc25.src
 0:glassfish-toplink-essentials-2.0.46-11.fc24.src
-0:glassfish-websocket-api-1.1-2.fc24.src
 0:glew-1.13.0-2.fc24.src
 1:glib-1.2.10-47.fc24.src
 0:glib-networking-2.49.90-1.fc25.src
@@ -560,7 +554,6 @@
 0:invokebinder-1.2-5.fc25.src
 0:ipcalc-0.1.8-1.fc25.src
 0:iproute-4.6.0-1.fc25.src
-0:ipset-6.29-1.fc25.src
 0:iptables-1.6.0-2.fc25.src
 0:iputils-20160308-3.fc25.src
 0:ironjacamar-1.3.4-2.fc25.src
@@ -735,7 +728,6 @@
 0:jruby-1.7.22-3.fc25.src
 1:js-1.8.5-25.fc25.src
 0:js-jquery-2.1.3-2.fc23.src
-0:js-jquery1-1.11.2-3.fc23.src
 0:js-sizzle-2.1.1-2.jquery.2.1.2.fc23.src
 0:jsch-0.1.54-2.fc25.src
 0:jsch-agent-proxy-0.0.8-3.fc24.src
@@ -796,7 +788,6 @@
 0:libIDL-0.8.14-11.fc24.src
 0:libSM-1.2.2-4.fc24.src
 0:libX11-1.6.3-3.fc24.src
-0:libXNVCtrl-352.21-3.fc24.src
 0:libXScrnSaver-1.2.2-10.fc24.src
 0:libXau-1.0.8-6.fc24.src
 0:libXaw-1.0.13-4.fc25.src
@@ -964,7 +955,6 @@
 0:libreport-2.7.2-2.fc25.src
 0:librevenge-0.0.4-3.fc24.src
 0:librsvg2-2.40.16-1.fc25.src
-0:librx-1.5-26.fc24.src
 0:libsamplerate-0.1.8-10.fc24.src
 0:libseccomp-2.3.1-1.fc25.src
 0:libsecret-0.18.5-1.fc25.src
@@ -1160,7 +1150,6 @@
 0:mina-ftpserver-1.0.6-3.fc25.src
 0:miniz-1.15-4.r4.fc25.src
 0:minlog-1.3.0-3.fc24.src
-0:moarvm-0.2016.07-1.fc25.src
 0:mocha-2.4.5-4.fc24.src
 0:mockito-1.10.19-10.fc24.src
 0:modello-1.8.3-4.fc25.src
@@ -1208,9 +1197,7 @@
 0:newt-0.52.19-2.fc25.src
 1:nfs-utils-1.3.4-1.rc2.fc25.src
 0:nghttp2-1.13.0-2.fc25.src
-1:nginx-1.10.1-1.fc25.src
 0:ninja-build-1.7.1-1.fc25.src
-1:nkf-2.1.4-3.fc25.src
 1:nodejs-6.5.0-103.fc25.src
 0:nodejs-abbrev-1.0.7-3.fc24.src
 0:nodejs-ansi-font-0.0.2-2.fc24.src
@@ -1221,7 +1208,6 @@
 0:nodejs-array-union-1.0.1-2.fc24.src
 0:nodejs-array-uniq-1.0.2-2.fc24.src
 0:nodejs-arrify-1.0.0-2.fc24.src
-0:nodejs-asap-2.0.3-3.fc24.src
 0:nodejs-assertion-error-1.0.2-1.fc25.src
 0:nodejs-async-1.5.0-3.fc24.src
 0:nodejs-balanced-match-0.3.0-2.fc24.src
@@ -1252,9 +1238,6 @@
 0:nodejs-console-dot-log-0.1.3-8.fc24.src
 0:nodejs-constantinople-2.0.0-6.fc24.src
 0:nodejs-core-util-is-1.0.2-1.fc25.src
-0:nodejs-css-1.6.0-4.fc24.src
-0:nodejs-css-parse-1.7.0-5.fc24.src
-0:nodejs-css-stringify-1.4.1-5.fc24.src
 0:nodejs-d-1.0.0-3.fc25.src
 0:nodejs-dateformat-1.0.6-4.fc24.src
 0:nodejs-debug-2.2.0-2.fc24.src
@@ -1388,7 +1371,6 @@
 0:nodejs-path-is-absolute-1.0.0-2.fc24.src
 0:nodejs-pretty-bytes-3.0.1-1.fc25.src
 0:nodejs-process-nextick-args-1.0.7-1.fc25.src
-0:nodejs-promise-4.0.0-5.fc24.src
 0:nodejs-proxyquire-1.7.10-1.fc25.src
 0:nodejs-qs-6.0.2-2.fc24.src
 0:nodejs-read-package-json-2.0.3-2.fc24.src
@@ -1459,7 +1441,6 @@
 0:nodeunit-0.9.1-5.fc25.src
 0:noggit-0.7-2.fc24.src
 0:npth-1.2-3.fc24.src
-0:nqp-0.0.2016.07-2.fc25.src
 0:nspr-4.12.0-1.fc24.src
 0:nss-3.26.0-1.0.fc25.src
 0:nss-pem-1.0.2-2.fc25.src
@@ -1493,7 +1474,6 @@
 0:opensp-1.5.2-23.fc24.src
 0:openssh-7.3p1-3.fc25.src
 1:openssl-1.0.2h-3.fc25.src
-0:openwebbeans-1.2.8-2.fc24.src
 0:options-1.2-6.fc24.src
 0:optipng-0.7.6-1.fc25.src
 0:opus-1.1.3-1.fc25.src
@@ -2228,7 +2208,6 @@
 0:pytest-2.9.2-2.fc25.src
 0:python-2.7.12-6.fc25.src
 1:python-BeautifulSoup-3.2.1-11.fc25.src
-0:python-IPy-0.81-16.fc25.src
 0:python-WSGIProxy2-0.4.1-5.fc25.src
 0:python-backports_abc-0.4-4.fc25.src
 0:python-beaker-1.5.4-14.fc25.src
@@ -2248,8 +2227,6 @@
 0:python-cryptography-vectors-1.3.1-3.fc25.src
 0:python-cssselect-0.9.2-1.fc25.src
 0:python-cups-1.9.72-9.fc25.src
-1:python-dateutil-2.5.3-2.fc25.src
-0:python-decorator-4.0.10-3.fc25.src
 0:python-docutils-0.12-0.7.20140510svn7747.fc25.src
 0:python-dtopt-0.1-20.fc25.src
 0:python-empy-3.3.2-8.fc25.src
@@ -2258,8 +2235,6 @@
 0:python-fixtures-3.0.0-2.fc25.src
 1:python-flask-0.11.1-3.fc25.src
 0:python-funcsigs-1.0.2-2.fc25.src
-0:python-gflags-2.0-7.fc25.src
-0:python-google-apputils-0.4.2-6.fc25.src
 1:python-html5lib-0.999-9.fc25.src
 0:python-http-parser-0.8.3-7.fc25.src
 0:python-hypothesis-3.4.0-2.fc25.src
@@ -2281,7 +2256,6 @@
 0:python-markupsafe-0.23-10.fc25.src
 0:python-mimeparse-0.1.4-9.fc25.src
 0:python-mock-2.0.0-2.fc25.src
-0:python-mox-0.5.3-11.fc25.src
 0:python-nose-1.3.7-7.fc24.src
 0:python-paste-2.0.2-4.fc25.src
 0:python-paste-deploy-1.5.2-7.fc25.src
@@ -2314,7 +2288,6 @@
 0:python-setuptools_scm-1.10.1-4.fc25.src
 0:python-singledispatch-3.4.0.3-5.fc25.src
 0:python-six-1.10.0-3.fc25.src
-0:python-slip-0.6.4-4.fc25.src
 0:python-snowballstemmer-1.2.0-4.fc25.src
 0:python-socketpool-0.5.3-6.fc25.src
 0:python-sphinx-1.4.6-2.fc25.src
@@ -2355,7 +2328,6 @@
 0:qpdf-6.0.0-3.fc25.src
 0:qpid-proton-java-0.12.2-1.fc25.src
 0:qrencode-3.4.2-6.fc24.src
-0:qrupdate-1.1.2-8.fc24.src
 0:qscintilla-2.9.3-1.fc25.src
 1:qt-4.8.7-18.fc25.src
 0:qt-assistant-adp-4.6.3-12.fc24.src
@@ -2419,49 +2391,11 @@
 0:rsync-3.1.2-2.fc24.src
 0:rsyslog-8.12.0-3.fc24.src
 0:ruby-2.3.1-58.fc25.src
-0:rubygem-ZenTest-4.11.0-1.fc25.src
-0:rubygem-aruba-0.6.2-3.fc24.src
-0:rubygem-builder-3.2.2-5.fc24.src
-0:rubygem-childprocess-0.5.3-5.fc25.src
-0:rubygem-coderay-1.1.0-6.fc24.src
-0:rubygem-cucumber-2.3.3-1.fc25.src
-0:rubygem-cucumber-core-1.4.0-1.fc25.src
-0:rubygem-cucumber-wire-0.0.1-1.fc25.src
-0:rubygem-diff-lcs-1.2.5-5.fc24.src
 0:rubygem-execjs-2.7.0-1.fc25.src
-0:rubygem-fattr-2.2.2-3.fc24.src
-0:rubygem-ffi-1.9.10-3.fc24.src
-0:rubygem-flexmock-2.2.1-1.fc25.src
-0:rubygem-gherkin-3.2.0-1.fc25.src
-0:rubygem-hoe-3.15.1-1.fc25.src
-0:rubygem-introspection-0.0.3-5.fc24.src
 0:rubygem-json-1.8.3-103.fc25.src
-0:rubygem-json_pure-1.8.1-3.fc24.src
-0:rubygem-kramdown-1.12.0-1.fc25.src
-0:rubygem-metaclass-0.0.4-3.fc24.src
-0:rubygem-minitest-5.8.4-101.fc24.src
-0:rubygem-minitest4-4.7.0-6.fc24.src
-0:rubygem-mocha-1.1.0-3.fc24.src
-0:rubygem-multi_json-1.10.1-3.fc24.src
-0:rubygem-multi_test-0.1.2-1.fc25.src
-0:rubygem-nokogiri-1.6.8-3.fc25.src
-0:rubygem-pkg-config-1.1.7-2.fc24.src
-0:rubygem-power_assert-0.3.0-100.fc25.src
 0:rubygem-rake-10.4.2-100.fc24.1.src
 0:rubygem-rdoc-4.2.2-2.fc25.src
-0:rubygem-rr-1.1.2-5.fc24.src
-0:rubygem-rspec-3.5.0-1.fc25.src
-0:rubygem-rspec-core-3.5.3-1.fc25.src
-0:rubygem-rspec-expectations-3.5.0-1.fc25.src
-0:rubygem-rspec-mocks-3.5.0-1.fc25.src
-0:rubygem-rspec-support-3.5.0-1.fc25.src
-0:rubygem-rspec2-2.14.1-5.fc24.src
-0:rubygem-rspec2-core-2.14.8-7.fc24.src
-0:rubygem-rspec2-expectations-2.14.5-8.fc24.1.src
-0:rubygem-rspec2-mocks-2.14.6-5.fc24.1.src
-0:rubygem-session-3.1.0-12.fc25.src
 0:rubygem-test-unit-3.2.1-100.fc25.src
-0:rubygem-thread_order-1.1.0-2.fc24.src
 0:rubygem-uglifier-3.0.0-1.fc25.src
 0:rubypick-1.1.1-5.fc24.src
 0:rxjava-1.0.13-3.fc25.src
@@ -2509,7 +2443,6 @@
 0:snappy-1.1.3-2.fc24.src
 0:snappy-java-1.1.2.4-2.fc25.src
 0:snowball-java-0-0.7.20130902.fc24.src
-0:softhsm-2.1.0-1.fc25.src
 0:sombok-2.4.0-2.fc24.src
 0:sonar-3.2-8.fc25.src
 0:sonar-update-center-1.12.1-7.fc25.src
@@ -2590,7 +2523,6 @@
 0:tree-1.7.0-6.fc24.src
 0:treelayout-1.0.3-3.fc25.src
 0:trilead-ssh2-217-7.jenkins8.fc24.src
-0:trousers-0.3.13-6.fc24.src
 0:truth-0.23-4.fc25.src
 0:tslib-1.0-11.fc24.src
 0:ttembed-1.1-5.fc24.src
@@ -2621,7 +2553,6 @@
 0:util-linux-2.28.1-1.fc25.src
 0:uucp-1.07-46.fc24.src
 0:uuid-1.6.2-33.fc25.src
-0:uw-imap-2007f-11.fc24.src
 0:v4l-utils-1.10.0-2.fc25.src
 0:vala-0.32.1-1.fc25.src
 1:valgrind-3.11.0-26.fc25.src
@@ -2631,7 +2562,6 @@
 0:volume_key-0.3.9-10.fc25.src
 0:vorbis-java-0.8-1.fc25.src
 0:vsftpd-3.0.3-2.fc25.src
-0:w3m-0.5.3-25.fc25.src
 0:wavpack-4.80.0-1.fc25.src
 0:wayland-1.11.93-1.fc25.src
 0:wayland-protocols-1.7-1.fc25.src
@@ -2681,7 +2611,6 @@
 0:xml-commons-resolver-1.2-19.fc24.src
 0:xml-maven-plugin-1.0.1-1.fc25.src
 0:xml-security-2.0.6-2.fc25.src
-0:xml-stylebook-1.0-0.18.b3_xalan2.svn313293.fc24.src
 0:xmlbeans-2.6.0-12.fc25.src
 0:xmlbeans-maven-plugin-2.3.3-6.fc24.src
 0:xmlgraphics-commons-2.0.1-2.fc24.src
@@ -2697,8 +2626,6 @@
 0:xmvn-2.5.0-11.fc25.src
 0:xnio-3.3.6-1.fc25.src
 0:xom-1.2.10-6.fc25.src
-0:xorg-x11-apps-7.7-15.fc24.src
-0:xorg-x11-drv-dummy-0.3.6-25.fc24.src
 1:xorg-x11-font-utils-7.5-31.fc24.src
 0:xorg-x11-fonts-7.5-16.fc24.src
 0:xorg-x11-proto-devel-7.7-19.fc25.src

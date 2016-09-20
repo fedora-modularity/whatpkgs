@@ -160,6 +160,11 @@ def process_requirements(reqs, dependencies, query, hints, pick_first,
 
             if not found:
                 if pick_first:
+                    # First try to use something we've already discovered
+                    for rpkg in required_packages:
+                        if rpkg.name in dependencies:
+                            return
+
                     # The user instructed processing to just take the first
                     # entry in the list.
                     recurse_package_deps(required_packages[0], dependencies,
