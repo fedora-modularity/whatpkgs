@@ -1,8 +1,8 @@
 #!/usr/bin/python2
 
-import sys
 import dnf
 import click
+import pprint
 from rpmUtils.miscutils import splitFilename
 from colorama import Fore, Back, Style
 
@@ -131,7 +131,8 @@ def get_srpm_for_package_name(binary_query, source_query, pkgname):
     return get_srpm_for_package(source_query, pkg)
 
 
-def process_requirements(reqs, dependencies, query, hints, pick_first,
+def process_requirements(reqs, dependencies, ambiguities,
+                         query, hints, pick_first,
                          follow_recommends):
     """
     Share code for recursing into requires or recommends
@@ -153,8 +154,9 @@ def process_requirements(reqs, dependencies, query, hints, pick_first,
                         # This has been disambiguated; use this one
                         found = True
                         recurse_package_deps(rpkg,
-                                             dependencies, query, hints,
-                                             pick_first, follow_recommends)
+                                             dependencies, ambiguities, query,
+                                             hints, pick_first,
+                                             follow_recommends)
                         break
                 if found:
                     # Don't keep looking once we find a match
@@ -164,25 +166,29 @@ def process_requirements(reqs, dependencies, query, hints, pick_first,
                 if pick_first:
                     # The user instructed processing to just take the first
                     # entry in the list.
-                    recurse_package_deps(required_packages[0], dependencies,
+                    recurse_package_deps(required_packages[0],
+                                         dependencies, ambiguities,
                                          query, hints, pick_first,
                                          follow_recommends)
                     continue
                 # Packages not solved by 'hints' list
-                # should be printed in red and we will cease
-                # recursing here.
-                for multichoice in required_packages:
-                    dependencies["_MULTI_:" + multichoice.name] = multichoice
+                # should be added to the ambiguities list
+                unresolved = {}
+                for rpkg in required_packages:
+                    unresolved[rpkg.name] = rpkg
+                ambiguities.append(unresolved)
 
             continue
 
         # Exactly one package matched, so proceed down into it.
-        recurse_package_deps(required_packages[0], dependencies, query,
+        recurse_package_deps(required_packages[0],
+                             dependencies, ambiguities, query,
                              hints, pick_first, follow_recommends)
 
 
-def recurse_package_deps(pkg, dependencies, query, hints,
-                         pick_first, follow_recommends):
+def recurse_package_deps(pkg, dependencies, ambiguities,
+                         query, hints, pick_first,
+                         follow_recommends):
     """
     Recursively search through dependencies and add them to the list
     """
@@ -192,13 +198,14 @@ def recurse_package_deps(pkg, dependencies, query, hints,
     dependencies[pkg.name] = pkg
 
     # Process Requires:
-    process_requirements(pkg.requires, dependencies, query, hints, pick_first,
-                         follow_recommends)
+    process_requirements(pkg.requires, dependencies, ambiguities, query, hints,
+                         pick_first, follow_recommends)
     if follow_recommends:
-        process_requirements(pkg.recommends, dependencies, query, hints,
-                             pick_first, follow_recommends)
+        process_requirements(pkg.recommends, dependencies, ambiguities, query,
+                             hints, pick_first, follow_recommends)
 
-def recurse_srpm_deps(source_pkg, dependencies, sources, query, hints,
+
+def recurse_srpm_deps(source_pkg, dependencies, ambiguities, query, hints,
                       pick_first, follow_recommends):
     """
     Recursively search through dependencies and add them to the list
@@ -206,12 +213,12 @@ def recurse_srpm_deps(source_pkg, dependencies, sources, query, hints,
     # Process Requires:
     # There is no BuildRecommends concept, so we don't
     # need to worry about that.
-    process_requirements(source_pkg.requires, dependencies, query, hints,
-                         pick_first,
-                         follow_recommends)
+    process_requirements(source_pkg.requires, dependencies, ambiguities,
+                         query, hints, pick_first, follow_recommends)
 
 
 def recurse_build_deps(source_pkg, binaries, sources,
+                       ambiguities,
                        binary_query, source_query,
                        hints, pick_first,
                        follow_recommends):
@@ -229,7 +236,7 @@ def recurse_build_deps(source_pkg, binaries, sources,
     # SRPM. There is no BuildRecommends concept, so we don't
     # need to worry about that.
     saved_binaries = binaries.copy()
-    recurse_srpm_deps(source_pkg, binaries, sources, binary_query,
+    recurse_srpm_deps(source_pkg, binaries, ambiguities, binary_query,
                       hints, pick_first, follow_recommends)
 
     deplist = sorted(binaries, key=binaries.get)
@@ -247,9 +254,11 @@ def recurse_build_deps(source_pkg, binaries, sources,
         # into it.
         spkg = get_srpm_for_package(source_query, binaries[dep])
         recurse_build_deps(spkg, binaries, sources,
+                           ambiguities,
                            binary_query, source_query,
                            hints, pick_first,
                            follow_recommends)
+
 
 def print_package_name(pkgname, dependencies, full):
     """
@@ -259,12 +268,6 @@ def print_package_name(pkgname, dependencies, full):
 
     printpkg = dependencies[pkgname]
 
-    end_color = False
-    if pkgname.startswith("_MULTI_:"):
-        end_color = True
-        pkgname = pkgname[8:]
-        sys.stdout.write(Fore.RED)
-
     if full:
         print("%d:%s-%s-%s.%s" % (printpkg.epoch,
                                   printpkg.name,
@@ -273,9 +276,6 @@ def print_package_name(pkgname, dependencies, full):
                                   printpkg.arch))
     else:
         print(printpkg.name)
-
-    if end_color:
-        sys.stdout.write(Style.RESET_ALL)
 
 
 @click.group()
@@ -312,15 +312,17 @@ def neededby(pkgnames, hint, recommends, merge, full_name, pick_first):
     (binary_query, _) = get_query_objects()
 
     dependencies = {}
+    ambiguities = []
     for pkgname in pkgnames:
         pkg = get_pkg_by_name(binary_query, pkgname)
 
         if not merge:
             # empty the dependencies list and start over
             dependencies = {}
+            ambiguities = []
 
-        recurse_package_deps(pkg, dependencies, binary_query,
-                             hint, pick_first, recommends)
+        recurse_package_deps(pkg, dependencies, ambiguities,
+                             binary_query, hint, pick_first, recommends)
 
         if not merge:
             # If we're printing individually, create a header
@@ -334,10 +336,22 @@ def neededby(pkgnames, hint, recommends, merge, full_name, pick_first):
                     continue
                 print_package_name(key, dependencies, full_name)
 
+            if len(ambiguities) > 0:
+                print(Fore.RED + Back.BLACK + "=== Unresolved Requirements ===" +
+                      Style.RESET_ALL)
+                pp = pprint.PrettyPrinter(indent=4)
+                pp.pprint(ambiguities)
+
     if merge:
         # Print the complete set of dependencies together
         for key in sorted(dependencies, key=dependencies.get):
             print_package_name(key, dependencies, full_name)
+
+        if len(ambiguities) > 0:
+            print(Fore.RED + Back.BLACK + "=== Unresolved Requirements ===" +
+                  Style.RESET_ALL)
+            pp = pprint.PrettyPrinter(indent=4)
+            pp.pprint(ambiguities)
 
 
 @main.command(short_help="Get Source RPM")
@@ -397,16 +411,19 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
 
     binary_pkgs = {}
     source_pkgs = {}
+    ambiguities = []
     for pkgname in pkgnames:
         pkg = get_pkg_by_name(binary_query, pkgname)
 
         if not merge:
             binary_pkgs = {}
             source_pkgs = {}
+            ambiguities = []
 
         # Get the source RPM for this package
         spkg = get_srpm_for_package(source_query, pkg)
         recurse_build_deps(spkg, binary_pkgs, source_pkgs,
+                           ambiguities,
                            binary_query, source_query,
                            hint, pick_first, recommends)
         if not merge:
@@ -428,6 +445,13 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
                         continue
                     print_package_name(key, binary_pkgs, full_name)
 
+            if len(ambiguities) > 0:
+                print(Fore.RED + Back.BLACK +
+                      "=== Unresolved Requirements ===" +
+                      Style.RESET_ALL)
+                pp = pprint.PrettyPrinter(indent=4)
+                pp.pprint(ambiguities)
+
     if merge:
         if sources:
             for key in sorted(source_pkgs, key=source_pkgs.get):
@@ -435,6 +459,12 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
         else:
             for key in sorted(binary_pkgs, key=binary_pkgs.get):
                 print_package_name(key, binary_pkgs, full_name)
+        if len(ambiguities) > 0:
+            print(Fore.RED + Back.BLACK +
+                  "=== Unresolved Requirements ===" +
+                  Style.RESET_ALL)
+            pp = pprint.PrettyPrinter(indent=4)
+            pp.pprint(ambiguities)
 
 if __name__ == "__main__":
     main()
