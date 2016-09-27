@@ -1,3 +1,5 @@
+#!/usr/bin/python2
+
 import sys
 import dnf
 import click
@@ -433,3 +435,6 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
         else:
             for key in sorted(binary_pkgs, key=binary_pkgs.get):
                 print_package_name(key, binary_pkgs, full_name)
+
+if __name__ == "__main__":
+    main()
