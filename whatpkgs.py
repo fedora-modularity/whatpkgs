@@ -278,6 +278,17 @@ def print_package_name(pkgname, dependencies, full):
         print(printpkg.name)
 
 
+def resolve_ambiguity(dependencies, ambiguity):
+    """
+    Determine if any of the contents of an ambiguous lookup
+    is already resolved by something in the dependencies.
+    """
+    for key in sorted(ambiguity, key=ambiguity.get):
+        if key in dependencies:
+            return True
+    return False
+
+
 @click.group()
 def main():
     pass
@@ -323,6 +334,14 @@ def neededby(pkgnames, hint, recommends, merge, full_name, pick_first):
 
         recurse_package_deps(pkg, dependencies, ambiguities,
                              binary_query, hint, pick_first, recommends)
+
+        # Check for unresolved deps in the list that are present in the
+        # dependencies. This happens when one package has an ambiguous dep but
+        # another package has an explicit dep on the same package.
+        # This list comprehension just returns the set of dictionaries that
+        # are not resolved by other entries
+        ambiguities = [x for x in ambiguities
+                       if not resolve_ambiguity(dependencies, x)]
 
         if not merge:
             # If we're printing individually, create a header
@@ -426,6 +445,18 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
                            ambiguities,
                            binary_query, source_query,
                            hint, pick_first, recommends)
+
+        # Check for unresolved deps in the list that are present in the
+        # dependencies. This happens when one package has an ambiguous dep but
+        # another package has an explicit dep on the same package.
+        # This list comprehension just returns the set of dictionaries that
+        # are not resolved by other entries
+        # We only search the binary packages here. This is a reduction; no
+        # additional packages are discovered so we don't need to regenrate
+        # the source RPM list.
+        ambiguities = [x for x in ambiguities
+                       if not resolve_ambiguity(binary_pkgs, x)]
+
         if not merge:
             # If we're printing individually, create a header
             print(Fore.GREEN + Back.BLACK + "=== %s.%s ===" % (
