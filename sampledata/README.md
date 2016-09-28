@@ -71,12 +71,30 @@ runtime-binary-dependency-packages-short.txt. It was created by running:
 ```
 cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
 whatpkgs neededtoselfhost --merge --no-recommends \
-                          --pick-first --no-sources \
+                          --no-sources \
                           --hint=glibc-minimal-langpack \
                           --hint=fedora-release \
                           --hint=libcrypt-nss \
                           --hint=cronie-noanacron \
-                          --hint=coreutils
+                          --hint=coreutils \
+                          --hint=java-1.8.0-openjdk-javadoc \
+                          --hint=sendmail \
+                          --hint=environment-modules \
+                          --hint=fedora-logos-httpd \
+                          --hint=rubygem-minitest \
+                          --hint=rubygem-rspec \
+                          --hint=kernel-core \
+                          --hint=gnuplot \
+                          --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
+                          --hint=perl-Archive-Extract-tgz-tar-gzip \
+                          --hint=perl-Archive-Extract-Z-uncompress \
+                          --hint=perl-Archive-Extract-bz2-bunzip2 \
+                          --hint=perl-Archive-Extract-gz-gzip \
+                          --hint=perl-Archive-Extract-tar-tar \
+                          --hint=perl-Archive-Extract-txz-tar-unxz \
+                          --hint=perl-Archive-Extract-zip-unzip \
+                          --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
+                          --hint=perl-Archive-Extract-xz-unxz
 
 ```
 
@@ -86,12 +104,30 @@ runtime-binary-dependency-packages-short.txt. It was created by running:
 ```
 cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
 whatpkgs neededtoselfhost --merge --no-recommends --full-name \
-                          --pick-first --no-sources \
+                          --no-sources \
                           --hint=glibc-minimal-langpack \
                           --hint=fedora-release \
                           --hint=libcrypt-nss \
                           --hint=cronie-noanacron \
-                          --hint=coreutils
+                          --hint=coreutils \
+                          --hint=java-1.8.0-openjdk-javadoc \
+                          --hint=sendmail \
+                          --hint=environment-modules \
+                          --hint=fedora-logos-httpd \
+                          --hint=rubygem-minitest \
+                          --hint=rubygem-rspec \
+                          --hint=kernel-core \
+                          --hint=gnuplot \
+                          --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
+                          --hint=perl-Archive-Extract-tgz-tar-gzip \
+                          --hint=perl-Archive-Extract-Z-uncompress \
+                          --hint=perl-Archive-Extract-bz2-bunzip2 \
+                          --hint=perl-Archive-Extract-gz-gzip \
+                          --hint=perl-Archive-Extract-tar-tar \
+                          --hint=perl-Archive-Extract-txz-tar-unxz \
+                          --hint=perl-Archive-Extract-zip-unzip \
+                          --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
+                          --hint=perl-Archive-Extract-xz-unxz
 ```
 
 ## selfhosting-source-packages-short.txt
@@ -101,12 +137,30 @@ It was created by running:
 ```
 cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
 whatpkgs neededtoselfhost --merge --no-recommends \
-                          --pick-first --sources \
+                          --sources \
                           --hint=glibc-minimal-langpack \
                           --hint=fedora-release \
                           --hint=libcrypt-nss \
                           --hint=cronie-noanacron \
-                          --hint=coreutils
+                          --hint=coreutils \
+                          --hint=java-1.8.0-openjdk-javadoc \
+                          --hint=sendmail \
+                          --hint=environment-modules \
+                          --hint=fedora-logos-httpd \
+                          --hint=rubygem-minitest \
+                          --hint=rubygem-rspec \
+                          --hint=kernel-core \
+                          --hint=gnuplot \
+                          --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
+                          --hint=perl-Archive-Extract-tgz-tar-gzip \
+                          --hint=perl-Archive-Extract-Z-uncompress \
+                          --hint=perl-Archive-Extract-bz2-bunzip2 \
+                          --hint=perl-Archive-Extract-gz-gzip \
+                          --hint=perl-Archive-Extract-tar-tar \
+                          --hint=perl-Archive-Extract-txz-tar-unxz \
+                          --hint=perl-Archive-Extract-zip-unzip \
+                          --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
+                          --hint=perl-Archive-Extract-xz-unxz
 ```
 
 ## selfhosting-source-packages-full.txt
@@ -116,11 +170,29 @@ It was created by running:
 ```
 cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
 whatpkgs neededtoselfhost --merge --no-recommends --full-name \
-                          --pick-first --sources \
+                          --sources \
                           --hint=glibc-minimal-langpack \
                           --hint=fedora-release \
                           --hint=libcrypt-nss \
                           --hint=cronie-noanacron \
-                          --hint=coreutils
+                          --hint=coreutils \
+                          --hint=java-1.8.0-openjdk-javadoc \
+                          --hint=sendmail \
+                          --hint=environment-modules \
+                          --hint=fedora-logos-httpd \
+                          --hint=rubygem-minitest \
+                          --hint=rubygem-rspec \
+                          --hint=kernel-core \
+                          --hint=gnuplot \
+                          --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
+                          --hint=perl-Archive-Extract-tgz-tar-gzip \
+                          --hint=perl-Archive-Extract-Z-uncompress \
+                          --hint=perl-Archive-Extract-bz2-bunzip2 \
+                          --hint=perl-Archive-Extract-gz-gzip \
+                          --hint=perl-Archive-Extract-tar-tar \
+                          --hint=perl-Archive-Extract-txz-tar-unxz \
+                          --hint=perl-Archive-Extract-zip-unzip \
+                          --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
+                          --hint=perl-Archive-Extract-xz-unxz
 ```
 

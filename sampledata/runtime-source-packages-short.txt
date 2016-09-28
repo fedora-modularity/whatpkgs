@@ -71,6 +71,7 @@ libseccomp
 libselinux
 libsemanage
 libsepol
+libsigsegv
 libssh2
 libtasn1
 libtool
