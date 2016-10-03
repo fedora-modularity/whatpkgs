@@ -25,7 +25,7 @@
 0:e2fsprogs-1.43.1-2.fc25.src
 0:ed-1.13-1.fc25.src
 0:elfutils-0.167-1.fc25.src
-1:emacs-25.1-0.2.rc1.fc25.src
+1:emacs-25.1-1.fc25.src
 0:expat-2.2.0-1.fc25.src
 0:fedora-release-25-0.11.src
 0:fedora-repos-25-0.5.src
@@ -47,7 +47,7 @@
 0:hwloc-1.11.0-6.fc24.src
 0:iptables-1.6.0-2.fc25.src
 0:isl-0.14-5.fc24.src
-0:kernel-4.8.0-0.rc6.git0.1.fc25.src
+0:kernel-4.8.0-0.rc7.git0.1.fc25.src
 0:keyutils-1.5.9-8.fc24.src
 0:kmod-23-1.fc25.src
 0:krb5-1.14.3-9.fc25.src
@@ -128,7 +128,7 @@
 0:setup-2.10.4-1.fc25.src
 2:shadow-utils-4.2.1-11.fc25.src
 0:sharutils-4.15.2-4.fc25.src
-0:sqlite-3.14.1-1.fc25.src
+0:sqlite-3.14.2-1.fc25.src
 0:star-1.5.3-6.fc24.src
 0:systemd-231-4.fc25.src
 0:talk-0.17-50.fc24.src

@@ -105,8 +105,8 @@
 50:aspell-en-2015.04.24-2.fc24.src
 0:assertj-core-2.2.0-2.fc24.src
 0:at-3.1.20-1.fc25.src
-0:at-spi2-atk-2.21.91-1.fc25.src
-0:at-spi2-core-2.21.4-1.fc25.src
+0:at-spi2-atk-2.22.0-1.fc25.src
+0:at-spi2-core-2.22.0-1.fc25.src
 0:atinject-1-22.20100611svn86.fc24.src
 0:atk-2.22.0-1.fc25.src
 0:atkmm-2.24.2-2.fc24.src
@@ -284,7 +284,7 @@
 0:ehcache-sizeof-agent-1.0.1-11.fc24.src
 0:elfutils-0.167-1.fc25.src
 0:elinks-0.12-0.48.pre6.fc24.src
-1:emacs-25.1-0.2.rc1.fc25.src
+1:emacs-25.1-1.fc25.src
 0:emma-2.0.5312-17.fc24.src
 0:enca-1.18-1.fc24.src
 1:enchant-1.6.0-14.fc25.src
@@ -530,6 +530,7 @@
 0:ima-evm-utils-0.9-4.fc24.src
 0:imake-1.0.7-6.fc24.src
 0:indent-2.2.11-20.fc24.src
+0:infinipath-psm-3.3-22_g4abbc60_open.3.fc25.src
 0:infinispan-8.2.4-1.fc25.src
 0:initscripts-9.69-1.fc25.src
 0:inkscape-0.92-1.fc25pre1.src
@@ -573,7 +574,7 @@
 0:janino-2.7.8-6.fc25.src
 0:jansi-1.11-10.fc24.src
 0:jansi-native-1.5-10.fc24.src
-0:jansson-2.7-3.fc24.src
+0:jansson-2.9-1.fc25.src
 0:jarjar-1.4-16.fc24.src
 0:jasper-1.900.1-34.fc25.src
 0:jasperreports-6.2.2-1.fc25.src
@@ -731,7 +732,7 @@
 0:kde-l10n-16.08.1-1.fc25.src
 0:kde-settings-24-7.fc25.src
 6:kdelibs-4.14.24-1.fc25.src
-0:kernel-4.8.0-0.rc6.git0.1.fc25.src
+0:kernel-4.8.0-0.rc7.git0.1.fc25.src
 0:keyutils-1.5.9-8.fc24.src
 0:kf5-5.26.0-1.fc25.src
 0:kf5-karchive-5.26.0-1.fc25.src
@@ -773,7 +774,7 @@
 0:libXevie-1.0.3-11.fc24.src
 0:libXext-1.3.3-4.fc24.src
 0:libXfixes-5.0.2-2.fc25.src
-0:libXfont-1.5.1-4.fc24.src
+0:libXfont-1.5.2-1.fc25.src
 0:libXft-2.3.2-4.fc24.src
 0:libXi-1.7.6-2.fc24.src
 0:libXinerama-1.1.3-6.fc24.src
@@ -804,7 +805,7 @@
 0:libbonobo-2.32.1-10.fc24.src
 0:libbonoboui-2.24.5-10.fc24.src
 0:libbs2b-3.1.0-16.fc24.src
-0:libbytesize-0.7-2.fc25.src
+0:libbytesize-0.7-3.fc25.src
 0:libcanberra-0.30-11.fc24.src
 0:libcap-2.25-2.fc25.src
 0:libcap-ng-0.7.8-1.fc25.src
@@ -917,6 +918,7 @@
 2:libpng-1.6.23-1.fc25.src
 0:libproxy-0.4.12-4.fc25.src
 0:libpsl-0.14.0-1.fc25.src
+0:libpsm2-10.2.2-2.fc25.src
 0:libpwquality-1.3.0-6.fc25.src
 0:libqb-1.0-1.fc25.src
 0:libqmi-1.16.0-1.fc25.src
@@ -1037,7 +1039,7 @@
 0:mallard-rng-1.0.2-1.fc25.src
 0:man-db-2.7.5-3.fc25.src
 0:man2html-1.6-17.g.fc24.src
-3:mariadb-10.1.16-1.fc25.src
+3:mariadb-10.1.17-1.fc25.src
 0:maven-3.3.9-6.fc25.src
 0:maven-antrun-plugin-1.8-3.fc24.src
 0:maven-archiver-3.1.1-1.fc25.src
@@ -1482,7 +1484,7 @@
 0:perl-Algorithm-Diff-1.1903-5.fc25.src
 0:perl-Any-Moose-0.26-7.fc25.src
 0:perl-Any-URI-Escape-0.01-10.fc25.src
-0:perl-AnyEvent-7.12-4.fc25.src
+0:perl-AnyEvent-7.13-1.fc25.src
 0:perl-AnyEvent-AIO-1.1-19.fc25.src
 0:perl-AnyEvent-BDB-1.1-19.fc25.src
 0:perl-App-FatPacker-0.010005-3.fc25.src
@@ -1490,7 +1492,7 @@
 0:perl-Archive-Any-Lite-0.11-2.fc25.src
 1:perl-Archive-Extract-0.78-1.fc25.src
 0:perl-Archive-Tar-2.10-1.fc25.src
-0:perl-Archive-Zip-1.59-1.fc25.src
+0:perl-Archive-Zip-1.59-2.fc25.src
 1:perl-Array-Diff-0.07-21.fc25.src
 0:perl-B-Compiling-0.06-5.fc25.src
 0:perl-B-Hooks-EndOfScope-0.21-1.fc25.src
@@ -1586,7 +1588,7 @@
 0:perl-DateTime-Format-IBeat-0.161-26.fc25.src
 1:perl-DateTime-Format-Mail-0.403-1.fc25.src
 0:perl-DateTime-Format-MySQL-0.06-2.fc25.src
-0:perl-DateTime-Format-Pg-0.16012-1.fc25.src
+0:perl-DateTime-Format-Pg-0.16012-2.fc25.src
 0:perl-DateTime-Format-SQLite-0.11-19.fc25.src
 1:perl-DateTime-Format-Strptime-1.68-2.fc25.src
 0:perl-DateTime-Locale-1.05-2.fc25.src
@@ -1720,7 +1722,7 @@
 0:perl-IO-Pipely-0.005-7.fc25.src
 0:perl-IO-Socket-INET6-2.72-8.fc25.src
 0:perl-IO-Socket-IP-0.38-1.fc25.src
-0:perl-IO-Socket-SSL-2.037-1.fc25.src
+0:perl-IO-Socket-SSL-2.038-1.fc25.src
 0:perl-IO-String-1.08-27.fc25.src
 0:perl-IO-Tty-1.12-6.fc25.src
 0:perl-IO-stringy-2.111-5.fc25.src
@@ -1770,7 +1772,7 @@
 0:perl-Module-Build-XSUtil-0.16-3.fc25.src
 0:perl-Module-CPANTS-Analyse-0.96-5.fc25.src
 0:perl-Module-CPANfile-1.1002-2.fc25.src
-1:perl-Module-CoreList-5.20160820-1.fc25.src
+1:perl-Module-CoreList-5.20160920-1.fc25.src
 0:perl-Module-ExtractUse-0.341-3.fc25.src
 0:perl-Module-Find-0.13-5.fc25.src
 0:perl-Module-Implementation-0.09-8.fc25.src
@@ -1999,7 +2001,7 @@
 0:perl-Test-UseAllModules-0.17-5.fc25.src
 0:perl-Test-Valgrind-1.19-1.fc25.src
 0:perl-Test-Vars-0.010-1.fc25.src
-0:perl-Test-Version-2.04-1.fc25.src
+0:perl-Test-Version-2.05-1.fc25.src
 0:perl-Test-Warn-0.30-7.fc25.src
 0:perl-Test-Warnings-0.026-3.fc25.src
 0:perl-Test-Without-Module-0.18-6.fc25.src
@@ -2012,7 +2014,7 @@
 0:perl-Text-CSV_XS-1.25-1.fc25.src
 0:perl-Text-CharWidth-0.04-27.fc25.src
 0:perl-Text-Diff-1.44-2.fc25.src
-0:perl-Text-Glob-0.09-16.fc25.src
+0:perl-Text-Glob-0.10-1.fc25.src
 0:perl-Text-Iconv-1.7-26.fc25.src
 0:perl-Text-ParseWords-3.30-365.fc25.src
 0:perl-Text-RecordParser-1.6.5-5.fc25.src
@@ -2094,7 +2096,7 @@
 1:perl-parent-0.234-365.fc25.src
 0:perl-perlindex-1.606-7.fc25.src
 0:perl-pod2pdf-0.42-12.fc25.src
-0:perl-podlators-4.07-365.fc25.src
+0:perl-podlators-4.07-366.fc25.src
 0:perl-podlinkcheck-14-2.fc25.src
 0:perl-prefork-1.04-20.fc25.src
 0:perl-srpm-macros-1-20.fc25.src
@@ -2156,7 +2158,7 @@
 0:powermock-1.6.5-4.fc25.src
 0:procmail-3.22-39.fc24.src
 0:procps-ng-3.3.10-11.fc24.src
-0:proguard-5.2.1-4.fc24.src
+0:proguard-5.3-1.fc25.src
 0:proj-4.9.2-2.fc24.src
 0:properties-maven-plugin-1.0.0-2.fc25.src
 0:protobuf-2.6.1-5.fc25.src
@@ -2225,7 +2227,7 @@
 0:python-isodate-0.5.4-3.fc25.src
 0:python-itsdangerous-0.24-7.fc25.src
 0:python-jedi-0.9.0-5.fc25.src
-0:python-jinja2-2.8-6.fc25.src
+0:python-jinja2-2.8-7.fc25.src
 0:python-jsonschema-2.5.1-2.fc25.src
 0:python-keyczar-0.71c-7.fc25.src
 0:python-keyring-9.0-2.fc25.src
@@ -2276,7 +2278,7 @@
 0:python-sphinx-theme-alabaster-0.7.8-2.fc25.src
 0:python-sphinx_rtd_theme-0.1.9-2.fc24.src
 0:python-sqlalchemy-1.0.14-1.fc25.src
-0:python-systemd-231-6.fc25.src
+0:python-systemd-232-1.fc25.src
 0:python-tempita-0.5.1-13.fc25.src
 0:python-testscenarios-0.5.0-3.fc25.src
 0:python-testtools-1.8.0-6.fc25.src
@@ -2291,7 +2293,7 @@
 0:python-webob-1.6.1-2.fc25.src
 0:python-webtest-2.0.23-1.fc25.src
 0:python-werkzeug-0.11.10-2.fc25.src
-0:python-wheel-0.26.0-2.fc24.src
+0:python-wheel-0.30.0a0-2.fc25.src
 0:python-which-1.1.0-16.fc25.src
 0:python-whoosh-2.7.4-2.fc25.src
 0:python-xpyb-1.3.1-6.fc24.src
@@ -2303,6 +2305,7 @@
 0:pytz-2016.6.1-1.fc25.src
 0:pywbem-0.7.0-30.20131121svn626.fc25.src
 0:pyxattr-0.5.3-8.fc25.src
+0:pyxdg-0.25-8.fc24.src
 0:qca-2.1.1-8.fc25.src
 0:qdox-2.0-0.5.M3.fc24.src
 0:qhull-2015.2-1.fc25.src
@@ -2420,7 +2423,7 @@
 0:rubygem-uglifier-3.0.0-1.fc25.src
 0:rubypick-1.1.1-5.fc24.src
 0:sac-1.3-23.fc24.src
-2:samba-4.5.0-0.0.rc1.fc25.src
+2:samba-4.5.0-2.fc25.src
 0:sanlock-3.4.0-2.fc25.src
 0:sat4j-2.3.5-8.fc24.src
 0:satyr-0.21-2.fc25.src
@@ -2433,7 +2436,7 @@
 0:schroedinger-1.0.11-10.fc24.src
 1:scl-utils-2.0.1-10.fc25.src
 0:scons-2.5.0-1.fc25.src
-0:screen-4.4.0-1.fc25.src
+0:screen-4.4.0-3.fc25.src
 0:sed-4.2.2-15.fc24.src
 0:selinux-policy-3.13.1-214.fc25.src
 0:sendmail-8.15.2-7.fc25.src
@@ -2479,11 +2482,11 @@
 0:spice-parent-26-5.fc24.src
 0:springframework-3.2.15-7.fc25.src
 0:spymemcached-2.11.4-5.fc24.src
-0:sqlite-3.14.1-1.fc25.src
+0:sqlite-3.14.2-1.fc25.src
 0:sqlite2-2.8.17-19.fc24.src
 0:sshj-0.13.0-4.fc25.src
 0:sslext-1.2-9.fc24.src
-0:sssd-1.14.1-2.fc25.src
+0:sssd-1.14.1-3.fc25.src
 0:star-1.5.3-6.fc24.src
 0:stax-ex-1.7.7-5.fc25.src
 0:stax2-api-4.0.0-1.fc25.src
@@ -2498,7 +2501,7 @@
 0:stunnel-5.35-1.fc25.src
 0:subunit-1.2.0-8.fc25.src
 0:subversion-1.9.4-4.fc25.src
-0:suitesparse-4.4.6-5.fc24.src
+0:suitesparse-4.4.6-6.fc25.src
 0:swig-3.0.10-1.fc25.src
 0:symlinks-1.4-13.fc24.src
 0:sysfsutils-2.1.0-19.fc24.src
@@ -2510,7 +2513,7 @@
 0:tagsoup-1.2.1-11.fc24.src
 0:talk-0.17-50.fc24.src
 2:tar-1.29-1.fc25.src
-0:tbb-4.4-8.20160526.fc25.src
+0:tbb-2017-1.20160722.fc25.src
 1:tcl-8.6.6-1.fc25.src
 0:tclx-8.4.0-26.fc24.src
 0:tcp_wrappers-7.6-83.fc25.src
@@ -2574,7 +2577,7 @@
 0:uw-imap-2007f-11.fc24.src
 0:v4l-utils-1.10.0-2.fc25.src
 0:vala-0.34.0-3.fc25.src
-1:valgrind-3.11.0-26.fc25.src
+1:valgrind-3.12.0-0.1.BETA1.fc25.src
 0:velocity-1.7-19.fc24.src
 0:velocity-tools-2.0-13.fc24.src
 2:vim-7.4.1989-2.fc25.src
@@ -2603,8 +2606,8 @@
 0:ws-commons-util-1.0.2-3.fc25.src
 0:ws-jaxme-0.5.2-16.fc25.src
 0:wsdl4j-1.6.3-8.fc24.src
-0:wxGTK-2.8.12-23.fc24.src
-0:wxGTK3-3.0.2-19.fc25.src
+0:wxGTK-2.8.12-26.fc25.src
+0:wxGTK3-3.0.2-23.fc25.src
 0:xalan-j2-2.7.1-28.fc24.src
 0:xapian-bindings-1.2.23-2.fc25.src
 0:xapian-core-1.2.23-1.fc25.src

@@ -976,6 +976,8 @@ hdf5-openmpi-devel
 help2man
 herqq
 herqq-devel
+hesiod
+hesiod-devel
 hessian
 hibernate-commons-annotations
 hibernate-core
@@ -1032,6 +1034,7 @@ ilmbase-devel
 ima-evm-utils
 imake
 indent
+infinipath-psm
 infinispan
 info
 initscripts
@@ -1470,7 +1473,6 @@ libarchive
 libarchive-devel
 libart_lgpl
 libart_lgpl-devel
-libasan
 libass
 libass-devel
 libassuan
@@ -1479,7 +1481,6 @@ libasyncns
 libasyncns-devel
 libatasmart
 libatasmart-devel
-libatomic
 libatomic_ops
 libatomic_ops-devel
 libatomic_ops-static
@@ -1533,7 +1534,6 @@ libcgroup
 libcgroup-devel
 libchromaprint
 libchromaprint-devel
-libcilkrts
 libcmocka
 libcmocka-devel
 libcollection
@@ -1719,7 +1719,6 @@ libmount-devel
 libmpc
 libmpcdec
 libmpcdec-devel
-libmpx
 libmspack
 libmspack-devel
 libmtp
@@ -1778,6 +1777,7 @@ libproxy
 libproxy-devel
 libpsl
 libpsl-devel
+libpsm2
 libpwquality
 libpwquality-devel
 libqb
@@ -1898,7 +1898,6 @@ libtommath-devel
 libtool
 libtool-ltdl
 libtool-ltdl-devel
-libubsan
 libucil
 libucil-devel
 libunicap
@@ -2583,7 +2582,13 @@ openal-soft-devel
 openblas
 openblas-devel
 openblas-openmp
+openblas-openmp64
+openblas-openmp64_
+openblas-serial64
+openblas-serial64_
 openblas-threads
+openblas-threads64
+openblas-threads64_
 opencl-headers
 opencv
 opencv-contrib
@@ -3401,7 +3406,6 @@ portals-pom
 portaudio
 portaudio-devel
 portlet-2.0-api
-postfix
 postgresql
 postgresql-contrib
 postgresql-devel
@@ -3417,6 +3421,7 @@ powermock-common
 powermock-core
 powermock-junit4
 powermock-reflect
+procmail
 procps-ng
 proguard
 proj
@@ -3688,6 +3693,7 @@ python3-pytest
 python3-pytz
 python3-pyudev
 python3-pyxattr
+python3-pyxdg
 python3-qt5
 python3-qt5-devel
 python3-requests
@@ -3732,6 +3738,7 @@ python3-zope-interface
 pytz
 pywbem
 pyxattr
+pyxdg
 qca
 qca-devel
 qdox
@@ -3969,6 +3976,7 @@ screen
 sed
 selinux-policy-devel
 selinux-policy-targeted
+sendmail
 serp
 setools-devel
 setools-libs
@@ -5354,8 +5362,6 @@ texlive-zxjafont
 tiger-types
 tiles
 time
-tinycdb
-tinycdb-devel
 tix
 tix-devel
 tk

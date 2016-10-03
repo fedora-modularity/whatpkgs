@@ -530,6 +530,7 @@ ilmbase
 ima-evm-utils
 imake
 indent
+infinipath-psm
 infinispan
 initscripts
 inkscape
@@ -917,6 +918,7 @@ libplist
 libpng
 libproxy
 libpsl
+libpsm2
 libpwquality
 libqb
 libqmi
@@ -2303,6 +2305,7 @@ python3-cairo
 pytz
 pywbem
 pyxattr
+pyxdg
 qca
 qdox
 qhull
