@@ -8,7 +8,7 @@ GeoIP-GeoLite-data
 GraphicsMagick
 HikariCP
 ImageMagick
-Lmod
+LibRaw
 ModemManager
 NetworkManager
 ORBit2
@@ -22,7 +22,6 @@ SDL2_mixer
 SFML
 SuperLU
 Xaw3d
-aajohan-comfortaa-fonts
 acl
 adwaita-icon-theme
 aesh
@@ -65,7 +64,6 @@ apache-commons-jxpath
 apache-commons-lang
 apache-commons-lang3
 apache-commons-logging
-apache-commons-math
 apache-commons-net
 apache-commons-ognl
 apache-commons-parent
@@ -151,7 +149,6 @@ binutils
 bison
 bitstream-vera-fonts
 bluez
-boilerpipe
 boost
 botan
 bouncycastle
@@ -192,9 +189,7 @@ chkconfig
 chromaprint
 chrpath
 cifs-utils
-clamav
 classmate
-cli-parser
 closure-compiler
 clucene09
 cmake
@@ -207,7 +202,6 @@ coffee-script
 color-filesystem
 colord
 compat-guile18
-compat-lua
 compface
 cookcc
 cookxml
@@ -233,6 +227,7 @@ curl
 curvesapi
 cyrus-sasl
 dain-snappy
+datefudge
 dblatex
 dbus
 dbus-c++
@@ -259,11 +254,11 @@ djvulibre
 dlm
 dmraid
 dnf
+dnsjava
 docbook-dtds
 docbook-style-dsssl
 docbook-style-xsl
 docbook-utils
-docker-client
 dom4j
 dos2unix
 dosfstools
@@ -271,26 +266,14 @@ doxygen
 dwz
 e2fsprogs
 easymock
+ebtables
 ecj
 eclipse
-eclipse-cdt
 eclipse-ecf
-eclipse-egit
 eclipse-emf
 eclipse-filesystem
-eclipse-gef
 eclipse-jgit
-eclipse-launchbar
 eclipse-license
-eclipse-linuxtools
-eclipse-mylyn
-eclipse-photran
-eclipse-ptp
-eclipse-remote
-eclipse-rse
-eclipse-subclipse
-eclipse-swtbot
-eclipse-tm-terminal
 eclipse-xsd
 eclipselink
 eclipselink-persistence-api
@@ -305,12 +288,13 @@ emacs
 emma
 enca
 enchant
+environment-modules
+epstool
 epydoc
 erlang
 esound
 exec-maven-plugin
 exempi
-exim
 expat
 expect
 expresso
@@ -337,8 +321,6 @@ felix-osgi-foundation
 felix-osgi-obr
 felix-osgi-obr-resolver
 felix-parent
-felix-scr-annotations
-felix-scr-generator
 felix-shell
 felix-utils
 fftw
@@ -373,6 +355,7 @@ fribidi
 ftgl
 fuse
 fusesource-pom
+g2clib
 game-music-emu
 gamin
 gawk
@@ -547,6 +530,7 @@ ilmbase
 ima-evm-utils
 imake
 indent
+infinipath-psm
 infinispan
 initscripts
 inkscape
@@ -554,6 +538,7 @@ intltool
 invokebinder
 ipcalc
 iproute
+ipset
 iptables
 iputils
 ironjacamar
@@ -567,8 +552,6 @@ itext
 itstool
 jFormatString
 jack-audio-connection-kit
-jackcess
-jackcess-encrypt
 jackson
 jackson-annotations
 jackson-core
@@ -577,7 +560,6 @@ jackson-dataformat-cbor
 jackson-dataformat-smile
 jackson-dataformat-xml
 jackson-dataformat-yaml
-jackson-datatype-guava
 jackson-jaxrs-providers
 jackson-module-jaxb-annotations
 jackson-parent
@@ -600,7 +582,6 @@ jatl
 java-1.8.0-openjdk
 java-base64
 java-comment-preprocessor
-java-libpst
 java-oauth
 java-service-wrapper
 java_cup
@@ -672,7 +653,6 @@ jcip-annotations
 jcodings
 jcommon
 jcsp
-jctools
 jdeparser
 jdeparser1
 jdepend
@@ -680,10 +660,8 @@ jdependency
 jdo-api
 jdom
 jdom2
-je
 jemalloc
 jeromq
-jersey
 jersey1
 jetbrains-annotations
 jettison
@@ -708,8 +686,6 @@ jhighlight
 jibx
 jline
 jline1
-jmatio
-jmh
 jmock
 jna
 jnr-constants
@@ -728,6 +704,7 @@ jq
 jruby
 js
 js-jquery
+js-jquery1
 js-sizzle
 jsch
 jsch-agent-proxy
@@ -747,9 +724,7 @@ jts
 jul-to-slf4j-stub
 junit
 junit-addons
-juniversalchardet
 jvnet-parent
-jwnl
 jython
 jzlib
 kate4
@@ -788,6 +763,7 @@ libICE
 libIDL
 libSM
 libX11
+libXNVCtrl
 libXScrnSaver
 libXau
 libXaw
@@ -879,7 +855,6 @@ libgnomecanvas
 libgnomeui
 libgpg-error
 libgphoto2
-libgsasl
 libgta
 libgudev
 libgusb
@@ -927,7 +902,6 @@ libnfsidmap
 libnftnl
 libnl3
 libnotify
-libntlm
 liboauth
 libofa
 libogg
@@ -944,6 +918,7 @@ libplist
 libpng
 libproxy
 libpsl
+libpsm2
 libpwquality
 libqb
 libqmi
@@ -955,6 +930,7 @@ librepo
 libreport
 librevenge
 librsvg2
+librx
 libsamplerate
 libseccomp
 libsecret
@@ -964,10 +940,12 @@ libsepol
 libserf
 libshout
 libsigc++20
+libsigsegv
 libsndfile
 libsolv
 libsoup
 libspatialite
+libspectre
 libspiro
 libsrtp
 libssh2
@@ -1034,15 +1012,10 @@ log4j-jboss-logmanager
 log4j12
 logback
 logrotate
-lpg
 lttng-ust
 lua
-lua-filesystem
-lua-json
-lua-lpeg
 lua-lunit
 lua-posix
-lua-term
 luajit
 lucene
 lucene3
@@ -1142,7 +1115,6 @@ mercurial
 mesa
 mesa-demos
 mesa-libGLU
-metadata-extractor2
 metainf-services
 metrics
 mftrace
@@ -1170,7 +1142,6 @@ multithreadedtc
 multiverse
 munge
 munge-maven-plugin
-mustache-java
 mvel
 mxml
 mybatis
@@ -1197,7 +1168,9 @@ netty3
 newt
 nfs-utils
 nghttp2
+nginx
 ninja-build
+nkf
 nodejs
 nodejs-abbrev
 nodejs-ansi-font
@@ -1208,6 +1181,7 @@ nodejs-array-differ
 nodejs-array-union
 nodejs-array-uniq
 nodejs-arrify
+nodejs-asap
 nodejs-assertion-error
 nodejs-async
 nodejs-balanced-match
@@ -1238,6 +1212,9 @@ nodejs-concat-stream
 nodejs-console-dot-log
 nodejs-constantinople
 nodejs-core-util-is
+nodejs-css
+nodejs-css-parse
+nodejs-css-stringify
 nodejs-d
 nodejs-dateformat
 nodejs-debug
@@ -1371,6 +1348,7 @@ nodejs-paperboy
 nodejs-path-is-absolute
 nodejs-pretty-bytes
 nodejs-process-nextick-args
+nodejs-promise
 nodejs-proxyquire
 nodejs-qs
 nodejs-read-package-json
@@ -1469,11 +1447,11 @@ openjpeg
 openjpeg2
 openldap
 openmpi
-opennlp
 opensm
 opensp
 openssh
 openssl
+openwebbeans
 options
 optipng
 opus
@@ -1566,7 +1544,6 @@ perl-Clone
 perl-Compress-Bzip2
 perl-Compress-LZF
 perl-Compress-Raw-Bzip2
-perl-Compress-Raw-Lzma
 perl-Compress-Raw-Zlib
 perl-Config-Any
 perl-Config-General
@@ -1741,7 +1718,6 @@ perl-IO-Async
 perl-IO-Capture
 perl-IO-CaptureOutput
 perl-IO-Compress
-perl-IO-Compress-Lzma
 perl-IO-HTML
 perl-IO-Pipely
 perl-IO-Socket-INET6
@@ -2208,6 +2184,7 @@ pyserial
 pytest
 python
 python-BeautifulSoup
+python-IPy
 python-WSGIProxy2
 python-backports_abc
 python-beaker
@@ -2227,6 +2204,8 @@ python-cryptography
 python-cryptography-vectors
 python-cssselect
 python-cups
+python-dateutil
+python-decorator
 python-docutils
 python-dtopt
 python-empy
@@ -2235,6 +2214,8 @@ python-extras
 python-fixtures
 python-flask
 python-funcsigs
+python-gflags
+python-google-apputils
 python-html5lib
 python-http-parser
 python-hypothesis
@@ -2245,6 +2226,7 @@ python-ipaddress
 python-iso8601
 python-isodate
 python-itsdangerous
+python-jedi
 python-jinja2
 python-jsonschema
 python-keyczar
@@ -2256,6 +2238,7 @@ python-markdown
 python-markupsafe
 python-mimeparse
 python-mock
+python-mox
 python-nose
 python-paste
 python-paste-deploy
@@ -2288,6 +2271,7 @@ python-setuptools
 python-setuptools_scm
 python-singledispatch
 python-six
+python-slip
 python-snowballstemmer
 python-socketpool
 python-sphinx
@@ -2321,6 +2305,7 @@ python3-cairo
 pytz
 pywbem
 pyxattr
+pyxdg
 qca
 qdox
 qhull
@@ -2328,6 +2313,7 @@ qjson
 qpdf
 qpid-proton-java
 qrencode
+qrupdate
 qscintilla
 qt
 qt-assistant-adp
@@ -2391,14 +2377,51 @@ rsh
 rsync
 rsyslog
 ruby
+rubygem-ZenTest
+rubygem-aruba
+rubygem-builder
+rubygem-childprocess
+rubygem-coderay
+rubygem-cucumber
+rubygem-cucumber-core
+rubygem-cucumber-wire
+rubygem-diff-lcs
 rubygem-execjs
+rubygem-fattr
+rubygem-ffi
+rubygem-flexmock
+rubygem-gherkin
+rubygem-hoe
+rubygem-introspection
 rubygem-json
+rubygem-json_pure
+rubygem-kramdown
+rubygem-metaclass
+rubygem-minitest
+rubygem-minitest4
+rubygem-mocha
+rubygem-multi_json
+rubygem-multi_test
+rubygem-nokogiri
+rubygem-pkg-config
+rubygem-power_assert
 rubygem-rake
 rubygem-rdoc
+rubygem-rr
+rubygem-rspec
+rubygem-rspec-core
+rubygem-rspec-expectations
+rubygem-rspec-mocks
+rubygem-rspec-support
+rubygem-rspec2
+rubygem-rspec2-core
+rubygem-rspec2-expectations
+rubygem-rspec2-mocks
+rubygem-session
 rubygem-test-unit
+rubygem-thread_order
 rubygem-uglifier
 rubypick
-rxjava
 sac
 samba
 sanlock
@@ -2429,7 +2452,6 @@ shrinkwrap
 shrinkwrap-descriptors
 shrinkwrap-resolver
 shtool
-simple
 simple-jndi
 simple-xml
 sip
@@ -2443,6 +2465,7 @@ snakeyaml
 snappy
 snappy-java
 snowball-java
+softhsm
 sombok
 sonar
 sonar-update-center
@@ -2460,7 +2483,6 @@ spice-parent
 springframework
 spymemcached
 sqlite
-sqlite-jdbc
 sqlite2
 sshj
 sslext
@@ -2481,7 +2503,6 @@ subunit
 subversion
 suitesparse
 swig
-swt-chart
 symlinks
 sysfsutils
 systemd
@@ -2494,6 +2515,7 @@ talk
 tar
 tbb
 tcl
+tclx
 tcp_wrappers
 tcsh
 teckit
@@ -2505,10 +2527,8 @@ testng
 texi2html
 texinfo
 texlive
-thredds
 tidy
 tiger-types
-tika
 tiles
 time
 tix
@@ -2523,6 +2543,7 @@ tre
 tree
 treelayout
 trilead-ssh2
+trousers
 truth
 tslib
 ttembed
@@ -2553,6 +2574,7 @@ uthash
 util-linux
 uucp
 uuid
+uw-imap
 v4l-utils
 vala
 valgrind
@@ -2560,8 +2582,8 @@ velocity
 velocity-tools
 vim
 volume_key
-vorbis-java
 vsftpd
+w3m
 wavpack
 wayland
 wayland-protocols
@@ -2611,6 +2633,7 @@ xml-commons-apis
 xml-commons-resolver
 xml-maven-plugin
 xml-security
+xml-stylebook
 xmlbeans
 xmlbeans-maven-plugin
 xmlgraphics-commons
@@ -2626,6 +2649,8 @@ xmpcore
 xmvn
 xnio
 xom
+xorg-x11-apps
+xorg-x11-drv-dummy
 xorg-x11-font-utils
 xorg-x11-fonts
 xorg-x11-proto-devel
@@ -2653,7 +2678,6 @@ zbar
 zinc
 zip
 zlib
-zsh
 zvbi
 zxing
 zziplib

@@ -94,6 +94,7 @@ libseccomp
 libselinux
 libsemanage
 libsepol
+libsigsegv
 libsmartcols
 libssh2
 libstdc++
