@@ -1,5 +1,6 @@
 #!/usr/bin/python2
 
+import os
 import dnf
 import click
 import pprint
@@ -25,7 +26,7 @@ class TooManyPackagesException(Exception):
                            "Too many packages returned for %s" % pkgname)
 
 
-def setup_base_repo():
+def setup_base_repo(use_system):
     """
     Enable only the official Fedora repositories
 
@@ -34,18 +35,32 @@ def setup_base_repo():
     """
     base = dnf.Base()
     base.read_all_repos()
-    r = base.repos.all()
-    r.disable()
-    r = base.repos.get_matching("fedora")
-    r.enable()
-    r = base.repos.get_matching("updates")
-    r.enable()
+    repo = base.repos.all()
+    repo.disable()
+    if use_system:
+        repo = base.repos.get_matching("fedora")
+        repo.enable()
+        repo = base.repos.get_matching("updates")
+        repo.enable()
+    else:
+        # Load the static data
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        repo_path = os.path.join(dir_path,
+            "sampledata/repodata/fedora/linux/development/25/Everything/x86_64/os/")
+        repo = base.repos.get_matching("fedora")
+        repo.mirrorlist = None
+        repo.metalink = None
+        repo.baseurl = "file://" + repo_path
+        repo.name = "static-binary"
+        repo.id = "static-binary"
+        repo.load()
+        repo.enable()
 
     base.fill_sack(load_system_repo=False, load_available_repos=True)
     return base
 
 
-def setup_source_repo():
+def setup_source_repo(use_system):
     """
     Enable only the official Fedora source repositories
 
@@ -54,25 +69,39 @@ def setup_source_repo():
     """
     base = dnf.Base()
     base.read_all_repos()
-    r = base.repos.all()
-    r.disable()
-    r = base.repos.get_matching("fedora-source")
-    r.enable()
-    r = base.repos.get_matching("updates-source")
-    r.enable()
+    repo = base.repos.all()
+    repo.disable()
+    if use_system:
+        repo = base.repos.get_matching("fedora-source")
+        repo.enable()
+        repo = base.repos.get_matching("updates-source")
+        repo.enable()
+    else:
+        # Load the static data
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        repo_path = os.path.join(dir_path,
+            "sampledata/repodata/fedora/linux/development/25/Everything/source/tree/")
+        repo = base.repos.get_matching("fedora-source")
+        repo.mirrorlist = None
+        repo.metalink = None
+        repo.baseurl = "file://" + repo_path
+        repo.name = "static-source"
+        repo.id = "static-source"
+        repo.load()
+        repo.enable()
 
     base.fill_sack(load_system_repo=False, load_available_repos=True)
     return base
 
 
-def get_query_objects():
+def get_query_objects(use_system):
     """
     Get query objects for binary packages and source packages
 
     Returns: tuple of (binary_query, sources_query)
     """
-    binaries = setup_base_repo()
-    sources = setup_source_repo()
+    binaries = setup_base_repo(use_system)
+    sources = setup_source_repo(use_system)
     return (binaries.sack.query(), sources.sack.query())
 
 
@@ -323,13 +352,18 @@ fulfill the requirement, automatically select one from the list.
 Note: this result may differ between runs depending upon how the list is
 sorted. It is recommended to use --hint instead, where practical.
 """)
-def neededby(pkgnames, hint, recommends, merge, full_name, pick_first):
+@click.option('--system/--no-system', default=False,
+              help="If --system is specified, use the 'fedora', 'updates', "
+                   "'source' and 'updates-source' repositories from the local "
+                   "system configuration. Otherwise, use the static data from "
+                   "the sampledata directory.")
+def neededby(pkgnames, hint, recommends, merge, full_name, pick_first, system):
     """
     Look up the dependencies for each specified package and
     display them in a human-parseable format.
     """
 
-    (binary_query, _) = get_query_objects()
+    (binary_query, _) = get_query_objects(system)
 
     dependencies = {}
     ambiguities = []
@@ -385,13 +419,18 @@ def neededby(pkgnames, hint, recommends, merge, full_name, pick_first):
 @main.command(short_help="Get Source RPM")
 @click.argument('pkgnames', nargs=-1)
 @click.option('--full-name/--no-full-name', default=False)
-def getsourcerpm(pkgnames, full_name):
+@click.option('--system/--no-system', default=False,
+              help="If --system is specified, use the 'fedora', 'updates', "
+                   "'source' and 'updates-source' repositories from the local "
+                   "system configuration. Otherwise, use the static data from "
+                   "the sampledata directory.")
+def getsourcerpm(pkgnames, full_name, system):
     """
     Look up the SRPMs from which these binary RPMs were generated.
 
     This list will be displayed deduplicated and sorted.
     """
-    (binary_query, source_query) = get_query_objects()
+    (binary_query, source_query) = get_query_objects(system)
 
     srpm_names = {}
     for pkgname in pkgnames:
@@ -427,15 +466,20 @@ fulfill the requirement, automatically select one from the list.
 Note: this result may differ between runs depending upon how the list is
 sorted. It is recommended to use --hint instead, where practical.
 """)
+@click.option('--system/--no-system', default=False,
+              help="If --system is specified, use the 'fedora', 'updates', "
+                   "'source' and 'updates-source' repositories from the local "
+                   "system configuration. Otherwise, use the static data from "
+                   "the sampledata directory.")
 def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
-                     pick_first, sources):
+                     pick_first, sources, system):
     """
     Look up the build dependencies for each specified package
     and all of their dependencies, recursively and display them
     in a human-parseable format.
     """
 
-    (binary_query, source_query) = get_query_objects()
+    (binary_query, source_query) = get_query_objects(system)
 
     binary_pkgs = {}
     source_pkgs = {}
