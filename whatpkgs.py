@@ -138,7 +138,13 @@ def process_requirements(reqs, dependencies, ambiguities,
     Share code for recursing into requires or recommends
     """
     for require in reqs:
-        required_packages = query.filter(provides=str(require), latest=True)
+        required_packages = query.filter(provides=str(require), latest=True,
+                                         arch='x86_64')
+
+        # Check for noarch packages satisfying it
+        if len(required_packages) == 0:
+            required_packages = query.filter(provides=str(require), latest=True,
+                                             arch='noarch')
 
         # If there are no dependencies, just return
         if len(required_packages) == 0:
@@ -166,10 +172,13 @@ def process_requirements(reqs, dependencies, ambiguities,
                 if pick_first:
                     # The user instructed processing to just take the first
                     # entry in the list.
-                    recurse_package_deps(required_packages[0],
-                                         dependencies, ambiguities,
-                                         query, hints, pick_first,
-                                         follow_recommends)
+                    for rpkg in required_packages:
+                        if rpkg.arch == 'noarch' or rpkg.arch == 'x86_64':
+                            recurse_package_deps(rpkg, dependencies,
+                                                 ambiguities, query,
+                                                 hints, pick_first,
+                                                 follow_recommends)
+                            break
                     continue
                 # Packages not solved by 'hints' list
                 # should be added to the ambiguities list
@@ -308,7 +317,7 @@ For example, it is recommended to use --hint=glibc-minimal-langpack
 @click.option('--full-name/--no-full-name', default=False)
 @click.option('--pick-first/--no-pick-first', default=False,
               help="""
-If multiple packages could satisfy a dependency and no --hint package will 
+If multiple packages could satisfy a dependency and no --hint package will
 fulfill the requirement, automatically select one from the list.
 
 Note: this result may differ between runs depending upon how the list is
