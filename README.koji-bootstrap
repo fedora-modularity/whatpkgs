@@ -1,0 +1,15 @@
+Feel free to use this file to import builds, figure out missing build within individual koji environments. (koji-stage, koji-prod) Works with any koji instance. Client needs to support koji --profile though.
+
+Example usage:
+
+# Print nvrs in format acceptable by koji
+./koji-bootstrap.py --koji-profile koji-stage --builds-from-file source-rpms-full.txt --print-builds
+
+
+# Find missing builds on koji-stage
+# Expect list of srpm names or more precise n(e)vras with lisrc as arch on input
+# bash-1.0-2.src # uses parse_nevra
+./koji-bootstrap.py --koji-profile koji-stage --builds-from-file source-rpms-full.txt --debug --find-missing-builds | tee missing.txt
+
+# Import missing builds from koji-prod to koji-stage and set pkg ownership on target koji to lkocman
+./koji-bootstrap.py --koji-profile koji-prod --koji-dest-profile koji-stage --builds-from-file missing.txt --debug  --import-builds --import-dest-tag base-runtime-1.0-1 --import-owner lkocman
