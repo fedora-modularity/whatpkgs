@@ -8,8 +8,10 @@ to properly locate the frozen repository data.
 
 ## Setup
 This tool has been tested on Fedora 24 and 25. It requires the following
-pre-requisites:
+pre-requisites (which includes DNF 2.0):
 ```
+dnf install fedora-repos-rawhide
+dnf update dnf --enablerepo=rawhide
 dnf install python3-click python3-colorama
 ```
 

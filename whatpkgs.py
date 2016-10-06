@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import os
+import sys
 import dnf
 import click
 import pprint
@@ -84,7 +85,11 @@ def setup_base_repo(use_system):
         repo.metalink = None
         repo.baseurl = "file://" + repo_path
         repo.name = "static-binary"
-        repo.id = "static-binary"
+        try:
+            repo._id = "static-binary"
+        except AttributeError:
+            print("DNF 2.x required.", file=sys.stderr)
+            sys.exit(1)
         repo.load()
         repo.enable()
 
@@ -118,7 +123,11 @@ def setup_source_repo(use_system):
         repo.metalink = None
         repo.baseurl = "file://" + repo_path
         repo.name = "static-source"
-        repo.id = "static-source"
+        try:
+            repo._id = "static-source"
+        except AttributeError:
+            print("DNF 2.x required.", file=sys.stderr)
+            sys.exit(1)
         repo.load()
         repo.enable()
 
@@ -275,6 +284,15 @@ def recurse_package_deps(pkg, dependencies, ambiguities,
     # Process Requires:
     process_requirements(pkg.requires, dependencies, ambiguities, query, hints,
                          pick_first, follow_recommends)
+
+    try:
+        # Process Requires(pre|post)
+        process_requirements(pkg.requires_pre, dependencies, ambiguities,
+                             query, hints, pick_first, follow_recommends)
+    except AttributeError:
+        print("DNF 2.x required.", file=sys.stderr)
+        sys.exit(1)
+
     if follow_recommends:
         process_requirements(pkg.recommends, dependencies, ambiguities, query,
                              hints, pick_first, follow_recommends)
