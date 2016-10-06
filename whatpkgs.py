@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 
+"""
+Tool for interacting with python3-dnf to get complicated dependency
+information from yum/dnf repodata.
+"""
+
 import os
 import sys
+import pprint
 import dnf
 import click
-import pprint
 from colorama import Fore, Back, Style
 
 
