@@ -134,6 +134,7 @@
 0:babeltrace-1.4.0-3.fc25.src
 0:bakefile-0.2.9-8.fc24.src
 0:base64coder-20101219-15.fc25.src
+0:basesystem-11-2.fc24.src
 0:bash-4.3.43-3.fc25.src
 1:bash-completion-2.4-1.fc25.src
 0:batik-1.8-6.fc24.src
@@ -263,6 +264,7 @@
 0:dos2unix-7.3.4-1.fc25.src
 0:dosfstools-4.0-1.fc25.src
 1:doxygen-1.8.12-1.fc25.src
+0:dracut-044-77.fc25.src
 0:dwz-0.12-2.fc24.src
 0:e2fsprogs-1.43.1-2.fc25.src
 0:easymock-3.4-2.fc25.src
@@ -998,6 +1000,7 @@
 0:lightcouch-0.1.8-2.fc24.src
 0:lilypond-2.19.48-1.fc25.src
 0:linux-atm-2.5.1-14.fc24.src
+0:linux-firmware-20160816-67.git7c3dfc0b.fc25.src
 0:linuxconsoletools-1.4.9-2.fc24.src
 0:linuxdoc-tools-0.9.68-10.fc24.src
 0:liquibase-3.5.1-1.fc25.src
@@ -2547,6 +2550,7 @@
 0:truth-0.23-4.fc25.src
 0:tslib-1.0-11.fc24.src
 0:ttembed-1.1-5.fc24.src
+0:ttmkfdir-3.0.9-48.fc24.src
 0:tuscany-sdo-java-1.1.1-15.fc25.src
 0:tycho-0.25.0-7.fc25.src
 0:tycho-extras-0.25.0-4.fc25.src

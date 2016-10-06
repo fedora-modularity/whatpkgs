@@ -134,6 +134,7 @@ babel
 babeltrace
 bakefile
 base64coder
+basesystem
 bash
 bash-completion
 batik
@@ -263,6 +264,7 @@ dom4j
 dos2unix
 dosfstools
 doxygen
+dracut
 dwz
 e2fsprogs
 easymock
@@ -998,6 +1000,7 @@ libyaml
 lightcouch
 lilypond
 linux-atm
+linux-firmware
 linuxconsoletools
 linuxdoc-tools
 liquibase
@@ -2547,6 +2550,7 @@ trousers
 truth
 tslib
 ttembed
+ttmkfdir
 tuscany-sdo-java
 tycho
 tycho-extras

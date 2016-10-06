@@ -1,6 +1,8 @@
+acl
 at
 audit-libs
 avahi-libs
+basesystem
 bash
 bc
 binutils
@@ -11,12 +13,14 @@ cflow
 chkconfig
 coreutils
 coreutils-common
+cpio
 cpp
 cracklib
 cronie
 cronie-noanacron
 crontabs
 crypto-policies
+cryptsetup-libs
 ctags
 cups-client
 cups-libs
@@ -24,7 +28,10 @@ curl
 cyrus-sasl-lib
 dbus
 dbus-libs
+device-mapper
+device-mapper-libs
 diffutils
+dracut
 ed
 elfutils-default-yama-scope
 elfutils-libelf
@@ -60,6 +67,7 @@ isl
 kernel-core
 kernel-headers
 keyutils-libs
+kmod
 kmod-libs
 krb5-libs
 less
@@ -105,6 +113,7 @@ libutempter
 libuuid
 libverto
 libxml2
+linux-firmware
 lockdev
 lua-libs
 lz4
@@ -150,6 +159,7 @@ perl-Text-Tabs+Wrap
 perl-Unicode-Normalize
 perl-constant
 perl-libs
+perl-macros
 perl-parent
 perl-threads
 perl-threads-shared
@@ -170,6 +180,7 @@ sqlite-libs
 systemd
 systemd-libs
 systemd-pam
+systemd-udev
 talk
 tcl
 time
@@ -181,5 +192,6 @@ ustr
 util-linux
 uucp
 vim-minimal
+xz
 xz-libs
 zlib

@@ -252,6 +252,7 @@ aws-sdk-java-s3
 axis
 bakefile
 base64coder
+basesystem
 bash
 bash-completion
 batik
@@ -480,6 +481,7 @@ dos2unix
 dosfstools
 doxygen
 doxygen-latex
+dracut
 dwz
 e2fsprogs
 e2fsprogs-devel
@@ -1983,6 +1985,7 @@ lilypond-texgyre-heros-fonts
 lilypond-texgyre-schola-fonts
 linux-atm-libs
 linux-atm-libs-devel
+linux-firmware
 linuxconsoletools
 linuxdoc-tools
 liquibase
@@ -3954,6 +3957,7 @@ rubygems-devel
 rubypick
 sac
 samba-client-libs
+samba-common
 samba-devel
 samba-libs
 sanlock-devel
@@ -3974,6 +3978,7 @@ scl-utils-build
 scons
 screen
 sed
+selinux-policy
 selinux-policy-devel
 selinux-policy-targeted
 sendmail
@@ -5169,6 +5174,7 @@ texlive-templates-fenn-doc
 texlive-templates-sommer-doc
 texlive-tensor
 texlive-tetex
+texlive-tetex-bin
 texlive-teubner
 texlive-tex
 texlive-tex-bin
@@ -5390,6 +5396,7 @@ truth
 tslib
 tslib-devel
 ttembed
+ttmkfdir
 tuscany-sdo-java
 tycho
 tycho-extras

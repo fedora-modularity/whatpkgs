@@ -252,6 +252,7 @@
 0:axis-1.4-29.fc25.noarch
 0:bakefile-0.2.9-8.fc24.x86_64
 0:base64coder-20101219-15.fc25.noarch
+0:basesystem-11-2.fc24.noarch
 0:bash-4.3.43-3.fc25.x86_64
 1:bash-completion-2.4-1.fc25.noarch
 0:batik-1.8-6.fc24.noarch
@@ -480,6 +481,7 @@
 0:dosfstools-4.0-1.fc25.x86_64
 1:doxygen-1.8.12-1.fc25.x86_64
 1:doxygen-latex-1.8.12-1.fc25.x86_64
+0:dracut-044-77.fc25.x86_64
 0:dwz-0.12-2.fc24.x86_64
 0:e2fsprogs-1.43.1-2.fc25.x86_64
 0:e2fsprogs-devel-1.43.1-2.fc25.x86_64
@@ -1983,6 +1985,7 @@
 0:lilypond-texgyre-schola-fonts-2.19.48-1.fc25.noarch
 0:linux-atm-libs-2.5.1-14.fc24.x86_64
 0:linux-atm-libs-devel-2.5.1-14.fc24.x86_64
+0:linux-firmware-20160816-67.git7c3dfc0b.fc25.noarch
 0:linuxconsoletools-1.4.9-2.fc24.x86_64
 0:linuxdoc-tools-0.9.68-10.fc24.x86_64
 0:liquibase-3.5.1-1.fc25.noarch
@@ -3954,6 +3957,7 @@
 0:rubypick-1.1.1-5.fc24.noarch
 0:sac-1.3-23.fc24.noarch
 2:samba-client-libs-4.5.0-2.fc25.x86_64
+2:samba-common-4.5.0-2.fc25.noarch
 2:samba-devel-4.5.0-2.fc25.x86_64
 2:samba-libs-4.5.0-2.fc25.x86_64
 0:sanlock-devel-3.4.0-2.fc25.x86_64
@@ -3974,6 +3978,7 @@
 0:scons-2.5.0-1.fc25.noarch
 0:screen-4.4.0-3.fc25.x86_64
 0:sed-4.2.2-15.fc24.x86_64
+0:selinux-policy-3.13.1-214.fc25.noarch
 0:selinux-policy-devel-3.13.1-214.fc25.noarch
 0:selinux-policy-targeted-3.13.1-214.fc25.noarch
 0:sendmail-8.15.2-7.fc25.x86_64
@@ -5169,6 +5174,7 @@
 5:texlive-templates-sommer-doc-svn15878.0-27.fc25.1.noarch
 5:texlive-tensor-svn15878.2.1-27.fc25.1.noarch
 5:texlive-tetex-svn38208.3.0-27.fc25.1.noarch
+5:texlive-tetex-bin-svn36770.0-27.20150728_r37987.fc25.1.noarch
 5:texlive-teubner-svn36085.4.5a-27.fc25.1.noarch
 5:texlive-tex-svn37078.3.14159265-27.fc25.1.noarch
 5:texlive-tex-bin-svn36790.0-27.20150728_r37987.fc25.1.x86_64
@@ -5390,6 +5396,7 @@
 0:tslib-1.0-11.fc24.x86_64
 0:tslib-devel-1.0-11.fc24.x86_64
 0:ttembed-1.1-5.fc24.x86_64
+0:ttmkfdir-3.0.9-48.fc24.x86_64
 0:tuscany-sdo-java-1.1.1-15.fc25.noarch
 0:tycho-0.25.0-7.fc25.noarch
 0:tycho-extras-0.25.0-4.fc25.noarch
