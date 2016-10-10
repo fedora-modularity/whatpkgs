@@ -177,10 +177,10 @@
 0:sharutils-4.15.2-4.fc25.x86_64
 0:spax-1.5.3-6.fc24.x86_64
 0:sqlite-libs-3.14.2-1.fc25.x86_64
-0:systemd-231-4.fc25.x86_64
-0:systemd-libs-231-4.fc25.x86_64
-0:systemd-pam-231-4.fc25.x86_64
-0:systemd-udev-231-4.fc25.x86_64
+0:systemd-231-8.fc25.x86_64
+0:systemd-libs-231-8.fc25.x86_64
+0:systemd-pam-231-8.fc25.x86_64
+0:systemd-udev-231-8.fc25.x86_64
 0:talk-0.17-50.fc24.x86_64
 1:tcl-8.6.6-1.fc25.x86_64
 0:time-1.7-49.fc24.x86_64

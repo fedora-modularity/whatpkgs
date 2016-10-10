@@ -475,7 +475,7 @@
 0:gtk-doc-1.25-1.fc25.src
 0:gtk-sharp2-2.12.26-3.fc24.src
 0:gtk2-2.24.31-2.fc25.src
-0:gtk3-3.22.0-1.fc25.src
+0:gtk3-3.22.0-2.fc25.src
 0:gtkglext-1.2.0-27.fc24.src
 0:gtkmm24-2.24.5-1.fc25.src
 0:gtkspell-2.0.16-11.fc24.src
@@ -802,7 +802,7 @@
 0:libatasmart-0.19-9.fc24.src
 0:libatomic_ops-7.4.4-1.fc25.src
 0:libavc1394-0.5.4-1.fc25.src
-0:libblockdev-1.9-2.fc25.src
+0:libblockdev-1.9-4.fc25.src
 0:libbluray-0.9.3-1.fc25.src
 0:libbonobo-2.32.1-10.fc24.src
 0:libbonoboui-2.24.5-10.fc24.src
@@ -2441,7 +2441,7 @@
 0:scons-2.5.0-1.fc25.src
 0:screen-4.4.0-3.fc25.src
 0:sed-4.2.2-15.fc24.src
-0:selinux-policy-3.13.1-214.fc25.src
+0:selinux-policy-3.13.1-216.fc25.src
 0:sendmail-8.15.2-7.fc25.src
 0:serp-1.15.2-0.5.20150412cvs.fc25.src
 0:setools-3.3.8-12.fc25.src
@@ -2508,7 +2508,7 @@
 0:swig-3.0.10-1.fc25.src
 0:symlinks-1.4-13.fc24.src
 0:sysfsutils-2.1.0-19.fc24.src
-0:systemd-231-4.fc25.src
+0:systemd-231-8.fc25.src
 0:systemtap-3.1-0.20160725git91bfb36.fc25.src
 0:t1lib-5.1.2-18.fc24.src
 0:t1utils-1.39-3.fc24.src
