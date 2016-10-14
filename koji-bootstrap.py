@@ -53,7 +53,9 @@ class ImportThread(WorkerThread):
         for rpm in glob.glob("%s/*" % workdir):
             self.pool.log_debug("Importing rpm %s" % rpm)
             ret, out = kobo.shortcuts.run("koji --profile '%s' import --create-build --src-epoch '%s' %s" % (opts.koji_dest_profile, epoch, rpm))
+
         self.pool.log_debug("Removing workdir %s" % workdir)
+        shutil.rmtree(workdir, ignore_errors=True)
 
 def get_koji_session(options):
     koji_config = munch.Munch(koji.read_config(
