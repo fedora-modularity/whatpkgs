@@ -3,11 +3,8 @@
 0:bc-1.06.95-16.fc24.src
 0:binutils-2.26.1-1.fc25.src
 0:byacc-1.9.20160324-1.fc25.src
-0:cflow-1.5-1.fc25.src
 0:coreutils-8.25-14.fc25.src
 0:cronie-1.5.1-2.fc25.src
-0:ctags-5.8-18.fc24.src
-1:cups-2.2.0-2.fc25.src
 0:diffutils-3.3-13.fc24.src
 0:ed-1.13-1.fc25.src
 0:file-5.28-4.fc25.src
@@ -20,9 +17,7 @@
 0:gzip-1.8-1.fc25.src
 0:kernel-4.8.0-0.rc7.git0.1.fc25.src
 0:m4-1.4.17-9.fc24.src
-0:mailx-12.5-19.fc24.src
 1:make-4.1-5.fc24.src
-0:man-db-2.7.5-3.fc25.src
 0:ncompress-4.2.4.4-6.fc24.src
 0:ncurses-6.0-6.20160709.fc25.src
 0:patch-2.7.5-3.fc24.src
@@ -31,11 +26,6 @@
 0:rpm-4.13.0-0.rc1.46.fc25.src
 0:sed-4.2.2-15.fc24.src
 2:shadow-utils-4.2.1-11.fc25.src
-0:sharutils-4.15.2-4.fc25.src
-0:star-1.5.3-6.fc24.src
-0:talk-0.17-50.fc24.src
 0:time-1.7-49.fc24.src
-0:torque-4.2.10-10.fc25.src
 0:util-linux-2.28.2-1.fc25.src
-0:uucp-1.07-46.fc24.src
 2:vim-7.4.1989-2.fc25.src

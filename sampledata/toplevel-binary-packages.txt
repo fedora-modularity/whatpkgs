@@ -3,11 +3,8 @@ bash
 bc
 binutils
 byacc
-cflow
 coreutils
 cronie
-ctags
-cups-client
 diffutils
 ed
 file
@@ -20,9 +17,7 @@ grep
 gzip
 kernel-core
 m4
-mailx
 make
-man-db
 ncompress
 ncurses
 patch
@@ -31,11 +26,6 @@ psmisc
 rpm
 sed
 shadow-utils
-sharutils
-spax
-talk
 time
-torque-client
 util-linux
-uucp
 vim-minimal

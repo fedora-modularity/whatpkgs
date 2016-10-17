@@ -181,7 +181,6 @@ cdi-api
 cdparanoia
 ceph
 cfitsio
-cflow
 cglib
 check
 checkpolicy
@@ -1035,7 +1034,6 @@ m17n-lib
 m2crypto
 m4
 mailcap
-mailx
 make
 malaga
 malaga-suomi-voikko
@@ -2514,7 +2512,6 @@ t1lib
 t1utils
 taglib
 tagsoup
-talk
 tar
 tbb
 tcl
@@ -2576,7 +2573,6 @@ userspace-rcu
 ustr
 uthash
 util-linux
-uucp
 uuid
 uw-imap
 v4l-utils

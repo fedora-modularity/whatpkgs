@@ -181,7 +181,6 @@
 0:cdparanoia-10.2-21.fc24.src
 1:ceph-10.2.2-3.fc25.src
 0:cfitsio-3.370-6.fc24.src
-0:cflow-1.5-1.fc25.src
 0:cglib-3.2.4-2.fc25.src
 0:check-0.10.0-3.fc24.src
 0:checkpolicy-2.5-7.fc25.src
@@ -1035,7 +1034,6 @@
 0:m2crypto-0.25.1-1.fc25.src
 0:m4-1.4.17-9.fc24.src
 0:mailcap-2.1.46-2.fc25.src
-0:mailx-12.5-19.fc24.src
 1:make-4.1-5.fc24.src
 0:malaga-7.12-19.fc24.src
 0:malaga-suomi-voikko-1.19-1.fc25.src
@@ -2514,7 +2512,6 @@
 0:t1utils-1.39-3.fc24.src
 0:taglib-1.11-1.fc25.src
 0:tagsoup-1.2.1-11.fc24.src
-0:talk-0.17-50.fc24.src
 2:tar-1.29-1.fc25.src
 0:tbb-2017-1.20160722.fc25.src
 1:tcl-8.6.6-1.fc25.src
@@ -2576,7 +2573,6 @@
 0:ustr-1.0.4-21.fc24.src
 0:uthash-1.9.9-10.fc24.src
 0:util-linux-2.28.2-1.fc25.src
-0:uucp-1.07-46.fc24.src
 0:uuid-1.6.2-34.fc25.src
 0:uw-imap-2007f-11.fc24.src
 0:v4l-utils-1.10.0-2.fc25.src
