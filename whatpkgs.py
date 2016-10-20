@@ -344,10 +344,6 @@ def recurse_build_deps(source_pkg, binaries, sources,
             # already processed.
             continue
 
-        if dep.startswith("_MULTI_:"):
-            print("Skipping: %s (Use --hint to disambiguate)" % dep[8:])
-            continue
-
         # Get the source RPM for this binary and recurse
         # into it.
         spkg = get_srpm_for_package(source_query, binaries[dep])
