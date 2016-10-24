@@ -84,6 +84,7 @@ cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=kernel-core \
+                               --hint=kernel-devel \
                                --hint=gnuplot \
                                --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
                                --hint=perl-Archive-Extract-tgz-tar-gzip \
@@ -118,6 +119,7 @@ cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=kernel-core \
+                               --hint=kernel-devel \
                                --hint=gnuplot \
                                --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
                                --hint=perl-Archive-Extract-tgz-tar-gzip \
@@ -152,6 +154,7 @@ cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=kernel-core \
+                               --hint=kernel-devel \
                                --hint=gnuplot \
                                --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
                                --hint=perl-Archive-Extract-tgz-tar-gzip \
@@ -186,6 +189,7 @@ cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=kernel-core \
+                               --hint=kernel-devel \
                                --hint=gnuplot \
                                --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
                                --hint=perl-Archive-Extract-tgz-tar-gzip \
