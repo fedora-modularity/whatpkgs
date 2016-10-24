@@ -206,12 +206,13 @@ def get_srpm_for_package_name(binary_query, source_query, pkgname):
     return get_srpm_for_package(source_query, pkg)
 
 
-def process_requirements(reqs, dependencies, ambiguities,
-                         query, hints, pick_first,
-                         follow_recommends):
+def get_requirements(reqs, dependencies, ambiguities,
+                     query, hints, pick_first):
     """
     Share code for recursing into requires or recommends
     """
+    requirements = []
+
     for require in reqs:
         required_packages = query.filter(provides=str(require), latest=True,
                                          arch='x86_64')
@@ -234,10 +235,7 @@ def process_requirements(reqs, dependencies, ambiguities,
                     if rpkg.name == choice:
                         # This has been disambiguated; use this one
                         found = True
-                        recurse_package_deps(rpkg,
-                                             dependencies, ambiguities, query,
-                                             hints, pick_first,
-                                             follow_recommends)
+                        requirements.append(rpkg)
                         break
                 if found:
                     # Don't keep looking once we find a match
@@ -254,10 +252,7 @@ def process_requirements(reqs, dependencies, ambiguities,
                     # entry in the list.
                     for rpkg in required_packages:
                         if rpkg.arch == 'noarch' or rpkg.arch == 'x86_64':
-                            recurse_package_deps(rpkg, dependencies,
-                                                 ambiguities, query,
-                                                 hints, pick_first,
-                                                 follow_recommends)
+                            requirements.append(rpkg)
                             break
                     continue
                 # Packages not solved by 'hints' list
@@ -270,9 +265,9 @@ def process_requirements(reqs, dependencies, ambiguities,
             continue
 
         # Exactly one package matched, so proceed down into it.
-        recurse_package_deps(required_packages[0],
-                             dependencies, ambiguities, query,
-                             hints, pick_first, follow_recommends)
+        requirements.append(required_packages[0])
+
+    return requirements
 
 
 def recurse_package_deps(pkg, dependencies, ambiguities,
@@ -287,19 +282,26 @@ def recurse_package_deps(pkg, dependencies, ambiguities,
     dependencies[pkg.name] = pkg
 
     # Process Requires:
-    process_requirements(pkg.requires, dependencies, ambiguities, query, hints,
-                         pick_first, follow_recommends)
+    deps = get_requirements(pkg.requires, dependencies, ambiguities,
+                            query, hints, pick_first)
 
     try:
         # Process Requires(pre|post)
-        process_requirements(pkg.requires_pre, dependencies, ambiguities,
-                             query, hints, pick_first, follow_recommends)
+        prereqs = get_requirements(pkg.requires_pre, dependencies, ambiguities,
+                                   query, hints, pick_first)
+        deps.extend(prereqs)
     except AttributeError:
         print("DNF 2.x required.", file=sys.stderr)
         sys.exit(1)
 
     if follow_recommends:
-        process_requirements(pkg.recommends, dependencies, ambiguities, query,
+        recommends = get_requirements(pkg.recommends, dependencies,
+                                      ambiguities, query, hints, pick_first)
+        deps.extend(recommends)
+
+    for dep in deps:
+        recurse_package_deps(dep,
+                             dependencies, ambiguities, query,
                              hints, pick_first, follow_recommends)
 
 
