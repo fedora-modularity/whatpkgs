@@ -224,7 +224,8 @@ def get_requirements(reqs, dependencies, ambiguities,
 
         # If there are no dependencies, just return
         if len(required_packages) == 0:
-            return
+            print("No package for [%s]" % str(require), file=sys.stderr)
+            continue
 
         # Check for multiple possible packages
         if len(required_packages) > 1:
