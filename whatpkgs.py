@@ -288,55 +288,48 @@ def recurse_package_deps(pkg, dependencies, ambiguities,
                              hints, pick_first, follow_recommends)
 
 
-def recurse_srpm_deps(source_pkg, dependencies, ambiguities, query, hints,
-                      pick_first, follow_recommends):
-    """
-    Recursively search through dependencies and add them to the list
-    """
-    # Process Requires:
-    # There is no BuildRecommends concept, so we don't
-    # need to worry about that.
-    process_requirements(source_pkg.requires, dependencies, ambiguities,
-                         query, hints, pick_first, follow_recommends)
-
-
-def recurse_build_deps(source_pkg, binaries, sources,
-                       ambiguities,
-                       binary_query, source_query,
-                       hints, pick_first,
-                       follow_recommends):
+def recurse_self_host(binary_pkg, binaries, sources,
+                      ambiguities, query,
+                      hints, pick_first, follow_recommends):
     """
     Recursively determine all build dependencies for this package
     """
-
-    if source_pkg.name in sources:
-        # Don't process the same Source RPM twice
+    if binary_pkg.name in binaries:
+        # Don't process the same binary RPM twice
         return
 
-    sources[source_pkg.name] = source_pkg
+    binaries[binary_pkg.name] = binary_pkg
 
-    # Recursively get all of the Requires for building this
-    # SRPM. There is no BuildRecommends concept, so we don't
-    # need to worry about that.
-    saved_binaries = binaries.copy()
-    recurse_srpm_deps(source_pkg, binaries, ambiguities, binary_query,
-                      hints, pick_first, follow_recommends)
+    # Process strict Requires:
+    deps = get_requirements(binary_pkg.requires, binaries, ambiguities,
+                            query, hints, pick_first)
 
-    deplist = sorted(binaries, key=binaries.get)
-    for dep in deplist:
-        if dep in saved_binaries:
-            # Don't needlessly recurse into binaries we've
-            # already processed.
-            continue
+    # Process Requires(pre|post):
+    prereqs = get_requirements(binary_pkg.requires_pre, binaries, ambiguities,
+                               query, hints, pick_first)
+    deps.extend(prereqs)
 
-        # Get the source RPM for this binary and recurse
-        # into it.
-        spkg = get_srpm_for_package(source_query, binaries[dep])
-        recurse_build_deps(spkg, binaries, sources,
-                           ambiguities,
-                           binary_query, source_query,
-                           hints, pick_first,
-                           follow_recommends)
+    if follow_recommends:
+        # Process Recommends:
+        recommends = get_requirements(binary_pkg.recommends, binaries,
+                                      ambiguities, query, hints, pick_first)
+        deps.extend(recommends)
+
+    # Now get the build dependencies for this package
+    source_pkg = get_srpm_for_package(query, binary_pkg)
+
+    if source_pkg.name not in sources:
+        # Don't process the same Source RPM twice
+        sources[source_pkg.name] = source_pkg
+
+        # Get the BuildRequires for this Source RPM
+        buildreqs = get_requirements(source_pkg.requires, binaries,
+                                     ambiguities, query, hints, pick_first)
+        deps.extend(buildreqs)
+
+    for dep in deps:
+        recurse_self_host(dep, binaries, sources, ambiguities, query, hints,
+                          pick_first, follow_recommends)
 
 
 def print_package_name(pkgname, dependencies, full):
@@ -520,25 +513,22 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
     in a human-parseable format.
     """
 
-    (binary_query, source_query) = get_query_objects(system)
+    query = get_query_object(system)
 
     binary_pkgs = {}
     source_pkgs = {}
     ambiguities = []
     for pkgname in pkgnames:
-        pkg = get_pkg_by_name(binary_query, pkgname)
+        pkg = get_pkg_by_name(query, pkgname)
 
         if not merge:
             binary_pkgs = {}
             source_pkgs = {}
             ambiguities = []
 
-        # Get the source RPM for this package
-        spkg = get_srpm_for_package(source_query, pkg)
-        recurse_build_deps(spkg, binary_pkgs, source_pkgs,
-                           ambiguities,
-                           binary_query, source_query,
-                           hint, pick_first, recommends)
+        recurse_self_host(pkg, binary_pkgs, source_pkgs,
+                          ambiguities, query,
+                          hint, pick_first, recommends)
 
         # Check for unresolved deps in the list that are present in the
         # dependencies. This happens when one package has an ambiguous dep but
