@@ -64,7 +64,7 @@ class TooManyPackagesException(Exception):
                            "Too many packages returned for %s" % pkgname)
 
 
-def setup_base_repo(use_system):
+def setup_repo(use_system):
     """
     Enable only the official Fedora repositories
 
@@ -79,6 +79,10 @@ def setup_base_repo(use_system):
         repo = base.repos.get_matching("fedora")
         repo.enable()
         repo = base.repos.get_matching("updates")
+        repo.enable()
+        repo = base.repos.get_matching("fedora-source")
+        repo.enable()
+        repo = base.repos.get_matching("updates-source")
         repo.enable()
     else:
         # Load the static data
@@ -98,29 +102,6 @@ def setup_base_repo(use_system):
         repo.load()
         repo.enable()
 
-    base.fill_sack(load_system_repo=False, load_available_repos=True)
-    return base
-
-
-def setup_source_repo(use_system):
-    """
-    Enable only the official Fedora source repositories
-
-    Returns: dnf.Base containing all the package metadata from the standard
-             repositories for SRPMs
-    """
-    base = dnf.Base()
-    base.read_all_repos()
-    repo = base.repos.all()
-    repo.disable()
-    if use_system:
-        repo = base.repos.get_matching("fedora-source")
-        repo.enable()
-        repo = base.repos.get_matching("updates-source")
-        repo.enable()
-    else:
-        # Load the static data
-        dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/fedora/linux/development/25/Everything/source/tree/")
         repo = base.repos.get_matching("fedora-source")
@@ -140,15 +121,16 @@ def setup_source_repo(use_system):
     return base
 
 
-def get_query_objects(use_system):
+
+def get_query_object(use_system):
     """
     Get query objects for binary packages and source packages
 
-    Returns: tuple of (binary_query, sources_query)
+    Returns: query object for source and binaries
     """
-    binaries = setup_base_repo(use_system)
-    sources = setup_source_repo(use_system)
-    return (binaries.sack.query(), sources.sack.query())
+    repo = setup_repo(use_system)
+
+    return repo.sack.query()
 
 
 def get_pkg_by_name(q, pkgname):
@@ -178,7 +160,7 @@ def get_pkg_by_name(q, pkgname):
     raise NoSuchPackageException(pkgname)
 
 
-def get_srpm_for_package(source_query, pkg):
+def get_srpm_for_package(query, pkg):
     # Get just the base name of the SRPM
     try:
         (sourcename, _, _, _, _) = splitFilename(pkg.sourcerpm)
@@ -186,7 +168,7 @@ def get_srpm_for_package(source_query, pkg):
         print("Failure: %s(%s)" % (pkg.sourcerpm, pkg.name))
         raise
 
-    matched = source_query.filter(name=sourcename, latest=True, arch='src')
+    matched = query.filter(name=sourcename, latest=True, arch='src')
     if len(matched) > 1:
         raise TooManyPackagesException(pkg.name)
 
@@ -197,13 +179,13 @@ def get_srpm_for_package(source_query, pkg):
     raise NoSuchPackageException(pkg.name)
 
 
-def get_srpm_for_package_name(binary_query, source_query, pkgname):
+def get_srpm_for_package_name(query, pkgname):
     """
     For a given package, retrieve a reference to its source RPM
     """
-    pkg = get_pkg_by_name(binary_query, pkgname)
+    pkg = get_pkg_by_name(query, pkgname)
 
-    return get_srpm_for_package(source_query, pkg)
+    return get_srpm_for_package(query, pkg)
 
 
 def get_requirements(reqs, dependencies, ambiguities,
@@ -214,12 +196,12 @@ def get_requirements(reqs, dependencies, ambiguities,
     requirements = []
 
     for require in reqs:
-        required_packages = query.filter(provides=str(require), latest=True,
+        required_packages = query.filter(provides=require, latest=True,
                                          arch='x86_64')
 
         # Check for noarch packages satisfying it
         if len(required_packages) == 0:
-            required_packages = query.filter(provides=str(require), latest=True,
+            required_packages = query.filter(provides=require, latest=True,
                                              arch='noarch')
 
         # If there are no dependencies, just return
@@ -422,12 +404,12 @@ def neededby(pkgnames, hint, recommends, merge, full_name, pick_first, system):
     display them in a human-parseable format.
     """
 
-    (binary_query, _) = get_query_objects(system)
+    query = get_query_object(system)
 
     dependencies = {}
     ambiguities = []
     for pkgname in pkgnames:
-        pkg = get_pkg_by_name(binary_query, pkgname)
+        pkg = get_pkg_by_name(query, pkgname)
 
         if not merge:
             # empty the dependencies list and start over
@@ -435,7 +417,7 @@ def neededby(pkgnames, hint, recommends, merge, full_name, pick_first, system):
             ambiguities = []
 
         recurse_package_deps(pkg, dependencies, ambiguities,
-                             binary_query, hint, pick_first, recommends)
+                             query, hint, pick_first, recommends)
 
         # Check for unresolved deps in the list that are present in the
         # dependencies. This happens when one package has an ambiguous dep but
@@ -489,11 +471,11 @@ def getsourcerpm(pkgnames, full_name, system):
 
     This list will be displayed deduplicated and sorted.
     """
-    (binary_query, source_query) = get_query_objects(system)
+    query = get_query_object(system)
 
     srpm_names = {}
     for pkgname in pkgnames:
-        pkg = get_srpm_for_package_name(binary_query, source_query, pkgname)
+        pkg = get_srpm_for_package_name(query, pkgname)
 
         srpm_names[pkg.name] = pkg
 
