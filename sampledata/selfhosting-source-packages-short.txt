@@ -345,6 +345,7 @@ fedfs-utils
 fedora-logos
 fedora-release
 fedora-repos
+fedpkg-minimal
 felix-bundlerepository
 felix-framework
 felix-gogo-command
