@@ -103,16 +103,23 @@ def setup_repo(use_system):
         # Load the static data
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
-            "sampledata/repodata/fedora/linux/development/25/Everything/x86_64/os/")
-        _setup_static_repo(base, "static-f25-beta-binary", repo_path)
+            "sampledata/repodata/RHEL-7/7.3-Beta/Server/x86_64/os/")
+        _setup_static_repo(base, "static-rhel7.3beta-binary", repo_path)
 
         repo_path = os.path.join(dir_path,
-            "sampledata/repodata/fedora/linux/development/25/Everything/source/tree/")
-        _setup_static_repo(base, "static-f25-beta-source", repo_path)
+            "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/x86_64/os/")
+        _setup_static_repo(base, "static-rhel7.3beta-optional-binary", repo_path)
+
+        repo_path = os.path.join(dir_path,
+            "sampledata/repodata/RHEL-7/7.3-Beta/Server/source/tree/")
+        _setup_static_repo(base, "static-rhel7.3beta-source", repo_path)
+
+        repo_path = os.path.join(dir_path,
+            "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/source/tree/")
+        _setup_static_repo(base, "static-rhel7.3beta-optional-source", repo_path)
 
     base.fill_sack(load_system_repo=False, load_available_repos=True)
     return base
-
 
 
 def get_query_object(use_system):

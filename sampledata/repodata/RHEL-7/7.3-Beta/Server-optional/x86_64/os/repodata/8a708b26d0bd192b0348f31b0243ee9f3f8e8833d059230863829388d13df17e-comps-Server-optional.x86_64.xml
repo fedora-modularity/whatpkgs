@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE comps
+  PUBLIC '-//Red Hat, Inc.//DTD Comps info//EN'
+  'comps.dtd'>
+<comps>
+  <group>
+    <id>internet-applications</id>
+    <name>Internet Applications</name>
+    <name xml:lang="as">ইন্টাৰনেট এপ্লিকেচনসমূহ</name>
+    <name xml:lang="bn">ইন্টারনেট অ্যাপ্লিকেশন</name>
+    <name xml:lang="bn_IN">ইন্টারনেট অ্যাপ্লিকেশন</name>
+    <name xml:lang="cs">Internetové aplikace</name>
+    <name xml:lang="de">Internet-Anwendungen</name>
+    <name xml:lang="es">Aplicaciones de Internet</name>
+    <name xml:lang="fr">Applications internet</name>
+    <name xml:lang="gu">ઇન્ટરનેટ કાર્યક્રમો</name>
+    <name xml:lang="hi">इंटरनेट अनुप्रयोग</name>
+    <name xml:lang="ia">Applicationes de Rete</name>
+    <name xml:lang="it">Applicazioni internet</name>
+    <name xml:lang="ja">インターネットアプリケーション</name>
+    <name xml:lang="kn">ಅಂತರಜಾಲ ಅನ್ವಯಗಳು</name>
+    <name xml:lang="ko">인터넷 프로그램</name>
+    <name xml:lang="ml">ഇന്റര്‍നെറ്റ് പ്രയോഗങ്ങള്‍</name>
+    <name xml:lang="mr">ऍप्लिकेशन्स्</name>
+    <name xml:lang="or">ଇଣ୍ଟରନେଟ ପ୍ରୟୋଗଗୁଡ଼ିକ</name>
+    <name xml:lang="pa">ਇੰਟਰਨੈੱਟ ਐਪਲੀਕੇਸ਼ਨਾਂ</name>
+    <name xml:lang="pl">Aplikacje internetowe</name>
+    <name xml:lang="pt_BR">Aplicações de Internet</name>
+    <name xml:lang="ru">Приложения Интернета</name>
+    <name xml:lang="sv">Internetprogram</name>
+    <name xml:lang="ta">இணையத்தள பயன்பாடுகள்</name>
+    <name xml:lang="te">ఇంటర్నెట్ అనువర్తనములు</name>
+    <name xml:lang="uk">Інтернет-програми</name>
+    <name xml:lang="zh_CN">互联网应用程序</name>
+    <name xml:lang="zh_TW">網際網路應用程式</name>
+    <description>Email, chat, and video conferencing software.</description>
+    <description xml:lang="as">ই-মেইল, চেট আৰু ভিডিঅ' সন্মিলনী চফ্টৱেৰ।</description>
+    <description xml:lang="bn">ই-মেইল, আলাপন ও ভিডিও কনফারেন্স সম্বন্ধীয় সফ্টওয়্যার।</description>
+    <description xml:lang="bn_IN">ই-মেইল, আলাপন ও ভিডিও কনফারেন্স সম্বন্ধীয় সফ্টওয়্যার।</description>
+    <description xml:lang="cs">Aplikace pro provoz e-mailu, chatu a videokonferencí.</description>
+    <description xml:lang="de">E-Mail, Chat und Videokonferenz-Software.</description>
+    <description xml:lang="es">Software de correo-e, chat, y vídeo conferencias.</description>
+    <description xml:lang="fr">Messagerie électronique, messagerie instantanée, et logiciel de vidéoconférence.</description>
+    <description xml:lang="gu">ઇમેલ, ચેટ, અને વિડિયો કૉન્ફરન્સીંગ સોફ્ટવેર.</description>
+    <description xml:lang="hi">ईमेल, चैट, और वीडियो सम्मेलन सॉफ्टवेयर.</description>
+    <description xml:lang="ia">Software de e-posta, chat e video-conferentia.</description>
+    <description xml:lang="it">Software per conferenza video, email e chat.</description>
+    <description xml:lang="ja">電子メール、チャット、ビデオ会議のソフトウェアです。</description>
+    <description xml:lang="kn">ಇಮೈಲ್, ಮಾತುಕತೆ, ಹಾಗು ವೀಡಿಯೊ ಸಮ್ಮೇಳನಕ್ಕೆ ನೆರವಾಗುವ ತಂತ್ರಾಂಶ.</description>
+    <description xml:lang="ko">이메일, 채팅, 화상회의 소프트웨어.</description>
+    <description xml:lang="ml">ഈമെയില്‍, ചാറ്റ്, വീഡിയോ കോണ്‍ഫറന്‍സിങ് എന്നിവയ്ക്കുള്ള സോഫ്റ്റ്‌വെയര്‍.</description>
+    <description xml:lang="mr">ईमेल, चॅट, व व्हिडीओ कॉन्फरेंसिंग सॉफ्टवेअर.</description>
+    <description xml:lang="or">ଇମେଲ, ଚାର୍ଟ, ଏବଂ ଭିଡିଓ ସମ୍ମେଳନ ସଫ୍ଟୱେର।</description>
+    <description xml:lang="pa">ਈਮੇਲ, ਚੈਟ, ਅਤੇ ਵੀਡੀਓ ਕਾਨਫਰੰਸ ਸਾਫਟਵੇਅਰ।</description>
+    <description xml:lang="pl">Oprogramowanie do obsługi poczty, komunikatorów i wideokonferencji.</description>
+    <description xml:lang="pt_BR">Software email, babe-papo e vídeo-conferência.</description>
+    <description xml:lang="ru">Программы электронной почты, обмена сообщениями и видеоконференций.</description>
+    <description xml:lang="sv">Epost-, chatt- och videokonferensprogram.</description>
+    <description xml:lang="ta">மின்னஞ்சல், அரட்டை, மற்றும் வீடியோ கலந்துரையாடல் மென்பொருள்.</description>
+    <description xml:lang="te">ఈమెయిల్, చాట్, మరియు వీడియో కాన్ఫరెన్సింగ్ సాఫ్టువేర్.</description>
+    <description xml:lang="uk">Програми для обміну електронною поштою, спілкування та проведення відеоконференцій.</description>
+    <description xml:lang="zh_CN">电子邮件、聊天和视频会议软件。</description>
+    <description xml:lang="zh_TW">郵件、聊天，以及視訊通話的軟體。</description>
+    <default>false</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+      <packagereq type="default">ekiga</packagereq>
+      <packagereq type="default">empathy</packagereq>
+      <packagereq type="default">evolution</packagereq>
+      <packagereq type="default">evolution-ews</packagereq>
+      <packagereq type="default">evolution-help</packagereq>
+      <packagereq type="default">evolution-mapi</packagereq>
+      <packagereq type="optional">pidgin</packagereq>
+      <packagereq type="optional">pidgin-sipe</packagereq>
+      <packagereq type="optional">thunderbird</packagereq>
+      <packagereq type="optional">xchat</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>office-suite</id>
+    <name>Office Suite and Productivity</name>
+    <name xml:lang="as">কাৰ্যালয় গোট আৰু কাৰ্য্যক্ষমতা</name>
+    <name xml:lang="bn">অফিস স্যুট ও কর্মক্ষমতা</name>
+    <name xml:lang="bn_IN">অফিস স্যুট ও কর্মক্ষমতা</name>
+    <name xml:lang="cs">Kancelářské aplikace</name>
+    <name xml:lang="de">Büro-Suite und Produktivität</name>
+    <name xml:lang="es">Office Suite y Productividad</name>
+    <name xml:lang="fr">Suite de bureautique et productivité</name>
+    <name xml:lang="gu">ઓફિસ સુટ અને ઉત્પાદકતા</name>
+    <name xml:lang="hi">ऑफिस सूइट और उत्पादकता</name>
+    <name xml:lang="ia">Applicationes de officio e productivitate</name>
+    <name xml:lang="it">Suite d'ufficio e Produttività</name>
+    <name xml:lang="ja">オフィススイートと生産性</name>
+    <name xml:lang="kn">ಆಫೀಸ್ ಸೂಟ್ ಹಾಗು ಉತ್ಪಾದಕತೆ</name>
+    <name xml:lang="ko">오피스 스위트/생산성</name>
+    <name xml:lang="ml">ഓഫീസ് സ്യൂട്ടും പ്രൊഡക്ടിവിറ്റിയും</name>
+    <name xml:lang="mr">ऑफिस स्युट व प्रोडक्टिवीटी</name>
+    <name xml:lang="or">ଅଫିସ ଅନୁଗାମୀ ଏବଂ ଉତ୍ପାଦନ</name>
+    <name xml:lang="pa">ਦਫਤਰੀ ਸੂਟ ਅਤੇ ਉਤਪਾਦਨ</name>
+    <name xml:lang="pl">Biuro i praca biurowa</name>
+    <name xml:lang="pt_BR">Conjunto Office e Produtividade</name>
+    <name xml:lang="ru">Офисный комплект</name>
+    <name xml:lang="sv">Kontorssvit och produktivitet</name>
+    <name xml:lang="ta">அலுவலகம் பரிவாரம் மற்றும் உற்பத்தி திறன்</name>
+    <name xml:lang="te">ఆఫీస్ స్యూట్ మరియు ఉత్పాదకత</name>
+    <name xml:lang="uk">Офісні комплекси і окремі програми</name>
+    <name xml:lang="zh_CN">办公套件和生产率</name>
+    <name xml:lang="zh_TW">辦公軟體和生產軟體</name>
+    <description>A full-purpose office suite, and other productivity tools.</description>
+    <description xml:lang="as">সম্পূৰ্ণ কাৰ্য্যক্ষমতা বিশিষ্ট কাৰ্যালয় গোট আৰু অন্যান্য নিৰ্মাণকাৰ্য্যৰ সামগ্ৰী।</description>
+    <description xml:lang="bn">সম্পূর্ণ কর্মক্ষমতা বিশিষ্ট অফিস স্যুট ও অন্যান্য নির্মাণকাজের সামগ্রী।</description>
+    <description xml:lang="bn_IN">সম্পূর্ণ কর্মক্ষমতা বিশিষ্ট অফিস স্যুট ও অন্যান্য নির্মাণকাজের সামগ্রী।</description>
+    <description xml:lang="cs">Univerzální kancelářský balík a další užitečné nástroje.</description>
+    <description xml:lang="de">Eine Vollzweck-Office-Suite und sonstige Produktivitäts-Tools.</description>
+    <description xml:lang="es">Un propósito total de office suite y otras herramientas de productividad.</description>
+    <description xml:lang="fr">Suite bureautique complète et autres outils de productivité.</description>
+    <description xml:lang="gu">સંપૂર્ણ-હેતુ માટે ઓફિસ સુટ, અને બીજા ઉત્પાદકતા સાધનો.</description>
+    <description xml:lang="hi">एक पूर्ण उद्देश्यीय ऑफिस सूइट, और अन्य उत्पादकता औज़ार.</description>
+    <description xml:lang="ia">Un insimul complete del applicationes de officio e altere utensiles pro le productivitate.</description>
+    <description xml:lang="it">Una suite d'ufficio per tutti gli scopi ed altri tool di produttività.</description>
+    <description xml:lang="ja">全目的対応のオフィススイートおよびその他生産性ツール</description>
+    <description xml:lang="kn">ಸಂಪೂರ್ಣ ಸಜ್ಜಿತವಾದ ಆಫೀಸ್ ಸೂಟ್, ಹಾಗು ಇತರೆ ಉತ್ಪಾದನಾ ಉಪಕರಣಗಳು.</description>
+    <description xml:lang="ko">완전한 오피스 스위트와 다른 생산성 도구들.</description>
+    <description xml:lang="ml">പൂര്‍ണ്ണ ആവശ്യങ്ങള്‍ക്കുള്ള ഓഫീസ് സ്യൂട്ടും മറ്റ് പ്രൊഡക്ടിവിറ്റി ഉപകരണങ്ങളും.</description>
+    <description xml:lang="mr">संपूर्णतया-उपयोगी ऑफिस संच, व इतर उपयोगी साधने.</description>
+    <description xml:lang="or">ଗୋଟିଏ ସମ୍ପୂର୍ଣ୍ଣ-ଉପଯୋଗୀ ଅଫିସ ଅନୁଗାମୀ, ଏବଂ ଅନ୍ୟାନ୍ୟ ଉତ୍ପାଦନ ମୂଳକ ସାଧନଗୁଡ଼ିକ।</description>
+    <description xml:lang="pa">ਇੱਕ ਸੰਪੂਰਨ ਦਫਤਰ ਸੈੱਟ, ਅਤੇ ਹੋਰ ਉਤਪਾਦਕੀ ਜੰਤਰ।</description>
+    <description xml:lang="pl">Pakiet biurowy i inne narzędzia produkcyjne.</description>
+    <description xml:lang="pt_BR">Um conjunto de office totalmente designado e outras ferramentas de produtividade.</description>
+    <description xml:lang="ru">Многофункциональный комплект офисных приложений.</description>
+    <description xml:lang="sv">En kontorssvit för alla ändamål, och andra produktivitetsverktyg.</description>
+    <description xml:lang="ta">ஒரு முழு-செயல்முறை அலுவக சூழல், மற்றும் மற்ற தயாரிப்பு கருவிகள்.</description>
+    <description xml:lang="te">ఒక పూర్తి-ప్రయోజనాత్మక ఆఫీస్ సూట్, మరియు యితర వుత్పాదక సాధనములు.</description>
+    <description xml:lang="uk">Комплекс офісних програм широкого призначення.</description>
+    <description xml:lang="zh_CN">全套办公套件以及其它产品工具。</description>
+    <description xml:lang="zh_TW">完整用途的辦公軟體套件，以及其它生產用途的工具。</description>
+    <default>false</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+      <packagereq type="default">libreoffice-calc</packagereq>
+      <packagereq type="default">libreoffice-draw</packagereq>
+      <packagereq type="default">libreoffice-emailmerge</packagereq>
+      <packagereq type="default">libreoffice-graphicfilter</packagereq>
+      <packagereq type="default">libreoffice-impress</packagereq>
+      <packagereq type="default">libreoffice-math</packagereq>
+      <packagereq type="default">libreoffice-writer</packagereq>
+      <packagereq type="optional">libreoffice-base</packagereq>
+      <packagereq type="optional">libreoffice-ogltrans</packagereq>
+      <packagereq type="optional">libreoffice-pyuno</packagereq>
+      <packagereq type="optional">libreoffice-wiki-publisher</packagereq>
+    </packagelist>
+  </group>
+  <category>
+    <id>applications</id>
+    <name>Applications</name>
+    <name xml:lang="af">Toepassings</name>
+    <name xml:lang="am">መጠቀሚያ ፕሮግራሞች</name>
+    <name xml:lang="ar">تطبيقات</name>
+    <name xml:lang="as">এপ্লিকেচন</name>
+    <name xml:lang="bal">کارمرزیان</name>
+    <name xml:lang="be">Дастасаваньні</name>
+    <name xml:lang="bg">Приложения</name>
+    <name xml:lang="bn">অ্যাপ্লিকেশন</name>
+    <name xml:lang="bn_IN">অ্যাপ্লিকেশন</name>
+    <name xml:lang="bs">Aplikacije</name>
+    <name xml:lang="ca">Aplicacions</name>
+    <name xml:lang="cs">Aplikace</name>
+    <name xml:lang="cy">Cymwysiadau</name>
+    <name xml:lang="da">Programmer</name>
+    <name xml:lang="de">Anwendungen</name>
+    <name xml:lang="el">Εφαρμογές</name>
+    <name xml:lang="en_GB">Applications</name>
+    <name xml:lang="es">Aplicaciones</name>
+    <name xml:lang="et">Rakendused</name>
+    <name xml:lang="eu">Aplikazioak</name>
+    <name xml:lang="fa">برنامه‌ها</name>
+    <name xml:lang="fi">Apuohjelmat</name>
+    <name xml:lang="fr">Applications</name>
+    <name xml:lang="gl">Aplicacións</name>
+    <name xml:lang="gu">કાર્યક્રમો</name>
+    <name xml:lang="he">ישומים</name>
+    <name xml:lang="hi">अनुप्रयोग</name>
+    <name xml:lang="hr">Aplikacije</name>
+    <name xml:lang="hu">Alkalmazások</name>
+    <name xml:lang="hy">ծրագրեր</name>
+    <name xml:lang="ia">Applicationes</name>
+    <name xml:lang="id">Aplikasi</name>
+    <name xml:lang="ilo">Dagiti Aplikasion</name>
+    <name xml:lang="is">Forrit</name>
+    <name xml:lang="it">Applicazioni</name>
+    <name xml:lang="ja">アプリケーション</name>
+    <name xml:lang="ka">პროგრამები</name>
+    <name xml:lang="kn">ಅನ್ವಯಗಳು</name>
+    <name xml:lang="ko">응용 프로그램</name>
+    <name xml:lang="lv">Lietojumprogrammas</name>
+    <name xml:lang="mai">अनुप्रयोग</name>
+    <name xml:lang="mk">Апликации</name>
+    <name xml:lang="ml">പ്രയോഗങ്ങള്‍</name>
+    <name xml:lang="mr">अनुप्रयोग</name>
+    <name xml:lang="ms">Aplikasi</name>
+    <name xml:lang="nb">Programmer</name>
+    <name xml:lang="ne">अनुप्रयोग</name>
+    <name xml:lang="nl">Toepassingen</name>
+    <name xml:lang="no">Programmer</name>
+    <name xml:lang="nso">Ditirišo</name>
+    <name xml:lang="or">ପ୍ରୟୋଗ</name>
+    <name xml:lang="pa">ਐਪਲੀਕੇਸ਼ਨ</name>
+    <name xml:lang="pl">Aplikacje</name>
+    <name xml:lang="pt">Aplicações</name>
+    <name xml:lang="pt_BR">Aplicações</name>
+    <name xml:lang="ro">Aplicaţii</name>
+    <name xml:lang="ru">Приложения</name>
+    <name xml:lang="si">වැඩසටහන්</name>
+    <name xml:lang="sk">Aplikácie</name>
+    <name xml:lang="sl">Aplikacije</name>
+    <name xml:lang="sq">Zbatime</name>
+    <name xml:lang="sr">Програми</name>
+    <name xml:lang="sr@Latn">Programi</name>
+    <name xml:lang="sr@latin">Programi</name>
+    <name xml:lang="sv">Program</name>
+    <name xml:lang="ta">பயன்பாடுகள்</name>
+    <name xml:lang="te">అనువర్తనాలు</name>
+    <name xml:lang="tg">Барномаҳо</name>
+    <name xml:lang="th">แอพลิเคชัน</name>
+    <name xml:lang="tr">Uygulamalar</name>
+    <name xml:lang="uk">Програми</name>
+    <name xml:lang="ur">اپلکیشن</name>
+    <name xml:lang="vi">Ứng dụng</name>
+    <name xml:lang="zh_CN">应用程序</name>
+    <name xml:lang="zh_TW">應用程式</name>
+    <name xml:lang="zu">Abayaleli</name>
+    <description>End-user applications.</description>
+    <description xml:lang="as">অন্ত-ব্যৱহাৰকাৰীৰ এপ্লিকেচন।</description>
+    <description xml:lang="bn">ব্যবহারকারী-প্রান্তের অ্যাপ্লিকেশন।</description>
+    <description xml:lang="bn_IN">ব্যবহারকারী-প্রান্তের অ্যাপ্লিকেশন।</description>
+    <description xml:lang="cs">Uživatelské aplikace</description>
+    <description xml:lang="de">End-Benutzer-Anwendungen.</description>
+    <description xml:lang="es">Aplicaciones de usuario final.</description>
+    <description xml:lang="fr">Applications pour utilisateur final.</description>
+    <description xml:lang="gu">અંતિમ-વપરાશકર્તા કાર્યક્રમો.</description>
+    <description xml:lang="hi">अंत्य उपयोक्ता अनुप्रयोग.</description>
+    <description xml:lang="ia">Applicationes de usatores final.</description>
+    <description xml:lang="it">Applicazioni utente finale.</description>
+    <description xml:lang="ja">エンドユーザーアプリケーション</description>
+    <description xml:lang="kn">ಎಂಡ್-ಯೂಸರ್ ಅನ್ವಯಗಳು</description>
+    <description xml:lang="ko">최종사용자 어플리케이션.</description>
+    <description xml:lang="ml">ഉപയോക്താവിനുള്ള പ്രയോഗങ്ങള്‍.</description>
+    <description xml:lang="mr">एंड-यूजर ऍप्लिकेशन्स्.</description>
+    <description xml:lang="or">ଚାଳକ ପ୍ରୟୋଗଗୁଡ଼ିକ।</description>
+    <description xml:lang="pa">ਅੰਤਲਾ-ਯੂਜ਼ਰ ਐਪਲੀਕੇਸ਼ਨ।</description>
+    <description xml:lang="pl">Aplikacje dla użytkowników końcowych.</description>
+    <description xml:lang="pt_BR">Aplicações de usuário final.</description>
+    <description xml:lang="ru">Приложения пользователя.</description>
+    <description xml:lang="sv">Slutanvändarprogram.</description>
+    <description xml:lang="ta">கடைசி-பயனர் பயன்பாடுகள்.</description>
+    <description xml:lang="te">అంత్య-వినియోగదారి అనువర్తనములు.</description>
+    <description xml:lang="uk">Програми для кінцевих користувачів.</description>
+    <description xml:lang="zh_CN">终端用户应用程序。</description>
+    <description xml:lang="zh_TW">終端用戶應用程式。</description>
+    <display_order>80</display_order>
+    <grouplist>
+      <groupid>internet-applications</groupid>
+      <groupid>office-suite</groupid>
+    </grouplist>
+  </category>
+  <langpacks>
+    <match install="autocorr-%s" name="autocorr-en"/>
+    <match install="firefox-langpack-%s" name="firefox"/>
+    <match install="gimp-help-%s" name="gimp-help"/>
+    <match install="gnome-getting-started-docs-%s" name="gnome-getting-started-docs"/>
+    <match install="hunspell-%s" name="hunspell"/>
+    <match install="hyphen-%s" name="hyphen"/>
+    <match install="kde-l10n-%s" name="kdelibs"/>
+    <match install="libreoffice-langpack-%s" name="libreoffice-core"/>
+    <match install="man-pages-%s" name="man-pages"/>
+    <match install="mythes-%s" name="mythes"/>
+    <match install="Red_Hat_Enterprise_Linux-Release_Notes-7-%s" name="Red_Hat_Enterprise_Linux-Release_Notes-7-en-US"/>
+  </langpacks>
+</comps>
