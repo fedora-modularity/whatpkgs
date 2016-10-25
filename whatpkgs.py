@@ -64,6 +64,21 @@ class TooManyPackagesException(Exception):
                            "Too many packages returned for %s" % pkgname)
 
 
+def _setup_static_repo(base, reponame, path):
+    repo = base.repos.get_matching("fedora")
+    repo.mirrorlist = None
+    repo.metalink = None
+    repo.baseurl = "file://" + path
+    repo.name = reponame
+    try:
+        repo._id = reponame
+    except AttributeError:
+        print("DNF 2.x required.", file=sys.stderr)
+        sys.exit(1)
+    repo.load()
+    repo.enable()
+
+
 def setup_repo(use_system):
     """
     Enable only the official Fedora repositories
@@ -89,33 +104,11 @@ def setup_repo(use_system):
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/fedora/linux/development/25/Everything/x86_64/os/")
-        repo = base.repos.get_matching("fedora")
-        repo.mirrorlist = None
-        repo.metalink = None
-        repo.baseurl = "file://" + repo_path
-        repo.name = "static-binary"
-        try:
-            repo._id = "static-binary"
-        except AttributeError:
-            print("DNF 2.x required.", file=sys.stderr)
-            sys.exit(1)
-        repo.load()
-        repo.enable()
+        _setup_static_repo(base, "static-f25-beta-binary", repo_path)
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/fedora/linux/development/25/Everything/source/tree/")
-        repo = base.repos.get_matching("fedora-source")
-        repo.mirrorlist = None
-        repo.metalink = None
-        repo.baseurl = "file://" + repo_path
-        repo.name = "static-source"
-        try:
-            repo._id = "static-source"
-        except AttributeError:
-            print("DNF 2.x required.", file=sys.stderr)
-            sys.exit(1)
-        repo.load()
-        repo.enable()
+        _setup_static_repo(base, "static-f25-beta-source", repo_path)
 
     base.fill_sack(load_system_repo=False, load_available_repos=True)
     return base
