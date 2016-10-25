@@ -64,8 +64,11 @@ class TooManyPackagesException(Exception):
                            "Too many packages returned for %s" % pkgname)
 
 
-def _setup_static_repo(base, reponame, path):
-    repo = base.repos.get_matching("fedora")
+def _setup_static_repo(base, reponame, path, source):
+    if source:
+        repo = base.repos.get_matching("fedora-source")
+    else:
+        repo = base.repos.get_matching("fedora")
     repo.mirrorlist = None
     repo.metalink = None
     repo.baseurl = "file://" + path
@@ -105,30 +108,30 @@ def setup_repo(use_system, use_rhel):
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server/x86_64/os/")
-        _setup_static_repo(base, "static-rhel7.3beta-binary", repo_path)
+        _setup_static_repo(base, "static-rhel7.3beta-binary", repo_path, False)
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/x86_64/os/")
-        _setup_static_repo(base, "static-rhel7.3beta-optional-binary", repo_path)
+        _setup_static_repo(base, "static-rhel7.3beta-optional-binary", repo_path, False)
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server/source/tree/")
-        _setup_static_repo(base, "static-rhel7.3beta-source", repo_path)
+        _setup_static_repo(base, "static-rhel7.3beta-source", repo_path, True)
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/source/tree/")
-        _setup_static_repo(base, "static-rhel7.3beta-optional-source", repo_path)
+        _setup_static_repo(base, "static-rhel7.3beta-optional-source", repo_path, True)
 
     else:
         # Load the static data for Fedora
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
            "sampledata/repodata/fedora/linux/development/25/Everything/x86_64/os/")
-        _setup_static_repo(base, "static-f25-beta-binary", repo_path)
+        _setup_static_repo(base, "static-f25-beta-binary", repo_path, False)
 
         repo_path = os.path.join(dir_path,
            "sampledata/repodata/fedora/linux/development/25/Everything/source/tree/")
-        _setup_static_repo(base, "static-f25-beta-source", repo_path)
+        _setup_static_repo(base, "static-f25-beta-source", repo_path, True)
 
     base.fill_sack(load_system_repo=False, load_available_repos=True)
     return base
