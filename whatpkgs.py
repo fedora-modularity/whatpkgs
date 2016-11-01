@@ -202,9 +202,16 @@ def get_srpm_for_package_name(query, pkgname):
 
     return get_srpm_for_package(query, pkg)
 
+def append_requirement(reqs, pkg, filters):
+    """
+    Check if this package is in the filter list. If it is, then
+    do not add it to the list of packages to recurse into.
+    """
+    if filters is None or pkg.name not in filters:
+        reqs.append(pkg)
 
 def get_requirements(reqs, dependencies, ambiguities,
-                     query, hints, pick_first):
+                     query, hints, filters, pick_first):
     """
     Share code for recursing into requires or recommends
     """
@@ -233,7 +240,7 @@ def get_requirements(reqs, dependencies, ambiguities,
                     if rpkg.name == choice:
                         # This has been disambiguated; use this one
                         found = True
-                        requirements.append(rpkg)
+                        append_requirement(requirements, rpkg, filters)
                         break
                 if found:
                     # Don't keep looking once we find a match
@@ -250,7 +257,7 @@ def get_requirements(reqs, dependencies, ambiguities,
                     # entry in the list.
                     for rpkg in required_packages:
                         if rpkg.arch == 'noarch' or rpkg.arch == 'x86_64':
-                            requirements.append(rpkg)
+                            append_requirement(requirements, rpkg, filters)
                             break
                     continue
                 # Packages not solved by 'hints' list
@@ -263,13 +270,13 @@ def get_requirements(reqs, dependencies, ambiguities,
             continue
 
         # Exactly one package matched, so proceed down into it.
-        requirements.append(required_packages[0])
+        append_requirement(requirements, required_packages[0], filters)
 
     return requirements
 
 
 def recurse_package_deps(pkg, dependencies, ambiguities,
-                         query, hints, pick_first,
+                         query, hints, filters, pick_first,
                          follow_recommends):
     """
     Recursively search through dependencies and add them to the list
@@ -281,12 +288,12 @@ def recurse_package_deps(pkg, dependencies, ambiguities,
 
     # Process Requires:
     deps = get_requirements(pkg.requires, dependencies, ambiguities,
-                            query, hints, pick_first)
+                            query, hints, filters, pick_first)
 
     try:
         # Process Requires(pre|post)
         prereqs = get_requirements(pkg.requires_pre, dependencies, ambiguities,
-                                   query, hints, pick_first)
+                                   query, hints, filters, pick_first)
         deps.extend(prereqs)
     except AttributeError:
         print("DNF 2.x required.", file=sys.stderr)
@@ -294,13 +301,13 @@ def recurse_package_deps(pkg, dependencies, ambiguities,
 
     if follow_recommends:
         recommends = get_requirements(pkg.recommends, dependencies,
-                                      ambiguities, query, hints, pick_first)
+                                      ambiguities, query, hints, filters,
+                                      pick_first)
         deps.extend(recommends)
 
     for dep in deps:
-        recurse_package_deps(dep,
-                             dependencies, ambiguities, query,
-                             hints, pick_first, follow_recommends)
+        recurse_package_deps(dep, dependencies, ambiguities, query,
+                             hints, filters, pick_first, follow_recommends)
 
 
 def recurse_self_host(binary_pkg, binaries, sources,
@@ -317,17 +324,18 @@ def recurse_self_host(binary_pkg, binaries, sources,
 
     # Process strict Requires:
     deps = get_requirements(binary_pkg.requires, binaries, ambiguities,
-                            query, hints, pick_first)
+                            query, hints, None, pick_first)
 
     # Process Requires(pre|post):
     prereqs = get_requirements(binary_pkg.requires_pre, binaries, ambiguities,
-                               query, hints, pick_first)
+                               query, hints, None, pick_first)
     deps.extend(prereqs)
 
     if follow_recommends:
         # Process Recommends:
         recommends = get_requirements(binary_pkg.recommends, binaries,
-                                      ambiguities, query, hints, pick_first)
+                                      ambiguities, query, hints, None,
+                                      pick_first)
         deps.extend(recommends)
 
     # Now get the build dependencies for this package
@@ -339,7 +347,8 @@ def recurse_self_host(binary_pkg, binaries, sources,
 
         # Get the BuildRequires for this Source RPM
         buildreqs = get_requirements(source_pkg.requires, binaries,
-                                     ambiguities, query, hints, pick_first)
+                                     ambiguities, query, hints, None,
+                                     pick_first)
         deps.extend(buildreqs)
 
     for dep in deps:
@@ -390,6 +399,15 @@ dependency. This option may be specified multiple times.
 
 For example, it is recommended to use --hint=glibc-minimal-langpack
 """)
+@click.option('--filter', multiple=True,
+              help="""
+Specify a package to be skipped during processing. This option may be
+specified multiple times.
+
+This is useful when some packages are provided by a lower-level module
+already contains the package and its dependencies.
+""")
+
 @click.option('--recommends/--no-recommends', default=True)
 @click.option('--merge/--no-merge', default=False)
 @click.option('--full-name/--no-full-name', default=False)
@@ -410,7 +428,7 @@ sorted. It is recommended to use --hint instead, where practical.
               help="If --system is not specified, the use of --rhel will "
                    "give back results from the RHEL sample data. Otherwise, "
                    "Fedora sample data will be used.")
-def neededby(pkgnames, hint, recommends, merge, full_name, pick_first,
+def neededby(pkgnames, hint, filter, recommends, merge, full_name, pick_first,
              system, rhel):
     """
     Look up the dependencies for each specified package and
@@ -422,6 +440,10 @@ def neededby(pkgnames, hint, recommends, merge, full_name, pick_first,
     dependencies = {}
     ambiguities = []
     for pkgname in pkgnames:
+        if pkgname in filter:
+            # Skip this if we explicitly filtered it out
+            continue
+
         pkg = get_pkg_by_name(query, pkgname)
 
         if not merge:
@@ -429,8 +451,8 @@ def neededby(pkgnames, hint, recommends, merge, full_name, pick_first,
             dependencies = {}
             ambiguities = []
 
-        recurse_package_deps(pkg, dependencies, ambiguities,
-                             query, hint, pick_first, recommends)
+        recurse_package_deps(pkg, dependencies, ambiguities, query, hint,
+                             filter, pick_first, recommends)
 
         # Check for unresolved deps in the list that are present in the
         # dependencies. This happens when one package has an ambiguous dep but
