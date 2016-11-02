@@ -64,11 +64,9 @@ class TooManyPackagesException(Exception):
                            "Too many packages returned for %s" % pkgname)
 
 
-def _setup_static_repo(base, reponame, path, source):
-    if source:
-        repo = base.repos.get_matching("fedora-source")
-    else:
-        repo = base.repos.get_matching("fedora")
+def _setup_static_repo(base, reponame, path):
+    repo = dnf.repo.Repo(reponame, base.conf)
+
     repo.mirrorlist = None
     repo.metalink = None
     repo.baseurl = "file://" + path
@@ -78,6 +76,7 @@ def _setup_static_repo(base, reponame, path, source):
     except AttributeError:
         print("DNF 2.x required.", file=sys.stderr)
         sys.exit(1)
+    base.repos.add(repo)
     repo.load()
     repo.enable()
 
@@ -90,10 +89,11 @@ def setup_repo(use_system, use_rhel):
              repositories for binary RPMs
     """
     base = dnf.Base()
-    base.read_all_repos()
-    repo = base.repos.all()
-    repo.disable()
+
     if use_system:
+        base.read_all_repos()
+        repo = base.repos.all()
+        repo.disable()
         repo = base.repos.get_matching("fedora")
         repo.enable()
         repo = base.repos.get_matching("updates")
@@ -108,30 +108,30 @@ def setup_repo(use_system, use_rhel):
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server/x86_64/os/")
-        _setup_static_repo(base, "static-rhel7.3beta-binary", repo_path, False)
+        _setup_static_repo(base, "static-rhel7.3beta-binary", repo_path)
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/x86_64/os/")
-        _setup_static_repo(base, "static-rhel7.3beta-optional-binary", repo_path, False)
+        _setup_static_repo(base, "static-rhel7.3beta-optional-binary", repo_path)
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server/source/tree/")
-        _setup_static_repo(base, "static-rhel7.3beta-source", repo_path, True)
+        _setup_static_repo(base, "static-rhel7.3beta-source", repo_path)
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/source/tree/")
-        _setup_static_repo(base, "static-rhel7.3beta-optional-source", repo_path, True)
+        _setup_static_repo(base, "static-rhel7.3beta-optional-source", repo_path)
 
     else:
         # Load the static data for Fedora
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
            "sampledata/repodata/fedora/linux/development/25/Everything/x86_64/os/")
-        _setup_static_repo(base, "static-f25-beta-binary", repo_path, False)
+        _setup_static_repo(base, "static-f25-beta-binary", repo_path)
 
         repo_path = os.path.join(dir_path,
            "sampledata/repodata/fedora/linux/development/25/Everything/source/tree/")
-        _setup_static_repo(base, "static-f25-beta-source", repo_path, True)
+        _setup_static_repo(base, "static-f25-beta-source", repo_path)
 
     base.fill_sack(load_system_repo=False, load_available_repos=True)
     return base
@@ -143,9 +143,9 @@ def get_query_object(use_system, use_rhel):
 
     Returns: query object for source and binaries
     """
-    repo = setup_repo(use_system, use_rhel)
+    base = setup_repo(use_system, use_rhel)
 
-    return repo.sack.query()
+    return base.sack.query()
 
 
 def get_pkg_by_name(q, pkgname):
