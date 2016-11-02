@@ -210,7 +210,7 @@ def append_requirement(reqs, pkg, filters):
     if filters is None or pkg.name not in filters:
         reqs.append(pkg)
 
-def get_requirements(reqs, dependencies, ambiguities,
+def get_requirements(parent, reqs, dependencies, ambiguities,
                      query, hints, filters, pick_first):
     """
     Share code for recursing into requires or recommends
@@ -228,7 +228,11 @@ def get_requirements(reqs, dependencies, ambiguities,
 
         # If there are no dependencies, just return
         if len(required_packages) == 0:
-            print("No package for [%s]" % str(require), file=sys.stderr)
+            print("No package for [%s] required by [%s-%s-%s.%s]" % (
+                str(require),
+                parent.name, parent.version,
+                parent.release, parent.arch),
+                  file=sys.stderr)
             continue
 
         # Check for multiple possible packages
@@ -287,20 +291,21 @@ def recurse_package_deps(pkg, dependencies, ambiguities,
     dependencies[pkg.name] = pkg
 
     # Process Requires:
-    deps = get_requirements(pkg.requires, dependencies, ambiguities,
-                            query, hints, filters, pick_first)
+    deps = get_requirements(pkg, pkg.requires, dependencies,
+                            ambiguities, query, hints, filters, pick_first)
 
     try:
         # Process Requires(pre|post)
-        prereqs = get_requirements(pkg.requires_pre, dependencies, ambiguities,
-                                   query, hints, filters, pick_first)
+        prereqs = get_requirements(pkg, pkg.requires_pre, dependencies,
+                                   ambiguities, query, hints, filters,
+                                   pick_first)
         deps.extend(prereqs)
     except AttributeError:
         print("DNF 2.x required.", file=sys.stderr)
         sys.exit(1)
 
     if follow_recommends:
-        recommends = get_requirements(pkg.recommends, dependencies,
+        recommends = get_requirements(pkg, pkg.recommends, dependencies,
                                       ambiguities, query, hints, filters,
                                       pick_first)
         deps.extend(recommends)
@@ -323,19 +328,20 @@ def recurse_self_host(binary_pkg, binaries, sources,
     binaries[binary_pkg.name] = binary_pkg
 
     # Process strict Requires:
-    deps = get_requirements(binary_pkg.requires, binaries, ambiguities,
-                            query, hints, None, pick_first)
+    deps = get_requirements(binary_pkg, binary_pkg.requires, binaries,
+                            ambiguities, query, hints, None, pick_first)
 
     # Process Requires(pre|post):
-    prereqs = get_requirements(binary_pkg.requires_pre, binaries, ambiguities,
-                               query, hints, None, pick_first)
+    prereqs = get_requirements(binary_pkg, binary_pkg.requires_pre,
+                               binaries, ambiguities, query, hints, None,
+                               pick_first)
     deps.extend(prereqs)
 
     if follow_recommends:
         # Process Recommends:
-        recommends = get_requirements(binary_pkg.recommends, binaries,
-                                      ambiguities, query, hints, None,
-                                      pick_first)
+        recommends = get_requirements(binary_pkg, binary_pkg.recommends,
+                                      binaries, ambiguities, query, hints,
+                                      None, pick_first)
         deps.extend(recommends)
 
     # Now get the build dependencies for this package
@@ -346,9 +352,9 @@ def recurse_self_host(binary_pkg, binaries, sources,
         sources[source_pkg.name] = source_pkg
 
         # Get the BuildRequires for this Source RPM
-        buildreqs = get_requirements(source_pkg.requires, binaries,
-                                     ambiguities, query, hints, None,
-                                     pick_first)
+        buildreqs = get_requirements(source_pkg, source_pkg.requires,
+                                     binaries, ambiguities, query, hints,
+                                     None, pick_first)
         deps.extend(buildreqs)
 
     for dep in deps:
@@ -630,6 +636,38 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
                   Style.RESET_ALL)
             pp = pprint.PrettyPrinter(indent=4)
             pp.pprint(ambiguities)
+
+@main.command(short_help="Debug missing Provides")
+@click.argument('requires', nargs=1)
+
+@click.option('--system/--no-system', default=False,
+              help="If --system is specified, use the 'fedora', 'updates', "
+                   "'source' and 'updates-source' repositories from the local "
+                   "system configuration. Otherwise, use the static data from "
+                   "the sampledata directory.")
+@click.option('--rhel/--no-rhel', default=False,
+              help="If --system is not specified, the use of --rhel will "
+                   "give back results from the RHEL sample data. Otherwise, "
+                   "Fedora sample data will be used.")
+def debugprovides(requires, system, rhel):
+    query = get_query_object(system, rhel)
+
+    required_packages = query.filter(provides=requires, latest=True,
+                                     arch='x86_64')
+    if len(required_packages) == 0:
+        required_packages = query.filter(provides=requires, latest=True,
+                                            arch='noarch')
+
+
+    # If there are no dependencies, just return
+    if len(required_packages) == 0:
+        print("No package for [%s]" % (str(requires)), file=sys.stderr)
+        sys.exit(1)
+
+    for pkg in required_packages:
+        print(repr(pkg))
+
+
 
 if __name__ == "__main__":
     main()
