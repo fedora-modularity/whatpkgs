@@ -27,7 +27,6 @@
 0:grep-2.25-1.fc25.src
 0:gzip-1.8-1.fc25.src
 0:iptables-1.6.0-2.fc25.src
-0:kernel-4.8.0-0.rc7.git0.1.fc25.src
 0:keyutils-1.5.9-8.fc24.src
 0:kmod-23-1.fc25.src
 0:krb5-1.14.3-9.fc25.src

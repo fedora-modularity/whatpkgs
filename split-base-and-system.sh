@@ -8,7 +8,7 @@ echo "Generate the SRPM list for base runtime ("lights-on")"
                       --hint=libcrypt-nss \
                       --hint=cronie-noanacron \
                       --hint=coreutils \
-                      grub2 grub2-efi kernel-core \
+                      grub2 grub2-efi kernel-core kernel-headers \
 | xargs \
 ./whatpkgs.py getsourcerpm --full-name \
 | sort | tee sampledata/fedora/25beta/base-runtime-module-source-packages-prelim.txt
@@ -26,6 +26,7 @@ cat sampledata/toplevel-binary-packages.txt|xargs \
                        --filter grub2 \
                        --filter grub2-efi \
                        --filter kernel-core \
+                       --filter kernel-headers \
 | xargs \
 ./whatpkgs.py getsourcerpm --full-name \
 | sort | tee sampledata/fedora/25beta/system-runtime-module-source-packages-prelim.txt
