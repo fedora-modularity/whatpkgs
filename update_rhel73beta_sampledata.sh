@@ -3,12 +3,12 @@
 set -x #echo on
 
 cat sampledata/rhel/7.3beta/toplevel-binary-packages.txt| xargs \
-./whatpkgs.py getsourcerpm --full-name \
+./whatpkgs.py getsourcerpm --rhel --full-name \
 | tee sampledata/rhel/7.3beta/toplevel-source-packages.txt
 
 
 cat sampledata/rhel/7.3beta/toplevel-binary-packages.txt|xargs \
-./whatpkgs.py neededby --merge --no-recommends \
+./whatpkgs.py neededby --rhel --merge --no-recommends \
                        --hint=glibc-minimal-langpack \
                        --hint=fedora-release \
                        --hint=libcrypt-nss \
@@ -18,7 +18,7 @@ cat sampledata/rhel/7.3beta/toplevel-binary-packages.txt|xargs \
 
 
 cat sampledata/rhel/7.3beta/toplevel-binary-packages.txt|xargs \
-./whatpkgs.py neededby --merge --no-recommends --full-name \
+./whatpkgs.py neededby --rhel --merge --no-recommends --full-name \
                        --hint=glibc-minimal-langpack \
                        --hint=fedora-release \
                        --hint=libcrypt-nss \
@@ -28,17 +28,17 @@ cat sampledata/rhel/7.3beta/toplevel-binary-packages.txt|xargs \
 
 
 cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt| xargs \
-./whatpkgs.py getsourcerpm \
+./whatpkgs.py getsourcerpm --rhel \
 | tee sampledata/rhel/7.3beta/runtime-source-packages-short.txt
 
 
 cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt| xargs \
-./whatpkgs.py getsourcerpm --full-name \
+./whatpkgs.py getsourcerpm --rhel --full-name \
 | tee sampledata/rhel/7.3beta/runtime-source-packages-full.txt
 
 
 cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt | xargs \
-./whatpkgs.py neededtoselfhost --merge --no-recommends \
+./whatpkgs.py neededtoselfhost --rhel --merge --no-recommends \
                                --no-sources \
                                --hint=glibc-minimal-langpack \
                                --hint=fedora-release \
@@ -65,11 +65,12 @@ cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt | xargs
                                --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
                                --hint=perl-Archive-Extract-xz-unxz \
                                --hint=infinipath-psm \
+                               --hint=xorg-x11-xinit \
 | tee sampledata/rhel/7.3beta/selfhosting-binary-packages-short.txt
 
 
 cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt | xargs \
-./whatpkgs.py neededtoselfhost --merge --no-recommends --full-name \
+./whatpkgs.py neededtoselfhost --rhel --merge --no-recommends --full-name \
                                --no-sources \
                                --hint=glibc-minimal-langpack \
                                --hint=fedora-release \
@@ -96,11 +97,12 @@ cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt | xargs
                                --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
                                --hint=perl-Archive-Extract-xz-unxz \
                                --hint=infinipath-psm \
+                               --hint=xorg-x11-xinit \
 | tee sampledata/rhel/7.3beta/selfhosting-binary-packages-full.txt
 
 
 cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt | xargs \
-./whatpkgs.py neededtoselfhost --merge --no-recommends \
+./whatpkgs.py neededtoselfhost --rhel --merge --no-recommends \
                                --sources \
                                --hint=glibc-minimal-langpack \
                                --hint=fedora-release \
@@ -127,11 +129,12 @@ cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt | xargs
                                --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
                                --hint=perl-Archive-Extract-xz-unxz \
                                --hint=infinipath-psm \
+                               --hint=xorg-x11-xinit \
 | tee sampledata/rhel/7.3beta/selfhosting-source-packages-short.txt
 
 
 cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt | xargs \
-./whatpkgs.py neededtoselfhost --merge --no-recommends --full-name \
+./whatpkgs.py neededtoselfhost --rhel --merge --no-recommends --full-name \
                                --sources \
                                --hint=glibc-minimal-langpack \
                                --hint=fedora-release \
@@ -158,4 +161,5 @@ cat sampledata/rhel/7.3beta/runtime-binary-dependency-packages-short.txt | xargs
                                --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
                                --hint=perl-Archive-Extract-xz-unxz \
                                --hint=infinipath-psm \
+                               --hint=xorg-x11-xinit \
 | tee sampledata/rhel/7.3beta/selfhosting-source-packages-full.txt
