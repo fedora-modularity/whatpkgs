@@ -2,6 +2,8 @@
 
 
 # Packages that explicitly belong in the Base Runtime
+# These are packages that are expected to maintain their public API for a very
+# long time and are required for booting the system "(lights-on)"
 EXPLICIT_BR="
     dracut
     gcc
@@ -19,11 +21,32 @@ EXPLICIT_BR="
     libstdc++-devel
 "
 
+FILTER_BR=""
+for i in $EXPLICIT_BR; do
+    FILTER_BR="$FILTER_BR --filter=$i"
+done
+
+
 # Packages that explicitly belong in the System Runtime
+# Items listed here may also be dependencies for the Base Runtime, but we are
+# electing to carry them with a different stability guarantee than BR.
+# Items in the system runtime are required for POSIX compliance.
 EXPLICIT_SR="
+    binutils
+    coreutils
+    findutils
+    shadow-utils
 "
 
+FILTER_SR=""
+for i in $EXPLICIT_SR; do
+    FILTER_SR="$FILTER_SR --filter=$i"
+done
+
 # Packages that belong in the shared components
+# These are packages that only show up in the dependencies of one of BR or SR,
+# but for which we do not want to maintain any API guarantees, so we'll move
+# them to the shared components list.
 EXPLICIT_SHARED="
     fedora-logos \
     freetype
@@ -32,13 +55,14 @@ EXPLICIT_SHARED="
 
 
 echo
-echo "Generate the SRPM list for base runtime ("lights-on")"
+echo "Generate the SRPM list for base runtime (\"lights-on\")"
 ./whatpkgs.py neededby --merge --no-recommends \
                       --hint=glibc-minimal-langpack \
                       --hint=fedora-release \
                       --hint=libcrypt \
                       --hint=cronie-noanacron \
                       --hint=coreutils \
+                      ${FILTER_SR} \
                       ${EXPLICIT_BR} \
                       ${EXPLICIT_SHARED} \
 | xargs \
@@ -55,20 +79,7 @@ cat sampledata/toplevel-binary-packages.txt|xargs \
                        --hint=libcrypt \
                        --hint=cronie-noanacron \
                        --hint=coreutils \
-                       --filter dracut \
-                       --filter gcc \
-                       --filter gcc-c++ \
-                       --filter glibc \
-                       --filter glibc-common \
-                       --filter glibc-headers \
-                       --filter grub2 \
-                       --filter grub2-efi \
-                       --filter kernel-core \
-                       --filter kernel-headers \
-                       --filter libcrypt \
-                       --filter libgcc \
-                       --filter libstdc++ \
-                       --filter libstdc++-devel \
+                       ${FILTER_BR} \
                        ${EXPLICIT_SR} \
                        ${EXPLICIT_SHARED} \
 | xargs \
