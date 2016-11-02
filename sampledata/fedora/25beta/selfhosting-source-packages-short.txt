@@ -212,6 +212,7 @@ compat-guile18
 compface
 cookcc
 cookxml
+coolkey
 copy-jdk-configs
 coreutils
 coro-mock
@@ -497,6 +498,7 @@ grizzly-npn
 groff
 groovy
 groovy18
+grub2
 grubby
 gsettings-desktop-schemas
 gsl
@@ -1516,6 +1518,7 @@ openjpeg
 openjpeg2
 openldap
 openmpi
+opensc
 opensm
 opensp
 openssh
@@ -1527,6 +1530,7 @@ optipng
 opus
 orc
 os-maven-plugin
+os-prober
 osgi-annotation
 p11-kit
 p7zip
@@ -1548,6 +1552,7 @@ pciutils
 pcre
 pcre2
 pcsc-lite
+pcsc-lite-ccid
 pdf-renderer
 pdfbox
 pegdown
@@ -2179,6 +2184,7 @@ perl-threads-shared
 perl-utf8-all
 perl-version
 perltidy
+pesign
 phonon
 phonon-backend-gstreamer
 php

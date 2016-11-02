@@ -33,6 +33,7 @@ ed
 elfutils
 emacs
 expat
+fedora-logos
 fedora-release
 fedora-repos
 fedpkg-minimal
@@ -41,11 +42,13 @@ filesystem
 findutils
 flex
 fpc-srpm-macros
+freetype
 gawk
 gc
 gcc
 gdb
 gdbm
+gettext
 ghc-srpm-macros
 glib2
 glibc
@@ -56,6 +59,7 @@ gnutls
 go-srpm-macros
 grep
 groff
+grub2
 guile
 gzip
 hwloc
@@ -71,6 +75,7 @@ libassuan
 libatomic_ops
 libcap
 libcap-ng
+libcroco
 libdb
 libffi
 libgcrypt
@@ -82,6 +87,7 @@ libmetalink
 libmpc
 libpcap
 libpipeline
+libpng
 libpsl
 libpwquality
 libseccomp
@@ -122,6 +128,7 @@ numactl
 ocaml-srpm-macros
 openldap
 openssl
+os-prober
 p11-kit
 pam
 patch

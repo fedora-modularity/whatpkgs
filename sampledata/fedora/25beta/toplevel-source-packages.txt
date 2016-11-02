@@ -22,6 +22,7 @@
 0:glibc-2.24-3.fc25.src
 0:gnupg2-2.1.13-2.fc25.src
 0:grep-2.25-1.fc25.src
+1:grub2-2.02-0.34.fc24.src
 0:gzip-1.8-1.fc25.src
 0:kernel-4.8.0-0.rc7.git0.1.fc25.src
 0:m4-1.4.17-9.fc24.src

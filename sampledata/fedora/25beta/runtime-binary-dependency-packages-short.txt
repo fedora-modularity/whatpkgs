@@ -41,6 +41,7 @@ elfutils-libelf
 elfutils-libs
 emacs-filesystem
 expat
+fedora-logos
 fedora-release
 fedora-repos
 fedpkg-minimal
@@ -50,12 +51,15 @@ filesystem
 findutils
 flex
 fpc-srpm-macros
+freetype
 gawk
 gc
 gcc
 gcc-c++
 gdb-headless
 gdbm
+gettext
+gettext-libs
 ghc-srpm-macros
 glib2
 glibc
@@ -70,6 +74,9 @@ gnutls
 go-srpm-macros
 grep
 groff-base
+grub2
+grub2-efi
+grub2-tools
 guile
 gzip
 hwloc-libs
@@ -93,6 +100,7 @@ libblkid
 libcap
 libcap-ng
 libcom_err
+libcroco
 libcrypt-nss
 libcurl
 libdb
@@ -112,6 +120,7 @@ libmpc
 libnghttp2
 libpcap
 libpipeline
+libpng
 libpsl
 libpwquality
 libseccomp
@@ -160,6 +169,7 @@ numactl-libs
 ocaml-srpm-macros
 openldap
 openssl-libs
+os-prober
 p11-kit
 p11-kit-trust
 pam
@@ -192,6 +202,10 @@ python-libs
 python-pip
 python-srpm-macros
 python2-setuptools
+python3
+python3-libs
+python3-pip
+python3-setuptools
 qrencode-libs
 qt5-srpm-macros
 readline

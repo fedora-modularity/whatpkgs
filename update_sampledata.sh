@@ -4,7 +4,7 @@ set -x #echo on
 
 cat sampledata/toplevel-binary-packages.txt| xargs \
 ./whatpkgs.py getsourcerpm --full-name \
-| tee sampledata/toplevel-source-packages.txt
+| tee sampledata/fedora/25beta/toplevel-source-packages.txt
 
 
 cat sampledata/toplevel-binary-packages.txt|xargs \
@@ -14,7 +14,7 @@ cat sampledata/toplevel-binary-packages.txt|xargs \
                        --hint=libcrypt-nss \
                        --hint=cronie-noanacron \
                        --hint=coreutils \
-| tee sampledata/runtime-binary-dependency-packages-short.txt
+| tee sampledata/fedora/25beta/runtime-binary-dependency-packages-short.txt
 
 
 cat sampledata/toplevel-binary-packages.txt|xargs \
@@ -24,17 +24,17 @@ cat sampledata/toplevel-binary-packages.txt|xargs \
                        --hint=libcrypt-nss \
                        --hint=cronie-noanacron \
                        --hint=coreutils \
-| tee sampledata/runtime-binary-dependency-packages-full.txt
+| tee sampledata/fedora/25beta/runtime-binary-dependency-packages-full.txt
 
 
 cat sampledata/runtime-binary-dependency-packages-short.txt| xargs \
 ./whatpkgs.py getsourcerpm \
-| tee sampledata/runtime-source-packages-short.txt
+| tee sampledata/fedora/25beta/runtime-source-packages-short.txt
 
 
 cat sampledata/runtime-binary-dependency-packages-short.txt| xargs \
 ./whatpkgs.py getsourcerpm --full-name \
-| tee sampledata/runtime-source-packages-full.txt
+| tee sampledata/fedora/25beta/runtime-source-packages-full.txt
 
 
 cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
@@ -65,7 +65,7 @@ cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
                                --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
                                --hint=perl-Archive-Extract-xz-unxz \
                                --hint=infinipath-psm \
-| tee sampledata/selfhosting-binary-packages-full.txt
+| tee sampledata/fedora/25beta/selfhosting-binary-packages-full.txt
 
 
 cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
@@ -96,7 +96,7 @@ cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
                                --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
                                --hint=perl-Archive-Extract-xz-unxz \
                                --hint=infinipath-psm \
-| tee sampledata/selfhosting-binary-packages-short.txt
+| tee sampledata/fedora/25beta/selfhosting-binary-packages-short.txt
 
 
 cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
@@ -127,7 +127,7 @@ cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
                                --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
                                --hint=perl-Archive-Extract-xz-unxz \
                                --hint=infinipath-psm \
-| tee sampledata/selfhosting-source-packages-full.txt
+| tee sampledata/fedora/25beta/selfhosting-source-packages-full.txt
 
 
 cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
@@ -158,5 +158,5 @@ cat sampledata/runtime-binary-dependency-packages-short.txt | xargs \
                                --hint=perl-Archive-Extract-tbz-tar-bunzip2 \
                                --hint=perl-Archive-Extract-xz-unxz \
                                --hint=infinipath-psm \
-| tee sampledata/selfhosting-source-packages-short.txt
+| tee sampledata/fedora/25beta/selfhosting-source-packages-short.txt
 

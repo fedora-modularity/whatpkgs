@@ -415,6 +415,7 @@
 0:compface-devel-1.5.2-21.fc24.x86_64
 0:cookcc-0.3.3-14.fc25.noarch
 0:cookxml-3.0.2-11.fc24.noarch
+0:coolkey-1.1.0-30.fc24.x86_64
 0:copy-jdk-configs-1.2-1.fc25.noarch
 0:coreutils-8.25-14.fc25.x86_64
 0:coreutils-common-8.25-14.fc25.x86_64
@@ -671,6 +672,7 @@
 0:fedfs-utils-devel-0.10.5-4.fc25.x86_64
 0:fedfs-utils-lib-0.10.5-4.fc25.x86_64
 0:fedfs-utils-nsdbparams-0.10.5-4.fc25.x86_64
+0:fedora-logos-22.0.0-3.fc24.x86_64
 0:fedora-logos-httpd-22.0.0-3.fc24.noarch
 0:fedora-release-25-0.11.noarch
 0:fedora-repos-25-0.5.noarch
@@ -990,6 +992,8 @@
 0:groovy-xml-2.4.5-9.fc25.noarch
 0:groovy18-1.8.9-24.fc24.noarch
 0:groovy18-lib-1.8.9-24.fc24.noarch
+1:grub2-efi-2.02-0.34.fc24.x86_64
+1:grub2-tools-2.02-0.34.fc24.x86_64
 0:grubby-8.40-3.fc24.x86_64
 0:gsettings-desktop-schemas-3.22.0-1.fc25.x86_64
 0:gsettings-desktop-schemas-devel-3.22.0-1.fc25.x86_64
@@ -2762,6 +2766,7 @@
 0:openldap-servers-2.4.44-2.fc25.x86_64
 0:openmpi-1.10.3-2.fc25.x86_64
 0:openmpi-devel-1.10.3-2.fc25.x86_64
+0:opensc-0.16.0-1.fc25.x86_64
 0:opensm-devel-3.3.20-1.fc25.x86_64
 0:opensm-libs-3.3.20-1.fc25.x86_64
 0:opensp-1.5.2-23.fc24.x86_64
@@ -2784,6 +2789,7 @@
 0:orc-compiler-0.4.26-1.fc25.x86_64
 0:orc-devel-0.4.26-1.fc25.x86_64
 0:os-maven-plugin-1.2.3-6.fc25.noarch
+0:os-prober-1.71-1.fc25.x86_64
 0:osgi-annotation-6.0.0-3.fc24.noarch
 0:p11-kit-0.23.2-2.fc24.x86_64
 0:p11-kit-devel-0.23.2-2.fc24.x86_64
@@ -2826,6 +2832,9 @@
 0:pcre2-devel-10.22-2.fc25.x86_64
 0:pcre2-utf16-10.22-2.fc25.x86_64
 0:pcre2-utf32-10.22-2.fc25.x86_64
+0:pcsc-lite-1.8.17-2.fc25.x86_64
+0:pcsc-lite-ccid-1.4.23-1.fc25.x86_64
+0:pcsc-lite-devel-1.8.17-2.fc25.x86_64
 0:pcsc-lite-libs-1.8.17-2.fc25.x86_64
 0:pdf-renderer-0-0.18.128svn.20110310.fc25.noarch
 0:pegdown-1.4.2-9.fc25.noarch
@@ -3495,6 +3504,7 @@
 5:perl-version-0.99.17-1.fc25.x86_64
 0:perlmulticore-devel-0.02-3.fc25.x86_64
 0:perltidy-20160302-2.fc25.noarch
+0:pesign-0.112-4.fc25.x86_64
 0:phonon-4.9.0-3.fc25.x86_64
 2:phonon-backend-gstreamer-4.9.0-1.fc25.x86_64
 0:phonon-devel-4.9.0-3.fc25.x86_64
