@@ -39,9 +39,12 @@ file-libs
 filesystem
 findutils
 flex
+freetype
 gawk
 gcc
 gdbm
+gettext
+gettext-libs
 glib2
 glibc
 glibc-common
@@ -50,6 +53,9 @@ glibc-headers
 gmp
 grep
 groff-base
+grub2
+grub2-efi
+grub2-tools
 grubby
 gzip
 hardlink
@@ -73,6 +79,7 @@ libblkid
 libcap
 libcap-ng
 libcom_err
+libcroco
 libcurl
 libdb
 libdb-utils
@@ -95,6 +102,7 @@ libsepol
 libssh2
 libstdc++
 libtasn1
+libunistring
 libuser
 libutempter
 libuuid
@@ -120,6 +128,7 @@ nss-tools
 nss-util
 openldap
 openssl-libs
+os-prober
 p11-kit
 p11-kit-trust
 pam
@@ -129,8 +138,11 @@ pkgconfig
 popt
 procps-ng
 psmisc
+python
+python-libs
 qrencode-libs
 readline
+redhat-logos
 redhat-release-server
 rpm
 rpm-libs
@@ -150,6 +162,7 @@ tzdata
 ustr
 util-linux
 vim-minimal
+which
 xz
 xz-libs
 zlib

@@ -16,6 +16,8 @@ gawk
 gcc
 glibc-common
 grep
+grub2
+grub2-efi
 gzip
 kernel
 m4

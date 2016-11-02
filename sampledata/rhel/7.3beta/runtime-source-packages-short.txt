@@ -33,14 +33,17 @@ file
 filesystem
 findutils
 flex
+freetype
 gawk
 gcc
 gdbm
+gettext
 glib2
 glibc
 gmp
 grep
 groff
+grub2
 grubby
 gzip
 hardlink
@@ -56,6 +59,7 @@ krb5
 less
 libcap
 libcap-ng
+libcroco
 libdb
 libffi
 libgcrypt
@@ -72,6 +76,7 @@ libsemanage
 libsepol
 libssh2
 libtasn1
+libunistring
 libuser
 libutempter
 libverto
@@ -92,6 +97,7 @@ nss-softokn
 nss-util
 openldap
 openssl
+os-prober
 p11-kit
 pam
 patch
@@ -100,8 +106,10 @@ pkgconfig
 popt
 procps-ng
 psmisc
+python
 qrencode
 readline
+redhat-logos
 redhat-release-server
 rpm
 sed
@@ -120,5 +128,6 @@ tzdata
 ustr
 util-linux
 vim
+which
 xz
 zlib
