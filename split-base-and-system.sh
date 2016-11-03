@@ -110,7 +110,19 @@ comm -1 -2 \
 | sort | tee sampledata/fedora/25beta/shared-components-module-definition-full.txt
 
 
+echo  "All remaining packages in the self-hosting list belong in gen-core-build"
+cat sampledata/fedora/25beta/selfhosting-source-packages-full.txt \
+| sort| tee sampledata/fedora/25beta/gen-core-build-module-definition-prelim.txt
+
+cat sampledata/fedora/25beta/base-runtime-module-definition-full.txt \
+    sampledata/fedora/25beta/system-runtime-module-definition-full.txt \
+    sampledata/fedora/25beta/shared-components-module-definition-full.txt \
+| sort | comm -2 -3 sampledata/fedora/25beta/gen-core-build-module-definition-prelim.txt - \
+| sort | tee sampledata/fedora/25beta/gen-core-build-module-definition-full.txt
+
+
 echo "Removing intermediate files"
 rm -f sampledata/fedora/25beta/base-runtime-module-source-packages-prelim.txt \
-      sampledata/fedora/25beta/system-runtime-module-source-packages-prelim.txt
+      sampledata/fedora/25beta/system-runtime-module-source-packages-prelim.txt \
+      sampledata/fedora/25beta/gen-core-build-module-definition-prelim.txt
 
