@@ -5,11 +5,11 @@
 0:gettext-0.19.8.1-2.fc25.src
 0:glibc-2.24-3.fc25.src
 0:isl-0.14-5.fc24.src
-0:kernel-4.8.0-0.rc7.git0.1.fc25.src
+0:kernel-4.8.6-300.fc25.src
 0:libcroco-0.6.11-2.fc24.src
 0:libmpc-1.0.2-5.fc24.src
-0:linux-firmware-20160816-67.git7c3dfc0b.fc25.src
+0:linux-firmware-20160923-68.git42ad5367.fc25.src
 0:lvm2-2.02.161-3.fc25.src
 0:os-prober-1.71-1.fc25.src
-0:tzdata-2016f-1.fc25.src
+0:tzdata-2016h-1.fc25.src
 1:grub2-2.02-0.34.fc24.src

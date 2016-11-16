@@ -310,6 +310,7 @@ blas
 blas-devel
 bluez-libs
 bluez-libs-devel
+boilerpipe
 boost
 boost-atomic
 boost-chrono
@@ -527,6 +528,7 @@ docbook-style-xsl
 docbook-utils
 docbook5-schemas
 docbook5-style-xsl
+docker-client
 dom4j
 dos2unix
 dosfstools
@@ -543,17 +545,38 @@ e2fsprogs-libs
 easymock
 ebtables
 ecj
+eclipse-cdt
+eclipse-cdt-parsers
+eclipse-contributor-tools
 eclipse-ecf-core
+eclipse-ecf-runtime
+eclipse-egit
 eclipse-emf-core
 eclipse-emf-runtime
 eclipse-emf-sdk
 eclipse-equinox-osgi
 eclipse-filesystem
+eclipse-gef
 eclipse-jdt
+eclipse-jgit
+eclipse-launchbar
 eclipse-license
+eclipse-linuxtools-docker
+eclipse-mylyn
+eclipse-mylyn-docs-wikitext
 eclipse-pde
+eclipse-photran
+eclipse-photran-intel
+eclipse-photran-xlf
 eclipse-platform
+eclipse-ptp
+eclipse-remote
+eclipse-rse
+eclipse-subclipse
 eclipse-swt
+eclipse-swtbot
+eclipse-tm-terminal
+eclipse-tm-terminal-connectors
 eclipse-xsd
 eclipselink
 eclipselink-persistence-api
@@ -690,6 +713,8 @@ felix-osgi-foundation
 felix-osgi-obr
 felix-osgi-obr-resolver
 felix-parent
+felix-scr-annotations
+felix-scr-generator
 felix-shell
 felix-utils
 fftw
@@ -829,6 +854,7 @@ gl2ps
 gl2ps-devel
 glassfish-annotation-api
 glassfish-dtd-parser
+glassfish-ejb-api
 glassfish-el
 glassfish-el-api
 glassfish-fastinfoset
@@ -866,6 +892,7 @@ glassfish-jaxb-txw2
 glassfish-jaxb-txwc2
 glassfish-jaxb-xjc
 glassfish-jaxb1-impl
+glassfish-jaxrpc-api
 glassfish-jsp
 glassfish-jsp-api
 glassfish-legal
@@ -874,6 +901,7 @@ glassfish-master-pom
 glassfish-pfl
 glassfish-servlet-api
 glassfish-toplink-essentials
+glassfish-transaction-api
 glew-devel
 glib
 glib-devel
@@ -992,6 +1020,7 @@ groovy-testng
 groovy-xml
 groovy18
 groovy18-lib
+grub2
 grub2-efi
 grub2-tools
 grubby
@@ -1170,6 +1199,8 @@ iw
 jFormatString
 jack-audio-connection-kit
 jack-audio-connection-kit-devel
+jackcess
+jackcess-encrypt
 jackson
 jackson-annotations
 jackson-core
@@ -1178,6 +1209,7 @@ jackson-dataformat-cbor
 jackson-dataformat-smile
 jackson-dataformat-xml
 jackson-dataformat-yaml
+jackson-datatype-guava
 jackson-jaxrs-json-provider
 jackson-jaxrs-providers
 jackson-module-jaxb-annotations
@@ -1207,8 +1239,10 @@ java-1.8.0-openjdk-headless
 java-1.8.0-openjdk-javadoc
 java-base64
 java-comment-preprocessor
+java-libpst
 java-oauth
 java-service-wrapper
+java-udunits
 java_cup
 javacc
 javacc-maven-plugin
@@ -1292,8 +1326,10 @@ jdo-api
 jdom
 jdom-javadoc
 jdom2
+je
 jemalloc
 jemalloc-devel
+jempbox
 jeromq
 jersey
 jersey1
@@ -1388,6 +1424,7 @@ jhighlight
 jibx
 jline
 jline1
+jmatio
 jmh
 jmh-generator-annprocess
 jmock
@@ -1446,7 +1483,9 @@ jul-to-slf4j
 jul-to-slf4j-stub
 junit
 junit-addons
+juniversalchardet
 jvnet-parent
+jwnl
 jython
 jzlib
 kate4-part
@@ -1543,6 +1582,8 @@ libXfixes
 libXfixes-devel
 libXfont
 libXfont-devel
+libXfont2
+libXfont2-devel
 libXft
 libXft-devel
 libXi
@@ -2067,7 +2108,7 @@ libvdpau
 libvdpau-devel
 libverto
 libverto-devel
-libverto-tevent
+libverto-libev
 libvirt-devel
 libvirt-libs
 libvisual
@@ -2149,6 +2190,7 @@ log4j-slf4j
 log4j12
 logback
 logrotate
+lpg-java-compat
 lttng-ust
 lttng-ust-devel
 lua
@@ -2342,6 +2384,7 @@ mesa-libgbm-devel
 mesa-libglapi
 mesa-libwayland-egl
 mesa-libwayland-egl-devel
+metadata-extractor2
 metainf-services
 metrics
 metrics-healthchecks
@@ -2428,6 +2471,7 @@ net-snmp-libs
 net-tools
 netcdf
 netcdf-devel
+netcdf-java
 netcf-devel
 netcf-libs
 netpbm
@@ -2766,6 +2810,8 @@ openldap-devel
 openldap-servers
 openmpi
 openmpi-devel
+opennlp-maxent
+opennlp-tools
 opensc
 opensm-devel
 opensm-libs
@@ -2837,6 +2883,7 @@ pcsc-lite-ccid
 pcsc-lite-devel
 pcsc-lite-libs
 pdf-renderer
+pdfbox
 pegdown
 perl
 perl-Algorithm-C3
@@ -2918,6 +2965,7 @@ perl-Compress-Raw-Zlib
 perl-Config-Any
 perl-Config-General
 perl-Config-Tiny
+perl-Const-Fast
 perl-Context-Preserve
 perl-Convert-Bencode
 perl-Coro
@@ -3117,6 +3165,7 @@ perl-Image-Size
 perl-Image-Xbm
 perl-Image-Xpm
 perl-Import-Into
+perl-Importer
 perl-Inline
 perl-Inline-C
 perl-Inline-Files
@@ -3127,7 +3176,6 @@ perl-JSON-PP
 perl-JSON-XS
 perl-Jcode
 perl-LWP-MediaTypes
-perl-LWP-Protocol-https
 perl-Lexical-SealRequireHints
 perl-Lexical-Var
 perl-Lingua-EN-Inflect
@@ -3211,7 +3259,6 @@ perl-MooseX-Types-Path-Tiny
 perl-MooseX-Types-Stringlike
 perl-Mouse
 perl-MouseX-Types
-perl-Mozilla-CA
 perl-NKF
 perl-NTLM
 perl-Net-HTTP
@@ -3245,6 +3292,7 @@ perl-Params-Classify
 perl-Params-Coerce
 perl-Params-Util
 perl-Params-Validate
+perl-Params-ValidationCompiler
 perl-Parse-CPAN-Meta
 perl-Parse-RecDescent
 perl-Parse-Yapp
@@ -3320,6 +3368,7 @@ perl-Sub-Name
 perl-Sub-Uplevel
 perl-Switch
 perl-Symbol-Util
+perl-Sys-Syslog
 perl-TAP-Formatter-HTML
 perl-Taint-Runtime
 perl-Task-Weaken
@@ -3398,6 +3447,8 @@ perl-Test-Warn
 perl-Test-Warnings
 perl-Test-Without-Module
 perl-Test-YAML
+perl-Test2-Plugin-NoWarnings
+perl-Test2-Suite
 perl-TestML
 perl-Text-Aligner
 perl-Text-Autoformat
@@ -4389,6 +4440,7 @@ springframework-webmvc
 spymemcached
 sqlite
 sqlite-devel
+sqlite-jdbc
 sqlite-libs
 sqlite2
 sqlite2-devel
@@ -4408,10 +4460,12 @@ stunnel
 subunit
 subunit-devel
 subversion
+subversion-javahl
 subversion-libs
 suitesparse
 suitesparse-devel
 swig
+swt-chart
 symlinks
 system-python
 system-python-libs
@@ -4431,7 +4485,6 @@ t1utils
 taglib
 taglib-devel
 tagsoup
-talk
 tar
 tbb
 tbb-devel
@@ -4515,6 +4568,7 @@ texlive-babel
 texlive-babel-albanian
 texlive-babel-bahasa
 texlive-babel-basque
+texlive-babel-belarusian
 texlive-babel-bosnian
 texlive-babel-breton
 texlive-babel-bulgarian
@@ -4542,7 +4596,9 @@ texlive-babel-italian
 texlive-babel-kurmanji
 texlive-babel-latin
 texlive-babel-latvian
+texlive-babel-macedonian
 texlive-babel-norsk
+texlive-babel-occitan
 texlive-babel-piedmontese
 texlive-babel-polish
 texlive-babel-portuges
@@ -4561,7 +4617,7 @@ texlive-babel-spanish
 texlive-babel-swedish
 texlive-babel-thai
 texlive-babel-turkish
-texlive-babel-ukraineb
+texlive-babel-ukrainian
 texlive-babel-vietnamese
 texlive-babel-welsh
 texlive-babelbib
@@ -4642,6 +4698,7 @@ texlive-charter
 texlive-chemfig
 texlive-chemgreek
 texlive-chngcntr
+texlive-churchslavonic
 texlive-circuitikz
 texlive-cite
 texlive-cjhebrew
@@ -4767,6 +4824,8 @@ texlive-cyrplain
 texlive-datetime
 texlive-dcpic
 texlive-dehyph-exptl
+texlive-delim
+texlive-delimseasy
 texlive-detex
 texlive-detex-bin
 texlive-dhua
@@ -4781,6 +4840,7 @@ texlive-dosepsbin-bin
 texlive-dot2texi
 texlive-dottex
 texlive-dratex
+texlive-drawmatrix
 texlive-droit-fr
 texlive-drs
 texlive-drv
@@ -4808,12 +4868,15 @@ texlive-dvips-bin
 texlive-dvipsconfig
 texlive-dvisvgm
 texlive-dvisvgm-bin
+texlive-dvisvgm-def
 texlive-e-french
 texlive-ebproof
 texlive-ec
 texlive-ecclesiastic
+texlive-econometrics
 texlive-eepic
 texlive-einfuehrung-doc
+texlive-einfuehrung2-doc
 texlive-elocalloc
 texlive-emp
 texlive-enctex
@@ -4889,6 +4952,7 @@ texlive-fltpoint
 texlive-fmtcount
 texlive-fncychap
 texlive-font-change
+texlive-font-change-xetex
 texlive-fontbook
 texlive-fontch
 texlive-fontinst
@@ -4927,6 +4991,7 @@ texlive-gfnotation
 texlive-gfsbaskerville
 texlive-gfsporson
 texlive-gincltex
+texlive-gloss-occitan
 texlive-glyphlist
 texlive-gmp
 texlive-gnuplottex
@@ -4934,12 +4999,15 @@ texlive-gost
 texlive-gradientframe
 texlive-grafcet
 texlive-graphics
+texlive-graphics-cfg
+texlive-graphics-def
 texlive-graphics-pln
 texlive-graphviz
 texlive-greek-fontenc
 texlive-greek-inputenc
 texlive-greekdates
 texlive-greektex
+texlive-greektonoi
 texlive-grundgesetze
 texlive-gsftopk
 texlive-gsftopk-bin
@@ -4965,6 +5033,7 @@ texlive-hyphen-base
 texlive-hyphen-basque
 texlive-hyphen-bulgarian
 texlive-hyphen-catalan
+texlive-hyphen-churchslavonic
 texlive-hyphen-coptic
 texlive-hyphen-croatian
 texlive-hyphen-czech
@@ -4992,6 +5061,7 @@ texlive-hyphen-latvian
 texlive-hyphen-lithuanian
 texlive-hyphen-mongolian
 texlive-hyphen-norwegian
+texlive-hyphen-occitan
 texlive-hyphen-piedmontese
 texlive-hyphen-polish
 texlive-hyphen-portuguese
@@ -5065,6 +5135,7 @@ texlive-lapdf
 texlive-lastpage
 texlive-latex
 texlive-latex-bib-ex-doc
+texlive-latex-bib2-ex-doc
 texlive-latex-bin
 texlive-latex-bin-bin
 texlive-latex-brochure-doc
@@ -5078,6 +5149,7 @@ texlive-latex-tabellen-doc
 texlive-latex-veryshortguide-doc
 texlive-latex-web-companion-doc
 texlive-latex2e-help-texinfo
+texlive-latex2e-help-texinfo-fr-doc
 texlive-latex2e-help-texinfo-spanish
 texlive-latex4wp-doc
 texlive-latex4wp-it-doc
@@ -5111,10 +5183,12 @@ texlive-logreq
 texlive-lpform
 texlive-lpic
 texlive-lplfitch
+texlive-lroundrect
 texlive-lshort-bulgarian-doc
 texlive-lshort-czech-doc
 texlive-lshort-dutch-doc
 texlive-lshort-english-doc
+texlive-lshort-estonian-doc
 texlive-lshort-finnish-doc
 texlive-lshort-french-doc
 texlive-lshort-german-doc
@@ -5155,6 +5229,7 @@ texlive-marginnote
 texlive-marvosym
 texlive-math-e-doc
 texlive-mathcomp
+texlive-mathpartir
 texlive-mathpazo
 texlive-maths-symbols-doc
 texlive-mathspec
@@ -5207,6 +5282,7 @@ texlive-montex
 texlive-moreverb
 texlive-mp3d
 texlive-mparhack
+texlive-mparrows
 texlive-mpattern
 texlive-mpcolornames
 texlive-mpgraphics
@@ -5272,12 +5348,14 @@ texlive-petri-nets
 texlive-pgf
 texlive-pgf-blur
 texlive-pgf-soroban
+texlive-pgf-spectra
 texlive-pgf-umlcd
 texlive-pgf-umlsd
 texlive-pgfgantt
 texlive-pgfkeyx
 texlive-pgfmolbio
 texlive-pgfopts
+texlive-pgfornament
 texlive-pgfplots
 texlive-philokalia
 texlive-picinpar
@@ -5308,6 +5386,7 @@ texlive-presentations-en-doc
 texlive-prftree
 texlive-proba
 texlive-productbox
+texlive-prooftrees
 texlive-przechlewski-book
 texlive-ps2pk
 texlive-ps2pk-bin
@@ -5329,6 +5408,7 @@ texlive-pst-bezier
 texlive-pst-blur
 texlive-pst-bspline
 texlive-pst-calendar
+texlive-pst-cie
 texlive-pst-circ
 texlive-pst-coil
 texlive-pst-cox
@@ -5433,6 +5513,7 @@ texlive-rotating
 texlive-roundrect
 texlive-rsfs
 texlive-ruhyphen
+texlive-russ
 texlive-rviewport
 texlive-sa-tikz
 texlive-sansmath
@@ -5457,6 +5538,7 @@ texlive-setspace
 texlive-shapes
 texlive-showexpl
 texlive-shuffle
+texlive-signchart
 texlive-simplified-latex-doc
 texlive-siunitx
 texlive-skaknew
@@ -5507,6 +5589,7 @@ texlive-tex-ewd
 texlive-tex-font-errors-cheatsheet-doc
 texlive-tex-gyre
 texlive-tex-gyre-math
+texlive-tex-ini-files
 texlive-tex-overview-doc
 texlive-tex-ps
 texlive-tex-refs-doc
@@ -5521,7 +5604,9 @@ texlive-texinfo
 texlive-texlive-common-doc
 texlive-texlive-cz-doc
 texlive-texlive-de-doc
+texlive-texlive-docindex
 texlive-texlive-en
+texlive-texlive-es-doc
 texlive-texlive-fr-doc
 texlive-texlive-it-doc
 texlive-texlive-msg-translations
@@ -5548,6 +5633,7 @@ texlive-tikz-bayesnet
 texlive-tikz-cd
 texlive-tikz-dependency
 texlive-tikz-dimline
+texlive-tikz-feynman
 texlive-tikz-inet
 texlive-tikz-opm
 texlive-tikz-palattice
@@ -5611,13 +5697,16 @@ texlive-ucharclasses
 texlive-ucs
 texlive-udesoftec
 texlive-uhc
+texlive-uhrzeit
 texlive-ukrhyph
 texlive-ulem
 texlive-uml
 texlive-umlaute
 texlive-underscore
+texlive-unicode-data
 texlive-unicode-math
 texlive-unisugar
+texlive-updmap-map
 texlive-upquote
 texlive-url
 texlive-utf8mex
@@ -5630,6 +5719,7 @@ texlive-venn
 texlive-venndiagram
 texlive-verbatimcopy
 texlive-visualfaq-doc
+texlive-visualtikz-doc
 texlive-vlna
 texlive-vlna-bin
 texlive-vntex
@@ -5690,7 +5780,12 @@ texlive-zapfchan
 texlive-zapfding
 texlive-zwpagelayout
 texlive-zxjafont
+thredds-grib
+thredds-httpservices
+thredds-netcdf
 tiger-types
+tika
+tika-parsers
 tiles
 time
 tix
@@ -5706,8 +5801,6 @@ tomcat-lib
 tomcat-servlet-3.1-api
 tomcat-taglibs-parent
 tomcat-taglibs-standard
-torque
-torque-client
 torque-devel
 torque-libs
 transfig
@@ -5759,7 +5852,6 @@ ustr-devel
 uthash-devel
 util-linux
 util-linux-user
-uucp
 uuid
 uuid-devel
 uw-imap-devel
@@ -5775,6 +5867,8 @@ virglrenderer
 virglrenderer-devel
 volume_key-devel
 volume_key-libs
+vorbis-java
+vorbis-java-tika
 vsftpd
 vte-profile
 vte3
@@ -5885,6 +5979,7 @@ xmlrpc-c-client++
 xmlrpc-c-devel
 xmlrpc-client
 xmlrpc-common
+xmlrpc-server
 xmlstarlet
 xmlstreambuffer
 xmlto

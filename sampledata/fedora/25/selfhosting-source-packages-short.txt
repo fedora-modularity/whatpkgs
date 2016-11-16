@@ -153,6 +153,7 @@ binutils
 bison
 bitstream-vera-fonts
 bluez
+boilerpipe
 boost
 botan
 bouncycastle
@@ -276,6 +277,7 @@ docbook-style-xsl
 docbook-utils
 docbook5-schemas
 docbook5-style-xsl
+docker-client
 dom4j
 dos2unix
 dosfstools
@@ -290,11 +292,24 @@ easymock
 ebtables
 ecj
 eclipse
+eclipse-cdt
 eclipse-ecf
+eclipse-egit
 eclipse-emf
 eclipse-filesystem
+eclipse-gef
 eclipse-jgit
+eclipse-launchbar
 eclipse-license
+eclipse-linuxtools
+eclipse-mylyn
+eclipse-photran
+eclipse-ptp
+eclipse-remote
+eclipse-rse
+eclipse-subclipse
+eclipse-swtbot
+eclipse-tm-terminal
 eclipse-xsd
 eclipselink
 eclipselink-persistence-api
@@ -360,6 +375,8 @@ felix-osgi-foundation
 felix-osgi-obr
 felix-osgi-obr-resolver
 felix-parent
+felix-scr-annotations
+felix-scr-generator
 felix-shell
 felix-utils
 fftw
@@ -437,14 +454,15 @@ gl-manpages
 gl2ps
 glassfish-annotation-api
 glassfish-dtd-parser
+glassfish-ejb-api
 glassfish-el
-glassfish-el-api
 glassfish-fastinfoset
 glassfish-gmbal
 glassfish-hk2
 glassfish-jax-rs-api
 glassfish-jaxb
 glassfish-jaxb-api
+glassfish-jaxrpc-api
 glassfish-jsp
 glassfish-jsp-api
 glassfish-legal
@@ -453,6 +471,7 @@ glassfish-master-pom
 glassfish-pfl
 glassfish-servlet-api
 glassfish-toplink-essentials
+glassfish-transaction-api
 glew
 glib
 glib-networking
@@ -601,6 +620,8 @@ itstool
 iw
 jFormatString
 jack-audio-connection-kit
+jackcess
+jackcess-encrypt
 jackson
 jackson-annotations
 jackson-core
@@ -609,6 +630,7 @@ jackson-dataformat-cbor
 jackson-dataformat-smile
 jackson-dataformat-xml
 jackson-dataformat-yaml
+jackson-datatypes-collections
 jackson-jaxrs-providers
 jackson-module-jaxb-annotations
 jackson-parent
@@ -631,6 +653,7 @@ jatl
 java-1.8.0-openjdk
 java-base64
 java-comment-preprocessor
+java-libpst
 java-oauth
 java-service-wrapper
 java_cup
@@ -711,6 +734,7 @@ jdependency
 jdo-api
 jdom
 jdom2
+je
 jemalloc
 jeromq
 jersey
@@ -738,6 +762,7 @@ jhighlight
 jibx
 jline
 jline1
+jmatio
 jmh
 jmock
 jna
@@ -777,7 +802,9 @@ jts
 jul-to-slf4j-stub
 junit
 junit-addons
+juniversalchardet
 jvnet-parent
+jwnl
 jython
 jzlib
 kate4
@@ -828,6 +855,7 @@ libXevie
 libXext
 libXfixes
 libXfont
+libXfont2
 libXft
 libXi
 libXinerama
@@ -1074,6 +1102,7 @@ log4j-jboss-logmanager
 log4j12
 logback
 logrotate
+lpg
 lttng-ust
 lua
 lua-lunit
@@ -1178,6 +1207,7 @@ mercurial
 mesa
 mesa-demos
 mesa-libGLU
+metadata-extractor2
 metainf-services
 metrics
 mftrace
@@ -1518,6 +1548,7 @@ openjpeg
 openjpeg2
 openldap
 openmpi
+opennlp
 opensc
 opensm
 opensp
@@ -1626,6 +1657,7 @@ perl-Compress-Raw-Zlib
 perl-Config-Any
 perl-Config-General
 perl-Config-Tiny
+perl-Const-Fast
 perl-Context-Preserve
 perl-Convert-Bencode
 perl-Coro
@@ -1816,6 +1848,7 @@ perl-Image-Size
 perl-Image-Xbm
 perl-Image-Xpm
 perl-Import-Into
+perl-Importer
 perl-Inline
 perl-Inline-C
 perl-Inline-Files
@@ -1826,7 +1859,6 @@ perl-JSON-PP
 perl-JSON-XS
 perl-Jcode
 perl-LWP-MediaTypes
-perl-LWP-Protocol-https
 perl-Lexical-SealRequireHints
 perl-Lexical-Var
 perl-Lingua-EN-Inflect
@@ -1903,7 +1935,6 @@ perl-MooseX-Types-Path-Tiny
 perl-MooseX-Types-Stringlike
 perl-Mouse
 perl-MouseX-Types
-perl-Mozilla-CA
 perl-NTLM
 perl-Net-HTTP
 perl-Net-IDN-Encode
@@ -1935,6 +1966,7 @@ perl-Params-Classify
 perl-Params-Coerce
 perl-Params-Util
 perl-Params-Validate
+perl-Params-ValidationCompiler
 perl-Parse-CPAN-Meta
 perl-Parse-RecDescent
 perl-Parse-Yapp
@@ -2008,6 +2040,7 @@ perl-Sub-Name
 perl-Sub-Uplevel
 perl-Switch
 perl-Symbol-Util
+perl-Sys-Syslog
 perl-TAP-Formatter-HTML
 perl-Taint-Runtime
 perl-Task-Weaken
@@ -2084,6 +2117,8 @@ perl-Test-Warn
 perl-Test-Warnings
 perl-Test-Without-Module
 perl-Test-YAML
+perl-Test2-Plugin-NoWarnings
+perl-Test2-Suite
 perl-TestML
 perl-Text-Aligner
 perl-Text-Autoformat
@@ -2694,6 +2729,7 @@ spice-parent
 springframework
 spymemcached
 sqlite
+sqlite-jdbc
 sqlite2
 sshj
 sslext
@@ -2714,6 +2750,7 @@ subunit
 subversion
 suitesparse
 swig
+swt-chart
 symlinks
 sysfsutils
 systemd
@@ -2722,7 +2759,6 @@ t1lib
 t1utils
 taglib
 tagsoup
-talk
 tar
 tbb
 tcl
@@ -2738,8 +2774,10 @@ testng
 texi2html
 texinfo
 texlive
+thredds
 tidy
 tiger-types
+tika
 tiles
 time
 tix
@@ -2785,7 +2823,6 @@ userspace-rcu
 ustr
 uthash
 util-linux
-uucp
 uuid
 uw-imap
 v4l-utils
@@ -2796,6 +2833,7 @@ velocity-tools
 vim
 virglrenderer
 volume_key
+vorbis-java
 vsftpd
 vte291
 vte3

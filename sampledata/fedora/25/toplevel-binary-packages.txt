@@ -9,7 +9,6 @@ coreutils
 cpio
 cronie
 ctags
-cups-client
 diffutils
 ed
 fedora-release
@@ -29,7 +28,6 @@ gzip
 info
 kernel-core
 m4
-mailx
 make
 man-db
 ncompress
@@ -43,14 +41,10 @@ rpm-build
 sed
 shadow-utils
 sharutils
-spax
-talk
 tar
 time
-torque-client
 unzip
 util-linux
-uucp
 vim-minimal
 which
 xz

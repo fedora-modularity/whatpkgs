@@ -36,6 +36,7 @@ EXPLICIT_SR="
     coreutils
     findutils
     shadow-utils
+    systemd
 "
 
 FILTER_SR=""
@@ -67,12 +68,12 @@ echo "Generate the SRPM list for base runtime (\"lights-on\")"
                       ${EXPLICIT_SHARED} \
 | xargs \
 ./whatpkgs.py getsourcerpm --full-name \
-| sort | tee sampledata/fedora/25beta/base-runtime-module-source-packages-prelim.txt
+| sort | tee sampledata/fedora/25/base-runtime-module-source-packages-prelim.txt
 
 
 echo
 echo "Generate the SRPM list for system runtime (POSIX)"
-cat sampledata/toplevel-binary-packages.txt|xargs \
+cat sampledata/fedora/25/toplevel-binary-packages.txt|xargs \
 ./whatpkgs.py neededby --merge --no-recommends \
                        --hint=glibc-minimal-langpack \
                        --hint=fedora-release \
@@ -84,45 +85,45 @@ cat sampledata/toplevel-binary-packages.txt|xargs \
                        ${EXPLICIT_SHARED} \
 | xargs \
 ./whatpkgs.py getsourcerpm --full-name \
-| sort | tee sampledata/fedora/25beta/system-runtime-module-source-packages-prelim.txt
+| sort | tee sampledata/fedora/25/system-runtime-module-source-packages-prelim.txt
 
 
 echo
 echo "Items that appear only in the base runtime belong to that module"
 comm -2 -3 \
-     sampledata/fedora/25beta/base-runtime-module-source-packages-prelim.txt \
-     sampledata/fedora/25beta/system-runtime-module-source-packages-prelim.txt \
-| sort | tee sampledata/fedora/25beta/base-runtime-module-definition-full.txt
+     sampledata/fedora/25/base-runtime-module-source-packages-prelim.txt \
+     sampledata/fedora/25/system-runtime-module-source-packages-prelim.txt \
+| sort | tee sampledata/fedora/25/base-runtime-module-definition-full.txt
 
 echo
 echo "Items that appear only in the system runtime belong to that module"
 comm -1 -3 \
-     sampledata/fedora/25beta/base-runtime-module-source-packages-prelim.txt \
-     sampledata/fedora/25beta/system-runtime-module-source-packages-prelim.txt \
-| sort | tee sampledata/fedora/25beta/system-runtime-module-definition-full.txt
+     sampledata/fedora/25/base-runtime-module-source-packages-prelim.txt \
+     sampledata/fedora/25/system-runtime-module-source-packages-prelim.txt \
+| sort | tee sampledata/fedora/25/system-runtime-module-definition-full.txt
 
 
 echo
 echo "Items common to both belong in the shared components module"
 comm -1 -2 \
-     sampledata/fedora/25beta/base-runtime-module-source-packages-prelim.txt \
-     sampledata/fedora/25beta/system-runtime-module-source-packages-prelim.txt \
-| sort | tee sampledata/fedora/25beta/shared-components-module-definition-full.txt
+     sampledata/fedora/25/base-runtime-module-source-packages-prelim.txt \
+     sampledata/fedora/25/system-runtime-module-source-packages-prelim.txt \
+| sort | tee sampledata/fedora/25/shared-components-module-definition-full.txt
 
 
 echo  "All remaining packages in the self-hosting list belong in gen-core-build"
-cat sampledata/fedora/25beta/selfhosting-source-packages-full.txt \
-| sort| tee sampledata/fedora/25beta/gen-core-build-module-definition-prelim.txt
+cat sampledata/fedora/25/selfhosting-source-packages-full.txt \
+| sort| tee sampledata/fedora/25/gen-core-build-module-definition-prelim.txt
 
-cat sampledata/fedora/25beta/base-runtime-module-definition-full.txt \
-    sampledata/fedora/25beta/system-runtime-module-definition-full.txt \
-    sampledata/fedora/25beta/shared-components-module-definition-full.txt \
-| sort | comm -2 -3 sampledata/fedora/25beta/gen-core-build-module-definition-prelim.txt - \
-| sort | tee sampledata/fedora/25beta/gen-core-build-module-definition-full.txt
+cat sampledata/fedora/25/base-runtime-module-definition-full.txt \
+    sampledata/fedora/25/system-runtime-module-definition-full.txt \
+    sampledata/fedora/25/shared-components-module-definition-full.txt \
+| sort | comm -2 -3 sampledata/fedora/25/gen-core-build-module-definition-prelim.txt - \
+| sort | tee sampledata/fedora/25/gen-core-build-module-definition-full.txt
 
 
 echo "Removing intermediate files"
-rm -f sampledata/fedora/25beta/base-runtime-module-source-packages-prelim.txt \
-      sampledata/fedora/25beta/system-runtime-module-source-packages-prelim.txt \
-      sampledata/fedora/25beta/gen-core-build-module-definition-prelim.txt
+rm -f sampledata/fedora/25/base-runtime-module-source-packages-prelim.txt \
+      sampledata/fedora/25/system-runtime-module-source-packages-prelim.txt \
+      sampledata/fedora/25/gen-core-build-module-definition-prelim.txt
 
