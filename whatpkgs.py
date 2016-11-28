@@ -6,12 +6,17 @@ information from yum/dnf repodata.
 """
 
 import os
+import platform
 import sys
 import pprint
 import dnf
 import click
 from colorama import Fore, Back, Style
 
+multi_arch = None
+primary_arch = platform.machine()
+if primary_arch == "x86_64":
+    multi_arch = "i686"
 
 def splitFilename(filename):
     """
@@ -107,11 +112,12 @@ def setup_repo(use_system, use_rhel):
         # Load the static data for RHEL
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
-            "sampledata/repodata/RHEL-7/7.3-Beta/Server/x86_64/os/")
+            "sampledata/repodata/RHEL-7/7.3-Beta/Server/%s/os/" % primary_arch)
         _setup_static_repo(base, "static-rhel7.3beta-binary", repo_path)
 
         repo_path = os.path.join(dir_path,
-            "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/x86_64/os/")
+            "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/%s/os/" %
+                                 primary_arch)
         _setup_static_repo(base, "static-rhel7.3beta-optional-binary", repo_path)
 
         repo_path = os.path.join(dir_path,
@@ -126,7 +132,8 @@ def setup_repo(use_system, use_rhel):
         # Load the static data for Fedora
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
-           "sampledata/repodata/fedora/linux/development/25/Everything/x86_64/os/")
+           "sampledata/repodata/fedora/linux/development/25/Everything/%s/os"
+           "/" % primary_arch)
         _setup_static_repo(base, "static-f25-beta-binary", repo_path)
 
         repo_path = os.path.join(dir_path,
@@ -150,20 +157,33 @@ def get_query_object(use_system, use_rhel):
 
 def get_pkg_by_name(q, pkgname):
     """
-    Try to find the package name as x86_64 and then noarch.
+    Try to find the package name as primary_arch, multi_arch and then noarch.
     This function will return exactly one result. If it finds zero or multiple
     packages that match the name, it will throw an error.
     """
-    matched = q.filter(name=pkgname, latest=True, arch='x86_64')
+    matched = q.filter(name=pkgname, latest=True, arch=primary_arch)
     if len(matched) > 1:
         raise TooManyPackagesException(pkgname)
 
     if len(matched) == 1:
-        # Exactly one package matched
+        # Exactly one package matched. We'll prioritize the archful package if
+        # the same package would satisfy a multi-arch version as well.
         # Technically it's possible for there to also be a noarch package
         # with the same name, which is an edge case I'm not optimizing for
         # yet.
         return matched[0]
+
+    if multi_arch:
+        matched = q.filter(name=pkgname, latest=True, arch=multi_arch)
+        if len(matched) > 1:
+            raise TooManyPackagesException(pkgname)
+
+        if len(matched) == 1:
+            # Exactly one package matched
+            # Technically it's possible for there to also be a noarch package
+            # with the same name, which is an edge case I'm not optimizing for
+            # yet.
+            return matched[0]
 
     matched = q.filter(name=pkgname, latest=True, arch='noarch')
     if len(matched) > 1:
@@ -219,7 +239,12 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
 
     for require in reqs:
         required_packages = query.filter(provides=require, latest=True,
-                                         arch='x86_64')
+                                         arch=primary_arch)
+
+        # Check for multi-arch packages satisfying it
+        if len(required_packages) == 0 and multi_arch:
+            required_packages = query.filter(provides=require, latest=True,
+                                             arch=multi_arch)
 
         # Check for noarch packages satisfying it
         if len(required_packages) == 0:
@@ -260,7 +285,8 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
                     # The user instructed processing to just take the first
                     # entry in the list.
                     for rpkg in required_packages:
-                        if rpkg.arch == 'noarch' or rpkg.arch == 'x86_64':
+                        if rpkg.arch == 'noarch' or rpkg.arch == \
+                                primary_arch or rpkg.arch == multi_arch:
                             append_requirement(requirements, rpkg, filters)
                             break
                     continue
@@ -653,7 +679,12 @@ def debugprovides(requires, system, rhel):
     query = get_query_object(system, rhel)
 
     required_packages = query.filter(provides=requires, latest=True,
-                                     arch='x86_64')
+                                     arch=primary_arch)
+
+    if len(required_packages) == 0 and multi_arch:
+        required_packages = query.filter(provides=requires, latest=True,
+                                            arch=multi_arch)
+
     if len(required_packages) == 0:
         required_packages = query.filter(provides=requires, latest=True,
                                             arch='noarch')
