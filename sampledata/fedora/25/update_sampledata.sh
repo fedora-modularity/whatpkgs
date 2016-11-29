@@ -14,6 +14,7 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt|xargs \
                        --hint=libcrypt-nss \
                        --hint=cronie-noanacron \
                        --hint=coreutils \
+                       --hint=python-libs \
 | tee sampledata/fedora/25/runtime-binary-dependency-packages-short.txt
 
 
@@ -24,6 +25,7 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt|xargs \
                        --hint=libcrypt-nss \
                        --hint=cronie-noanacron \
                        --hint=coreutils \
+                       --hint=python-libs \
 | tee sampledata/fedora/25/runtime-binary-dependency-packages-full.txt
 
 
