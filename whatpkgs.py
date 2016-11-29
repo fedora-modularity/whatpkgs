@@ -155,12 +155,24 @@ def get_query_object(use_system, use_rhel):
     return base.sack.query()
 
 
-def get_pkg_by_name(q, pkgname):
+def get_pkg_by_name(q, pkgname, arch=None):
     """
     Try to find the package name as primary_arch, multi_arch and then noarch.
     This function will return exactly one result. If it finds zero or multiple
     packages that match the name, it will throw an error.
     """
+
+    # If we were requested to search for a specific architecture
+    if arch:
+        matched = q.filter(name=pkgname, latest=True, arch=arch)
+        if len(matched) > 1:
+            raise TooManyPackagesException(pkgname)
+        if len(matched) == 1:
+            # Exactly one package matched.
+            return matched[0]
+        raise NoSuchPackageException(pkgname)
+
+    # Otherwise, check the primary arch, multi-arch and noarch packages
     matched = q.filter(name=pkgname, latest=True, arch=primary_arch)
     if len(matched) > 1:
         raise TooManyPackagesException(pkgname)
@@ -294,7 +306,7 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
                 # should be added to the ambiguities list
                 unresolved = {}
                 for rpkg in required_packages:
-                    unresolved[rpkg.name] = rpkg
+                    unresolved["%s#%s" % (rpkg.name, rpkg.arch)] = rpkg
                 ambiguities.append(unresolved)
 
             continue
@@ -311,10 +323,11 @@ def recurse_package_deps(pkg, dependencies, ambiguities,
     """
     Recursively search through dependencies and add them to the list
     """
-    if pkg.name in dependencies:
+    depname = "%s#%s" % (pkg.name, pkg.arch)
+    if depname in dependencies:
         # Don't recurse the same dependency twice
         return
-    dependencies[pkg.name] = pkg
+    dependencies[depname] = pkg
 
     # Process Requires:
     deps = get_requirements(pkg, pkg.requires, dependencies,
@@ -347,11 +360,13 @@ def recurse_self_host(binary_pkg, binaries, sources,
     """
     Recursively determine all build dependencies for this package
     """
-    if binary_pkg.name in binaries:
+
+    depname = "%s#%s" % (binary_pkg.name, binary_pkg.arch)
+    if depname in binaries:
         # Don't process the same binary RPM twice
         return
 
-    binaries[binary_pkg.name] = binary_pkg
+    binaries[depname] = binary_pkg
 
     # Process strict Requires:
     deps = get_requirements(binary_pkg, binary_pkg.requires, binaries,
@@ -403,7 +418,10 @@ def print_package_name(pkgname, dependencies, full):
                                   printpkg.release,
                                   printpkg.arch))
     else:
-        print(printpkg.name)
+        if printpkg.arch == multi_arch:
+            print("%s#%s" % (printpkg.name, printpkg.arch))
+        else:
+            print("%s" % printpkg.name)
 
 
 def resolve_ambiguity(dependencies, ambiguity):
@@ -415,6 +433,16 @@ def resolve_ambiguity(dependencies, ambiguity):
         if key in dependencies:
             return True
     return False
+
+
+def _split_pkgname(name):
+    splitname = name.rsplit("#", 2)
+    pkgname = splitname[0]
+    arch = None
+    if len(splitname) > 1:
+        arch = splitname[1]
+
+    return (pkgname, arch)
 
 
 @click.group()
@@ -471,12 +499,14 @@ def neededby(pkgnames, hint, filter, recommends, merge, full_name, pick_first,
 
     dependencies = {}
     ambiguities = []
-    for pkgname in pkgnames:
+    for fullpkgname in pkgnames:
+        (pkgname, arch) = _split_pkgname(fullpkgname)
+
         if pkgname in filter:
             # Skip this if we explicitly filtered it out
             continue
 
-        pkg = get_pkg_by_name(query, pkgname)
+        pkg = get_pkg_by_name(query, pkgname, arch)
 
         if not merge:
             # empty the dependencies list and start over
@@ -545,7 +575,9 @@ def getsourcerpm(pkgnames, full_name, system, rhel):
     query = get_query_object(system, rhel)
 
     srpm_names = {}
-    for pkgname in pkgnames:
+    for fullpkgname in pkgnames:
+        (pkgname, arch) = _split_pkgname(fullpkgname)
+
         pkg = get_srpm_for_package_name(query, pkgname)
 
         srpm_names[pkg.name] = pkg
@@ -600,8 +632,10 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
     binary_pkgs = {}
     source_pkgs = {}
     ambiguities = []
-    for pkgname in pkgnames:
-        pkg = get_pkg_by_name(query, pkgname)
+    for fullpkgname in pkgnames:
+        (pkgname, arch) = _split_pkgname(fullpkgname)
+
+        pkg = get_pkg_by_name(query, pkgname, arch)
 
         if not merge:
             binary_pkgs = {}

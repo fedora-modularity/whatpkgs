@@ -910,9 +910,11 @@ glib2
 glib2-devel
 glib2-doc
 glib2-static
+glibc#i686
 glibc
 glibc-all-langpacks
 glibc-common
+glibc-devel#i686
 glibc-devel
 glibc-headers
 glibc-langpack-de
@@ -1704,6 +1706,7 @@ libconfuse
 libconfuse-devel
 libcroco
 libcroco-devel
+libcrypt-nss#i686
 libcrypt-nss
 libcurl
 libcurl-devel
@@ -1773,6 +1776,7 @@ libftdi
 libftdi-devel
 libgcab1
 libgcab1-devel
+libgcc#i686
 libgcc
 libgcrypt
 libgcrypt-devel
@@ -2752,6 +2756,7 @@ nss-pem
 nss-pkcs11-devel
 nss-softokn
 nss-softokn-devel
+nss-softokn-freebl#i686
 nss-softokn-freebl
 nss-softokn-freebl-devel
 nss-sysinit

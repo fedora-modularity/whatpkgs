@@ -68,6 +68,7 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt | xargs \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=sendmail \
+                               glibc#i686 \
 | tee sampledata/fedora/25/selfhosting-binary-packages-full.txt
 
 
@@ -100,6 +101,7 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt | xargs \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=sendmail \
+                               glibc#i686 \
 | tee sampledata/fedora/25/selfhosting-binary-packages-short.txt
 
 cat sampledata/fedora/25/selfhosting-binary-packages-short.txt | xargs \
