@@ -84,6 +84,7 @@ def _setup_static_repo(base, reponame, path):
     base.repos.add(repo)
     repo.load()
     repo.enable()
+    repo._md_expire_cache()
 
 
 def setup_repo(use_system, use_rhel):
