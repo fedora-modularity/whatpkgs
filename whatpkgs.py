@@ -140,6 +140,17 @@ def setup_repo(use_system, use_rhel):
            "sampledata/repodata/fedora/linux/development/25/Everything/source/tree/")
         _setup_static_repo(base, "static-f25-beta-source", repo_path)
 
+        # Add override repositories for modularity
+        repo_path = os.path.join(dir_path,
+           "sampledata/repodata/fedora/linux/development/25/gencore-override"
+           "/%s/os" % primary_arch)
+        _setup_static_repo(base, "static-gencore-override-binary", repo_path)
+
+        repo_path = os.path.join(dir_path,
+           "sampledata/repodata/fedora/linux/development/25/gencore-override"
+           "/source/tree/")
+        _setup_static_repo(base, "static-gencore-override-source", repo_path)
+
     base.fill_sack(load_system_repo=False, load_available_repos=True)
     return base
 
