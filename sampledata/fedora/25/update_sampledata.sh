@@ -39,7 +39,8 @@ cat sampledata/fedora/25/runtime-binary-dependency-packages-short.txt| xargs \
 | tee sampledata/fedora/25/runtime-source-packages-full.txt
 
 
-cat sampledata/fedora/25/toplevel-binary-packages.txt | xargs \
+cat sampledata/fedora/25/toplevel-binary-packages.txt \
+    sampledata/fedora/25/selfhosting-overrides.txt | xargs \
 ./whatpkgs.py neededtoselfhost --merge --no-recommends --full-name \
                                --no-sources \
                                --hint=coreutils \
@@ -68,11 +69,11 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt | xargs \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=sendmail \
-                               glibc#i686 \
 | tee sampledata/fedora/25/selfhosting-binary-packages-full.txt
 
 
-cat sampledata/fedora/25/toplevel-binary-packages.txt | xargs \
+cat sampledata/fedora/25/toplevel-binary-packages.txt \
+    sampledata/fedora/25/selfhosting-overrides.txt | xargs \
 ./whatpkgs.py neededtoselfhost --merge --no-recommends \
                                --no-sources \
                                --hint=coreutils \
@@ -101,7 +102,6 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt | xargs \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=sendmail \
-                               glibc#i686 \
 | tee sampledata/fedora/25/selfhosting-binary-packages-short.txt
 
 cat sampledata/fedora/25/selfhosting-binary-packages-short.txt | xargs \
