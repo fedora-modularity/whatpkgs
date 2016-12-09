@@ -225,6 +225,7 @@
 0:dosfstools-4.0-1.fc25.src
 0:dotconf-1.3-12.fc24.src
 0:dtc-1.4.2-1.fc25.src
+0:dwz-0.12-2.fc24.src
 0:dyninst-9.2.0-4.fc25.src
 0:easymock-3.4-2.fc25.src
 0:ebtables-2.0.10-21.fc25.src
@@ -2662,6 +2663,7 @@
 0:xpp3-1.1.4-11.c.fc25.src
 0:xsom-0-15.20110809svn.fc24.src
 0:xstream-1.4.9-3.fc25.src
+0:xz-5.2.2-2.fc24.src
 0:xz-java-1.5-5.fc24.src
 0:yajl-2.1.0-5.fc24.src
 0:yasm-1.3.0-3.fc24.src

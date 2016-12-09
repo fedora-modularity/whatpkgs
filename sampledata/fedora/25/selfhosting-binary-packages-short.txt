@@ -2767,7 +2767,9 @@ nss-util-devel
 nss_wrapper
 ntfs-3g
 ntfsprogs
+numactl-devel
 numactl-libs
+numad
 objectweb-asm
 objectweb-asm3
 objectweb-pom
@@ -5147,6 +5149,7 @@ texlive-ifxetex
 texlive-impatient-doc
 texlive-impatient-fr-doc
 texlive-impnattypo
+texlive-import
 texlive-inconsolata
 texlive-index
 texlive-interchar
@@ -6009,6 +6012,7 @@ xemacs-packages-base
 xemacs-packages-base-el
 xemacs-packages-extra
 xemacs-packages-extra-el
+xen-devel
 xen-libs
 xen-licenses
 xerces-c

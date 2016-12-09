@@ -262,7 +262,7 @@
 0:boost-wave-1.60.0-9.fc25.x86_64
 0:botan-1.10.13-4.fc25.x86_64
 0:botan-devel-1.10.13-4.fc25.x86_64
-0:bouncycastle-1.54-1.fc25.noarch
+0:bouncycastle-1.54-2.fc25.noarch
 0:bouncycastle-mail-1.54-1.fc25.noarch
 0:bouncycastle-pg-1.54-1.fc25.noarch
 0:bouncycastle-pkix-1.54-1.fc25.noarch
@@ -2341,7 +2341,7 @@
 0:nodejs-ansi-font-0.0.2-2.fc24.noarch
 0:nodejs-ansi-regex-2.0.0-3.fc24.noarch
 0:nodejs-ansi-styles-2.1.0-2.fc24.noarch
-0:nodejs-argparse-1.0.7-1.fc25.noarch
+0:nodejs-argparse-1.0.7-2.fc25.noarch
 0:nodejs-array-differ-1.0.0-2.fc24.noarch
 0:nodejs-array-union-1.0.1-2.fc24.noarch
 0:nodejs-array-uniq-1.0.2-2.fc24.noarch
@@ -2362,7 +2362,7 @@
 0:nodejs-caller-path-2.0.0-2.fc25.noarch
 0:nodejs-callsite-1.0.0-8.fc24.noarch
 0:nodejs-callsites-2.0.0-1.fc25.noarch
-0:nodejs-chai-3.5.0-3.fc25.noarch
+0:nodejs-chai-3.5.0-4.fc25.noarch
 0:nodejs-chalk-1.1.3-1.fc25.noarch
 0:nodejs-character-parser-1.2.0-4.fc24.noarch
 0:nodejs-charm-0.1.2-8.fc24.noarch
@@ -2405,7 +2405,7 @@
 0:nodejs-es6-weak-map-2.0.1-3.fc24.noarch
 0:nodejs-es-abstract-1.5.1-1.fc25.noarch
 0:nodejs-escape-string-regexp-1.0.5-1.fc24.noarch
-0:nodejs-escodegen-1.3.2-9.fc24.noarch
+0:nodejs-escodegen-1.3.2-10.fc25.noarch
 0:nodejs-esprima-2.7.2-1.fc24.noarch
 0:nodejs-es-to-primitive-1.1.1-2.fc24.noarch
 0:nodejs-estraverse-4.2.0-1.fc25.noarch
@@ -2414,7 +2414,7 @@
 0:nodejs-eventemitter2-0.4.13-4.fc24.noarch
 0:nodejs-events-to-array-1.0.2-3.fc24.noarch
 0:nodejs-exit-0.1.2-4.fc24.noarch
-0:nodejs-expect-dot-js-0.2.0-9.fc24.noarch
+0:nodejs-expect-dot-js-0.2.0-10.fc25.noarch
 0:nodejs-faye-websocket-0.7.2-5.fc24.noarch
 0:nodejs-figures-1.7.0-2.fc25.noarch
 0:nodejs-fill-keys-1.0.2-2.fc24.noarch
@@ -2437,7 +2437,7 @@
 0:nodejs-grunt-contrib-internal-0.4.13-2.fc24.noarch
 0:nodejs-grunt-contrib-nodeunit-0.4.1-3.fc24.noarch
 0:nodejs-grunt-contrib-uglify-0.11.1-4.fc25.noarch
-0:nodejs-grunt-contrib-watch-0.6.1-5.fc24.noarch
+0:nodejs-grunt-contrib-watch-0.6.1-7.fc25.noarch
 0:nodejs-grunt-known-options-1.1.0-1.fc25.noarch
 0:nodejs-grunt-legacy-log-1.0.0-1.fc25.noarch
 0:nodejs-grunt-legacy-log-utils-1.0.0-2.fc25.noarch
@@ -2503,7 +2503,7 @@
 0:nodejs-normalize-package-data-2.3.5-3.fc24.noarch
 0:nodejs-number-is-nan-1.0.0-2.fc25.noarch
 0:nodejs-object-assign-4.1.0-1.fc25.noarch
-0:nodejs-object-inspect-1.2.1-1.fc25.noarch
+0:nodejs-object-inspect-1.2.1-2.fc25.noarch
 0:nodejs-object-is-1.0.1-2.fc24.noarch
 0:nodejs-object-keys-1.0.11-1.fc25.noarch
 0:nodejs-once-1.3.3-3.fc24.noarch
@@ -2533,9 +2533,9 @@
 0:nodejs-semver-5.1.0-2.fc24.noarch
 0:nodejs-set-immediate-shim-1.0.1-4.fc25.noarch
 0:nodejs-shelljs-0.3.0-4.fc24.noarch
-0:nodejs-should-8.4.0-1.fc25.noarch
+0:nodejs-should-8.4.0-2.fc25.noarch
 0:nodejs-should-equal-0.8.0-1.fc25.noarch
-0:nodejs-should-format-0.3.2-2.fc24.noarch
+0:nodejs-should-format-0.3.2-3.fc25.noarch
 0:nodejs-should-type-0.2.0-3.fc24.noarch
 0:nodejs-simple-assert-1.0.0-5.fc24.noarch
 0:nodejs-sinon-1.17.1-2.fc24.noarch
@@ -2568,7 +2568,7 @@
 0:nodejs-uglify-to-browserify-1.0.2-5.fc24.noarch
 0:nodejs-unc-path-regex-0.1.1-2.fc24.noarch
 0:nodejs-underscore-1.8.3-2.fc24.noarch
-0:nodejs-underscore-dot-string-2.3.1-6.fc24.noarch
+0:nodejs-underscore-dot-string-2.3.1-7.fc25.noarch
 0:nodejs-uri-path-1.0.0-1.fc24.noarch
 0:nodejs-util-0.10.3-4.fc24.noarch
 0:nodejs-util-deprecate-1.0.2-1.fc25.noarch
@@ -2602,7 +2602,9 @@
 0:nss-util-3.27.0-1.0.fc25.x86_64
 0:nss-util-devel-3.27.0-1.0.fc25.x86_64
 0:nss_wrapper-1.1.3-1.fc25.x86_64
+0:numactl-devel-2.0.11-2.fc24.x86_64
 0:numactl-libs-2.0.11-2.fc24.x86_64
+0:numad-0.5-21.20150602git.fc24.x86_64
 0:objectweb-asm3-3.3.1-13.fc24.noarch
 0:objectweb-asm-5.1-4.fc25.noarch
 0:objectweb-pom-1.5-4.fc24.noarch
@@ -4446,6 +4448,7 @@
 0:xemacs-packages-base-el-20160621-1.fc25.noarch
 0:xemacs-packages-extra-20160621-1.fc25.noarch
 0:xemacs-packages-extra-el-20160621-1.fc25.noarch
+0:xen-devel-4.7.0-6.fc25.x86_64
 0:xen-libs-4.7.0-6.fc25.x86_64
 0:xen-licenses-4.7.0-6.fc25.x86_64
 0:xerces-c-3.1.4-1.fc25.x86_64
@@ -4517,11 +4520,11 @@
 0:xpp3-minimal-1.1.4-11.c.fc25.noarch
 0:xsom-0-15.20110809svn.fc24.noarch
 0:xstream-1.4.9-3.fc25.noarch
-0:xz-5.2.2-2.fc24.x86_64
-0:xz-devel-5.2.2-2.fc24.x86_64
+0:xz-5.2.2-3.fc26.x86_64
+0:xz-devel-5.2.2-3.fc26.x86_64
 0:xz-java-1.5-5.fc24.noarch
-0:xz-libs-5.2.2-2.fc24.x86_64
-0:xz-lzma-compat-5.2.2-2.fc24.x86_64
+0:xz-libs-5.2.2-3.fc26.x86_64
+0:xz-lzma-compat-5.2.2-3.fc26.x86_64
 0:yajl-2.1.0-5.fc24.x86_64
 0:yajl-devel-2.1.0-5.fc24.x86_64
 0:yasm-1.3.0-3.fc24.x86_64
@@ -4541,8 +4544,8 @@
 0:zxing-3.2.1-3.fc24.noarch
 0:zziplib-0.13.62-7.fc24.x86_64
 0:zziplib-devel-0.13.62-7.fc24.x86_64
-12:aspell-0.60.6.1-13.fc24.x86_64
-12:aspell-devel-0.60.6.1-13.fc24.x86_64
+12:aspell-0.60.6.1-14.fc25.x86_64
+12:aspell-devel-0.60.6.1-14.fc25.x86_64
 12:dhcp-client-4.3.5-1.fc25.x86_64
 12:dhcp-common-4.3.5-1.fc25.noarch
 12:dhcp-libs-4.3.5-1.fc25.x86_64
@@ -4577,8 +4580,8 @@
 1:dbus-x11-1.11.6-1.fc25.x86_64
 1:dejagnu-1.6-1.fc25.noarch
 1:dia-0.97.3-5.fc24.x86_64
-1:doxygen-1.8.12-1.fc25.x86_64
-1:doxygen-latex-1.8.12-1.fc25.x86_64
+1:doxygen-1.8.12-5.fc25.x86_64
+1:doxygen-latex-1.8.12-5.fc25.x86_64
 1:ecj-4.6-1.fc25.noarch
 1:eclipse-cdt-9.0.0-1.fc25.x86_64
 1:eclipse-cdt-parsers-9.0.0-1.fc25.x86_64
@@ -4754,7 +4757,7 @@
 1:sisu-plexus-0.3.2-4.fc24.noarch
 1:tcl-8.6.6-1.fc25.x86_64
 1:tcl-devel-8.6.6-1.fc25.x86_64
-1:telnet-0.17-65.fc24.x86_64
+1:telnet-0.17-66.fc26.x86_64
 1:tix-8.4.3-17.fc24.x86_64
 1:tix-devel-8.4.3-17.fc24.x86_64
 1:tk-8.6.6-1.fc25.x86_64
@@ -5412,6 +5415,7 @@
 5:texlive-impatient-doc-svn35573.0-17.fc25.1.noarch
 5:texlive-impatient-fr-doc-svn15878.0-17.fc25.1.noarch
 5:texlive-impnattypo-svn36448.1.4-17.fc25.1.noarch
+5:texlive-import-svn17361.5.1-17.fc25.1.noarch
 5:texlive-inconsolata-svn39839-17.fc25.1.noarch
 5:texlive-index-svn24099.4.1beta-17.fc25.1.noarch
 5:texlive-interchar-svn36312.0.2-17.fc25.1.noarch
