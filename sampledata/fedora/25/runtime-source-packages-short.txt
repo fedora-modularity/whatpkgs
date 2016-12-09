@@ -132,10 +132,10 @@ popt
 procps-ng
 psmisc
 python
+python3
 python-pip
 python-rpm-macros
 python-setuptools
-python3
 qrencode
 qt5
 readline

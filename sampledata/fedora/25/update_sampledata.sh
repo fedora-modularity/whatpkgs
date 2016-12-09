@@ -4,7 +4,7 @@ set -x #echo on
 
 cat sampledata/fedora/25/toplevel-binary-packages.txt| xargs \
 ./whatpkgs.py getsourcerpm --full-name \
-| tee sampledata/fedora/25/toplevel-source-packages.txt
+| sort | tee sampledata/fedora/25/toplevel-source-packages.txt
 
 
 cat sampledata/fedora/25/toplevel-binary-packages.txt|xargs \
@@ -15,7 +15,7 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt|xargs \
                        --hint=glibc-minimal-langpack \
                        --hint=libcrypt-nss \
                        --hint=python-libs \
-| tee sampledata/fedora/25/runtime-binary-dependency-packages-short.txt
+| sort | tee sampledata/fedora/25/runtime-binary-dependency-packages-short.txt
 
 
 cat sampledata/fedora/25/toplevel-binary-packages.txt|xargs \
@@ -26,17 +26,17 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt|xargs \
                        --hint=glibc-minimal-langpack \
                        --hint=libcrypt-nss \
                        --hint=python-libs \
-| tee sampledata/fedora/25/runtime-binary-dependency-packages-full.txt
+| sort | tee sampledata/fedora/25/runtime-binary-dependency-packages-full.txt
 
 
 cat sampledata/fedora/25/runtime-binary-dependency-packages-short.txt| xargs \
 ./whatpkgs.py getsourcerpm \
-| tee sampledata/fedora/25/runtime-source-packages-short.txt
+| sort | tee sampledata/fedora/25/runtime-source-packages-short.txt
 
 
 cat sampledata/fedora/25/runtime-binary-dependency-packages-short.txt| xargs \
 ./whatpkgs.py getsourcerpm --full-name \
-| tee sampledata/fedora/25/runtime-source-packages-full.txt
+| sort | tee sampledata/fedora/25/runtime-source-packages-full.txt
 
 
 cat sampledata/fedora/25/toplevel-binary-packages.txt \
@@ -69,7 +69,7 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=sendmail \
-| tee sampledata/fedora/25/selfhosting-binary-packages-full.txt
+| sort | tee sampledata/fedora/25/selfhosting-binary-packages-full.txt
 
 
 cat sampledata/fedora/25/toplevel-binary-packages.txt \
@@ -102,13 +102,13 @@ cat sampledata/fedora/25/toplevel-binary-packages.txt \
                                --hint=rubygem-minitest \
                                --hint=rubygem-rspec \
                                --hint=sendmail \
-| tee sampledata/fedora/25/selfhosting-binary-packages-short.txt
+| sort | tee sampledata/fedora/25/selfhosting-binary-packages-short.txt
 
 cat sampledata/fedora/25/selfhosting-binary-packages-short.txt | xargs \
 ./whatpkgs.py getsourcerpm \
-| tee sampledata/fedora/25/selfhosting-source-packages-short.txt
+| sort | tee sampledata/fedora/25/selfhosting-source-packages-short.txt
 
 cat sampledata/fedora/25/selfhosting-binary-packages-short.txt | xargs \
 ./whatpkgs.py getsourcerpm --full-name \
-| tee sampledata/fedora/25/selfhosting-source-packages-full.txt
+| sort | tee sampledata/fedora/25/selfhosting-source-packages-full.txt
 
