@@ -1527,6 +1527,7 @@ nss-util
 nss_wrapper
 ntfs-3g
 numactl
+numad
 numpy
 objectweb-asm
 objectweb-asm3

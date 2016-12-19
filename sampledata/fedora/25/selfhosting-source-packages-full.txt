@@ -38,7 +38,7 @@
 0:apache-commons-lang-2.6-18.fc24.src
 0:apache-commons-lang3-3.4-5.fc25.src
 0:apache-commons-logging-1.2-6.fc25.src
-0:apache-commons-math-3.4.1-3.fc24.src
+0:apache-commons-math-3.4.1-4.fc25.src
 0:apache-commons-net-3.5-1.fc25.src
 0:apache-commons-ognl-3.0.2-11.20120313svn1102435.fc24.src
 0:apache-commons-parent-40-2.fc25.src
@@ -80,7 +80,7 @@
 0:atinject-1-22.20100611svn86.fc24.src
 0:atk-2.22.0-1.fc25.src
 0:atkmm-2.24.2-2.fc24.src
-0:atlas-3.10.2-12.fc24.src
+0:atlas-3.10.2-13.fc25.src
 0:at-spi2-atk-2.22.0-1.fc25.src
 0:at-spi2-core-2.22.0-1.fc25.src
 0:attica-0.4.2-9.fc24.src
@@ -122,7 +122,7 @@
 0:boilerpipe-1.2.0-7.fc24.src
 0:boost-1.60.0-9.fc25.src
 0:botan-1.10.13-4.fc25.src
-0:bouncycastle-1.54-1.fc25.src
+0:bouncycastle-1.54-2.fc25.src
 0:bouncycastle-mail-1.54-1.fc25.src
 0:bouncycastle-pg-1.54-1.fc25.src
 0:bouncycastle-pkix-1.54-1.fc25.src
@@ -138,7 +138,7 @@
 0:byacc-1.9.20160324-1.fc25.src
 0:byaccj-1.15-12.fc24.src
 0:bytelist-1.0.8-11.fc24.src
-0:byteman-3.0.6-1.fc25.src
+0:byteman-3.0.6-2.fc25.src
 0:bzip2-1.0.6-20.fc24.src
 0:c3p0-0.9.5-0.3.pre8.fc24.src
 0:ca-certificates-2016.2.10-1.0.fc25.src
@@ -149,7 +149,7 @@
 0:c-ares-1.12.0-1.fc25.src
 0:castor-1.3.3-3.fc24.src
 0:castor-maven-plugin-2.5-2.fc24.src
-0:cbi-plugins-1.1.2-4.fc24.src
+0:cbi-plugins-1.1.2-5.fc25.src
 0:cdi-api-1.2-3.fc25.src
 0:cdparanoia-10.2-21.fc24.src
 0:cdrkit-1.1.11-31.fc24.src
@@ -167,7 +167,7 @@
 0:clang-3.8.0-2.fc25.src
 0:classmate-1.3.1-1.fc25.src
 0:cli-parser-1.1.2-5.fc24.src
-0:closure-compiler-20141215-3.fc24.src
+0:closure-compiler-20141215-4.fc25.src
 0:clucene09-0.9.21b-16.fc24.src
 0:cmake-3.6.2-6.fc25.src
 0:cmdtest-0.16-1.fc24.src
@@ -251,7 +251,7 @@
 0:dotconf-1.3-12.fc24.src
 0:dracut-044-77.fc25.src
 0:dtc-1.4.2-1.fc25.src
-0:dwz-0.12-2.fc24.src
+0:dwz-0.12-2.fc25.1.baseruntime.src
 0:dyninst-9.2.0-4.fc25.src
 0:e2fsprogs-1.43.1-2.fc25.src
 0:easymock-3.4-2.fc25.src
@@ -328,7 +328,7 @@
 0:felix-gogo-parent-0.6.0-14.fc24.src
 0:felix-gogo-runtime-0.16.2-4.fc25.src
 0:felix-gogo-shell-0.12.0-1.fc24.src
-0:felix-main-5.4.0-1.fc24.src
+0:felix-main-5.4.0-2.fc25.src
 0:felix-osgi-compendium-1.4.0-23.fc25.src
 0:felix-osgi-core-1.4.0-20.fc25.src
 0:felix-osgi-foundation-1.2.0-20.fc24.src
@@ -435,7 +435,7 @@
 0:glassfish-transaction-api-1.2-2.fc24.src
 0:glew-1.13.0-2.fc24.src
 0:glib2-2.50.1-1.fc25.src
-0:glibc-2.24-3.fc25.src
+0:glibc-2.24-3.fc25.1.baseruntime.src
 0:glibc32-2.20-7.3.fc25.src
 0:glibmm24-2.50.0-1.fc25.src
 0:glib-networking-2.50.0-1.fc25.src
@@ -623,7 +623,7 @@
 0:jbigkit-2.1-5.fc24.src
 0:jboss-annotations-1.2-api-1.0.0-1.fc25.src
 0:jboss-classfilewriter-1.1.2-1.fc25.src
-0:jboss-connector-1.6-api-1.0.1-3.fc24.src
+0:jboss-connector-1.6-api-1.0.1-4.fc25.src
 0:jboss-connector-1.7-api-1.0.0-4.fc24.src
 0:jboss-dmr-1.3.0-1.fc25.src
 0:jboss-ejb-3.1-api-1.0.2-15.fc25.src
@@ -636,7 +636,7 @@
 0:jboss-invocation-1.4.1-1.fc25.src
 0:jboss-jacc-1.4-api-1.0.2-11.fc24.src
 0:jboss-jacc-1.5-api-1.0.0-5.fc24.src
-0:jboss-jaspi-1.0-api-1.0.1-11.fc24.src
+0:jboss-jaspi-1.0-api-1.0.1-12.fc25.src
 0:jboss-jaspi-1.1-api-1.0.0-1.fc25.src
 0:jboss-jaxrpc-1.1-api-1.0.1-12.fc25.src
 0:jboss-jaxrs-2.0-api-1.0.0-3.fc25.src
@@ -720,7 +720,7 @@
 0:jmock-2.8.2-2.fc25.src
 0:jna-4.2.2-1.fc25.src
 0:jnr-constants-0.9.2-1.fc25.src
-0:jnr-enxio-0.12-1.fc25.src
+0:jnr-enxio-0.12-2.fc25.src
 0:jnr-ffi-2.0.9-1.fc25.src
 0:jnr-netdb-1.1.5-1.fc24.src
 0:jnr-posix-3.0.29-1.fc25.src
@@ -819,7 +819,7 @@
 0:libdaemon-0.14-10.fc24.src
 0:libdap-3.17.2-2.fc25.src
 0:libdatrie-0.2.9-3.fc25.src
-0:libdb4-4.8.30-20.fc24.src
+0:libdb4-4.8.30-20.fc25.1.baseruntime.src
 0:libdb-5.3.28-14.fc24.src
 0:libdbi-0.9.0-6.fc24.src
 0:libdc1394-2.2.2-5.fc24.src
@@ -979,7 +979,7 @@
 0:libva-1.7.2-1.fc25.src
 0:libvdpau-1.1.1-3.fc24.src
 0:libverto-0.2.6-6.fc24.src
-0:libvirt-2.2.0-1.fc25.src
+0:libvirt-2.2.0-1.fc25.1.baseruntime.src
 0:libvoikko-3.8-2.fc25.src
 0:libvpx-1.6.0-1.fc25.src
 0:libwacom-0.22-1.fc25.src
@@ -1099,7 +1099,7 @@
 0:maven-javadoc-plugin-2.10.4-1.fc25.src
 0:maven-jaxb2-plugin-0.13.0-2.fc24.src
 0:maven-jxr-2.5-4.fc25.src
-0:maven-license-plugin-1.8.0-18.fc23.src
+0:maven-license-plugin-1.8.0-20.fc25.src
 0:maven-mapping-3.0.0-3.fc24.src
 0:maven-parent-27-2.fc24.src
 0:maven-plugin-build-helper-1.9.1-3.fc24.src
@@ -1203,7 +1203,7 @@
 0:nodejs-ansi-font-0.0.2-2.fc24.src
 0:nodejs-ansi-regex-2.0.0-3.fc24.src
 0:nodejs-ansi-styles-2.1.0-2.fc24.src
-0:nodejs-argparse-1.0.7-1.fc25.src
+0:nodejs-argparse-1.0.7-2.fc25.src
 0:nodejs-array-differ-1.0.0-2.fc24.src
 0:nodejs-array-union-1.0.1-2.fc24.src
 0:nodejs-array-uniq-1.0.2-2.fc24.src
@@ -1224,7 +1224,7 @@
 0:nodejs-caller-path-2.0.0-2.fc25.src
 0:nodejs-callsite-1.0.0-8.fc24.src
 0:nodejs-callsites-2.0.0-1.fc25.src
-0:nodejs-chai-3.5.0-3.fc25.src
+0:nodejs-chai-3.5.0-4.fc25.src
 0:nodejs-chalk-1.1.3-1.fc25.src
 0:nodejs-character-parser-1.2.0-4.fc24.src
 0:nodejs-charm-0.1.2-8.fc24.src
@@ -1267,7 +1267,7 @@
 0:nodejs-es6-weak-map-2.0.1-3.fc24.src
 0:nodejs-es-abstract-1.5.1-1.fc25.src
 0:nodejs-escape-string-regexp-1.0.5-1.fc24.src
-0:nodejs-escodegen-1.3.2-9.fc24.src
+0:nodejs-escodegen-1.3.2-10.fc25.src
 0:nodejs-esprima-2.7.2-1.fc24.src
 0:nodejs-es-to-primitive-1.1.1-2.fc24.src
 0:nodejs-estraverse-4.2.0-1.fc25.src
@@ -1276,7 +1276,7 @@
 0:nodejs-eventemitter2-0.4.13-4.fc24.src
 0:nodejs-events-to-array-1.0.2-3.fc24.src
 0:nodejs-exit-0.1.2-4.fc24.src
-0:nodejs-expect-dot-js-0.2.0-9.fc24.src
+0:nodejs-expect-dot-js-0.2.0-10.fc25.src
 0:nodejs-faye-websocket-0.7.2-5.fc24.src
 0:nodejs-figures-1.7.0-2.fc25.src
 0:nodejs-fill-keys-1.0.2-2.fc24.src
@@ -1299,7 +1299,7 @@
 0:nodejs-grunt-contrib-internal-0.4.13-2.fc24.src
 0:nodejs-grunt-contrib-nodeunit-0.4.1-3.fc24.src
 0:nodejs-grunt-contrib-uglify-0.11.1-4.fc25.src
-0:nodejs-grunt-contrib-watch-0.6.1-5.fc24.src
+0:nodejs-grunt-contrib-watch-0.6.1-7.fc25.src
 0:nodejs-grunt-known-options-1.1.0-1.fc25.src
 0:nodejs-grunt-legacy-log-1.0.0-1.fc25.src
 0:nodejs-grunt-legacy-log-utils-1.0.0-2.fc25.src
@@ -1364,7 +1364,7 @@
 0:nodejs-normalize-package-data-2.3.5-3.fc24.src
 0:nodejs-number-is-nan-1.0.0-2.fc25.src
 0:nodejs-object-assign-4.1.0-1.fc25.src
-0:nodejs-object-inspect-1.2.1-1.fc25.src
+0:nodejs-object-inspect-1.2.1-2.fc25.src
 0:nodejs-object-is-1.0.1-2.fc24.src
 0:nodejs-object-keys-1.0.11-1.fc25.src
 0:nodejs-once-1.3.3-3.fc24.src
@@ -1394,9 +1394,9 @@
 0:nodejs-semver-5.1.0-2.fc24.src
 0:nodejs-set-immediate-shim-1.0.1-4.fc25.src
 0:nodejs-shelljs-0.3.0-4.fc24.src
-0:nodejs-should-8.4.0-1.fc25.src
+0:nodejs-should-8.4.0-2.fc25.src
 0:nodejs-should-equal-0.8.0-1.fc25.src
-0:nodejs-should-format-0.3.2-2.fc24.src
+0:nodejs-should-format-0.3.2-3.fc25.src
 0:nodejs-should-type-0.2.0-3.fc24.src
 0:nodejs-simple-assert-1.0.0-5.fc24.src
 0:nodejs-sinon-1.17.1-2.fc24.src
@@ -1429,7 +1429,7 @@
 0:nodejs-uglify-to-browserify-1.0.2-5.fc24.src
 0:nodejs-unc-path-regex-0.1.1-2.fc24.src
 0:nodejs-underscore-1.8.3-2.fc24.src
-0:nodejs-underscore-dot-string-2.3.1-6.fc24.src
+0:nodejs-underscore-dot-string-2.3.1-7.fc25.src
 0:nodejs-uri-path-1.0.0-1.fc24.src
 0:nodejs-util-0.10.3-4.fc24.src
 0:nodejs-util-deprecate-1.0.2-1.fc25.src
@@ -1453,6 +1453,7 @@
 0:nss-util-3.27.0-1.0.fc25.src
 0:nss_wrapper-1.1.3-1.fc25.src
 0:numactl-2.0.11-2.fc24.src
+0:numad-0.5-21.20150602git.fc24.src
 0:objectweb-asm3-3.3.1-13.fc24.src
 0:objectweb-asm-5.1-4.fc25.src
 0:objectweb-pom-1.5-4.fc24.src
@@ -2462,7 +2463,7 @@
 0:rubygem-gherkin-3.2.0-1.fc25.src
 0:rubygem-globalid-0.3.6-1.fc25.src
 0:rubygem-haml-4.0.5-4.fc21.src
-0:rubygem-hashery-2.1.0-5.fc21.src
+0:rubygem-hashery-2.1.2-1.fc25.src
 0:rubygem-hoe-3.15.2-1.fc25.src
 0:rubygem-hpricot-0.8.6-12.fc24.src
 0:rubygem-http_connection-1.4.1-11.fc24.src
@@ -2710,7 +2711,7 @@
 0:util-linux-2.28.2-1.fc25.src
 0:uuid-1.6.2-34.fc25.src
 0:uw-imap-2007f-11.fc24.src
-0:v4l-utils-1.10.0-2.fc25.src
+0:v4l-utils-1.10.1-1.fc25.src
 0:vala-0.34.2-1.fc25.src
 0:velocity-1.7-19.fc24.src
 0:velocity-tools-2.0-13.fc24.src
@@ -2806,7 +2807,7 @@
 0:xpp3-1.1.4-11.c.fc25.src
 0:xsom-0-15.20110809svn.fc24.src
 0:xstream-1.4.9-3.fc25.src
-0:xz-5.2.2-2.fc24.src
+0:xz-5.2.2-3.fc26.src
 0:xz-java-1.5-5.fc24.src
 0:yajl-2.1.0-5.fc24.src
 0:yasm-1.3.0-3.fc24.src
@@ -2820,7 +2821,7 @@
 0:zvbi-0.2.35-1.fc24.src
 0:zxing-3.2.1-3.fc24.src
 0:zziplib-0.13.62-7.fc24.src
-12:aspell-0.60.6.1-13.fc24.src
+12:aspell-0.60.6.1-14.fc25.src
 12:dhcp-4.3.5-1.fc25.src
 14:libpcap-1.7.4-2.fc24.src
 1:aether-1.0.2-4.fc24.src
@@ -2834,7 +2835,7 @@
 1:dbus-1.11.6-1.fc25.src
 1:dejagnu-1.6-1.fc25.src
 1:dia-0.97.3-5.fc24.src
-1:doxygen-1.8.12-1.fc25.src
+1:doxygen-1.8.12-5.fc25.src
 1:ecj-4.6-1.fc25.src
 1:eclipse-4.6.1-5.fc25.src
 1:eclipse-cdt-9.0.0-1.fc25.src
@@ -2932,7 +2933,7 @@
 1:scl-utils-2.0.1-10.fc25.src
 1:sisu-0.3.2-4.fc24.src
 1:tcl-8.6.6-1.fc25.src
-1:telnet-0.17-65.fc24.src
+1:telnet-0.17-66.fc26.src
 1:tix-8.4.3-17.fc24.src
 1:tk-8.6.6-1.fc25.src
 1:tomcat-8.0.36-2.fc25.src
