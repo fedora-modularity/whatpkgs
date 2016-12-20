@@ -38,7 +38,7 @@
 0:gc-7.4.4-1.fc25.src
 0:gdb-7.12-24.fc25.src
 0:gdbm-1.12-1.fc25.src
-0:gettext-0.19.8.1-2.fc25.src
+0:gettext-0.19.8.1-5.fc26.src
 0:ghc-srpm-macros-1.4.2-4.fc25.src
 0:glib2-2.50.1-1.fc25.src
 0:glibc-2.24-3.fc25.1.baseruntime.src
@@ -109,16 +109,13 @@
 0:popt-1.16-7.fc24.src
 0:procps-ng-3.3.10-11.fc24.src
 0:psmisc-22.21-8.fc24.src
-0:python-2.7.12-7.fc25.src
 0:python3-3.5.2-4.fc25.src
-0:python-pip-8.1.2-2.fc25.src
 0:python-rpm-macros-3-10.fc25.src
-0:python-setuptools-25.1.1-1.fc25.src
 0:qrencode-3.4.2-6.fc24.src
 0:qt5-5.7.0-9.fc25.src
 0:readline-6.3-8.fc24.src
 0:redhat-rpm-config-44-1.fc25.src
-0:rpm-4.13.0-0.rc1.46.fc25.src
+0:rpm-4.13.0-8.fc26.src
 0:sed-4.2.2-15.fc24.src
 0:setup-2.10.4-1.fc25.src
 0:sharutils-4.15.2-4.fc25.src
