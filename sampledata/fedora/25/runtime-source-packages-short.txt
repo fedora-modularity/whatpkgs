@@ -131,11 +131,8 @@ pkgconfig
 popt
 procps-ng
 psmisc
-python
 python3
-python-pip
 python-rpm-macros
-python-setuptools
 qrencode
 qt5
 readline

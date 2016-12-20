@@ -111,6 +111,7 @@ aws-sdk-java
 axis
 babel
 babeltrace
+baekmuk-ttf-fonts
 bakefile
 base64coder
 basesystem
@@ -175,6 +176,7 @@ chkconfig
 chromaprint
 chrpath
 cifs-utils
+cjkuni-uming-fonts
 clang
 classmate
 cli-parser
@@ -338,6 +340,7 @@ expect
 expresso
 extra166y
 extra-cmake-modules
+fakechroot
 fakeroot
 fasterxml-oss-parent
 fastutil
@@ -594,6 +597,8 @@ initscripts
 inkscape
 intltool
 invokebinder
+ipa-gothic-fonts
+ipa-pgothic-fonts
 ipcalc
 iproute
 ipset
@@ -901,6 +906,7 @@ libgnomeui
 libgpg-error
 libgphoto2
 libgta
+libgtop2
 libgudev
 libgusb
 libibcm
@@ -1086,6 +1092,7 @@ linuxdoc-tools
 linux-firmware
 liquibase
 lirc
+lklug-fonts
 lksctp-tools
 llvm
 lm_sensors
@@ -1568,6 +1575,7 @@ orc
 osgi-annotation
 os-maven-plugin
 os-prober
+overpass-fonts
 p11-kit
 p7zip
 pacemaker
@@ -1615,6 +1623,7 @@ perl-autodie
 perl-bareword-filehandles
 perl-B-Compiling
 perl-BDB
+perl-B-Debug
 perl-B-Hooks-EndOfScope
 perl-B-Hooks-OP-Check
 perl-Bit-Vector
@@ -1629,6 +1638,7 @@ perl-Carp
 perl-Carp-Clan
 perl-CBOR-XS
 perl-CGI
+perl-CGI-Application
 perl-Class-Accessor
 perl-Class-Accessor-Chained
 perl-Class-Accessor-Grouped
@@ -1659,6 +1669,7 @@ perl-Compress-Raw-Bzip2
 perl-Compress-Raw-Zlib
 perl-Config-Any
 perl-Config-General
+perl-Config-Simple
 perl-Config-Tiny
 perl-constant
 perl-constant-boolean
@@ -1680,6 +1691,7 @@ perl-CPANPLUS
 perl-criticism
 perl-Crypt-PasswdMD5
 perl-Crypt-RC4
+perl-CSS
 perl-Curses
 perl-Cwd-Guard
 perl-Data-Dump
@@ -1700,6 +1712,7 @@ perl-Date-Simple
 perl-DateTime
 perl-DateTime-Calendar-Mayan
 perl-DateTime-Format-Builder
+perl-DateTime-Format-DateParse
 perl-DateTime-Format-HTTP
 perl-DateTime-Format-IBeat
 perl-DateTime-Format-Mail
@@ -1729,6 +1742,7 @@ perl-Devel-CallParser
 perl-Devel-CheckBin
 perl-Devel-CheckCompiler
 perl-Devel-CheckLib
+perl-Devel-Cover
 perl-Devel-Cycle
 perl-Devel-Declare
 perl-Devel-EnforceEncapsulation
@@ -1794,6 +1808,7 @@ perl-File-Find-Rule-Perl
 perl-File-Flat
 perl-FileHandle-Fmode
 perl-File-HomeDir
+perl-File-Inplace
 perl-File-Listing
 perl-File-MimeInfo
 perl-File-Path
@@ -1825,6 +1840,7 @@ perl-gettext
 perl-Glib
 perl-Graph
 perl-GraphViz
+perl-GTop
 perl-Guard
 perl-Hash-Merge
 perl-Hash-Util-FieldHash-Compat
@@ -1832,10 +1848,15 @@ perl-Heap
 perl-Hook-LexWrap
 perl-HTML-Element-Extended
 perl-HTML-Format
+perl-HTML-FormatText-WithLinks
+perl-HTML-FormatText-WithLinks-AndTables
 perl-HTML-Parser
 perl-HTML-TableExtract
 perl-HTML-Tagset
+perl-HTML-Template
 perl-HTML-Tree
+perl-HTML-WikiConverter
+perl-HTML-WikiConverter-Markdown
 perl-HTTP-Cookies
 perl-HTTP-Daemon
 perl-HTTP-Date
@@ -1872,6 +1893,8 @@ perl-IO-Tty
 perl-IPC-Cmd
 perl-IPC-Run
 perl-IPC-Run3
+perl-IPC-SharedCache
+perl-IPC-ShareLite
 perl-IPC-System-Simple
 perl-IPC-SysV
 perl-Jcode
@@ -1886,9 +1909,17 @@ perl-libintl-perl
 perl-libnet
 perl-libwww-perl
 perl-libxml-perl
+perl-Lingua-EN-Fathom
 perl-Lingua-EN-Inflect
+perl-Lingua-EN-Sentence
+perl-Lingua-EN-Syllable
 perl-List-MoreUtils
+perl-Locale-Codes
 perl-Locale-Maketext
+perl-Locale-Maketext-Gettext
+perl-Locale-Maketext-Lexicon
+perl-Locale-Msgfmt
+perl-Locale-PO
 perl-Locale-US
 perl-local-lib
 perl-Log-Message
@@ -1987,6 +2018,7 @@ perl-Package-Variant
 perl-PadWalker
 perl-Paper-Specs
 perl-Parallel-ForkManager
+perl-Parallel-Iterator
 perl-Params-Check
 perl-Params-Classify
 perl-Params-Coerce
@@ -2086,6 +2118,7 @@ perl-Storable
 perl-strictures
 perl-String-Format
 perl-String-RewritePrefix
+perl-String-Similarity
 perl-Struct-Dumb
 perl-Sub-Exporter
 perl-Sub-Exporter-ForMethods
@@ -2098,6 +2131,7 @@ perl-SUPER
 perl-Switch
 perl-Symbol-Util
 perl-syntax
+perl-Syntax-Highlight-Engine-Kate
 perl-Syntax-Keyword-Junction
 perl-Sys-Syslog
 perl-Taint-Runtime
@@ -2151,6 +2185,7 @@ perl-Test-Memory-Cycle
 perl-Test-MinimumVersion
 perl-TestML
 perl-Test-MockModule
+perl-Test-MockObject
 perl-Test-Mojibake
 perl-Test-Needs
 perl-Test-NoBreakpoints
@@ -2201,6 +2236,7 @@ perl-Text-CSV
 perl-Text-CSV_XS
 perl-Text-Diff
 perl-Text-Glob
+perl-Text-Haml
 perl-Text-Iconv
 perl-Text-ParseWords
 perl-Text-RecordParser
@@ -2236,6 +2272,8 @@ perl-Unicode-Map8
 perl-Unicode-Normalize
 perl-Unicode-String
 perl-Unicode-UTF8
+perl-UNIVERSAL-can
+perl-UNIVERSAL-isa
 perl-UNIVERSAL-moniker
 perl-UNIVERSAL-require
 perl-URI
@@ -2244,10 +2282,13 @@ perl-utf8-all
 perl-Variable-Magic
 perl-version
 perl-WWW-RobotRules
+perl-XML-Catalog
 perl-XML-DOM
+perl-XML-Dumper
 perl-XML-Filter-BufferText
 perl-XML-Handler-YAWriter
 perl-XML-LibXML
+perl-XML-LibXSLT
 perl-XML-NamespaceSupport
 perl-XML-Parser
 perl-XML-RegExp
@@ -2255,6 +2296,8 @@ perl-XML-SAX
 perl-XML-SAX-Base
 perl-XML-SAX-Writer
 perl-XML-Simple
+perl-XML-TokeParser
+perl-XML-TreeBuilder
 perl-XML-Twig
 perl-XML-Writer
 perl-XML-XPath
@@ -2329,6 +2372,7 @@ psmisc
 pstoedit
 psutils
 pth
+publican
 publicsuffix-list
 pulseaudio
 pycairo
@@ -2373,9 +2417,11 @@ python-decorator
 python-docutils
 python-dtopt
 python-empy
+python-enchant
 python-enum34
 python-extras
 python-fixtures
+python-flake8
 python-flask
 python-funcsigs
 python-gflags
@@ -2401,6 +2447,7 @@ python-lxml
 python-mako
 python-markdown
 python-markupsafe
+python-mccabe
 python-mimeparse
 python-mock
 python-mox
@@ -2547,6 +2594,7 @@ rome
 rpcbind
 rpm
 rpmdevtools
+rpmlint
 rpm-mpi-hooks
 rrdtool
 rsh
@@ -2636,6 +2684,7 @@ rubygem-rack-cache
 rubygem-rack-protection
 rubygem-rack-test
 rubygem-rails
+rubygem-rails-controller-testing
 rubygem-rails-dom-testing
 rubygem-rails-html-sanitizer
 rubygem-railties

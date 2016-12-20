@@ -171,14 +171,6 @@ pkgconfig
 popt
 procps-ng
 psmisc
-python
-python2-setuptools
-python3
-python3-libs
-python3-pip
-python3-setuptools
-python-libs
-python-pip
 python-srpm-macros
 qrencode-libs
 qt5-srpm-macros
@@ -198,6 +190,7 @@ systemd
 systemd-libs
 systemd-pam
 systemd-udev
+system-python
 system-python-libs
 tar
 time

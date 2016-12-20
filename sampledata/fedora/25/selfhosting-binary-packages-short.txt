@@ -200,6 +200,8 @@ aws-sdk-java-core
 aws-sdk-java-kms
 aws-sdk-java-s3
 axis
+baekmuk-ttf-batang-fonts
+baekmuk-ttf-fonts-common
 bakefile
 base64coder
 basesystem
@@ -344,6 +346,7 @@ checkstyle
 chkconfig
 chrpath
 cifs-utils-devel
+cjkuni-uming-fonts
 clang
 clang-devel
 clang-libs
@@ -645,6 +648,8 @@ expect
 expresso
 extra166y
 extra-cmake-modules
+fakechroot
+fakechroot-libs
 fakeroot
 fakeroot-libs
 fasterxml-oss-parent
@@ -1150,6 +1155,8 @@ initscripts
 inkscape
 intltool
 invokebinder
+ipa-gothic-fonts
+ipa-pgothic-fonts
 ipcalc
 iproute
 ipset
@@ -1718,6 +1725,8 @@ libgphoto2
 libgphoto2-devel
 libgta
 libgta-devel
+libgtop2
+libgtop2-devel
 libgudev
 libgudev-devel
 libgusb
@@ -2157,6 +2166,7 @@ liquibase
 lirc-core
 lirc-devel
 lirc-libs
+lklug-fonts
 lksctp-tools
 lksctp-tools-devel
 llvm
@@ -2850,6 +2860,7 @@ orc-devel
 osgi-annotation
 os-maven-plugin
 os-prober
+overpass-fonts
 p11-kit
 p11-kit-devel
 p11-kit-trust
@@ -2931,6 +2942,7 @@ perl-autodie
 perl-bareword-filehandles
 perl-B-Compiling
 perl-BDB
+perl-B-Debug
 perl-B-Hooks-EndOfScope
 perl-B-Hooks-OP-Check
 perl-Bit-Vector
@@ -2945,6 +2957,7 @@ perl-Carp
 perl-Carp-Clan
 perl-CBOR-XS
 perl-CGI
+perl-CGI-Application
 perl-Class-Accessor
 perl-Class-Accessor-Chained
 perl-Class-Accessor-Grouped
@@ -2975,6 +2988,7 @@ perl-Compress-Raw-Bzip2
 perl-Compress-Raw-Zlib
 perl-Config-Any
 perl-Config-General
+perl-Config-Simple
 perl-Config-Tiny
 perl-constant
 perl-constant-boolean
@@ -2995,6 +3009,7 @@ perl-CPANPLUS
 perl-criticism
 perl-Crypt-PasswdMD5
 perl-Crypt-RC4
+perl-CSS
 perl-Curses
 perl-Cwd-Guard
 perl-Data-Dump
@@ -3015,6 +3030,7 @@ perl-Date-Simple
 perl-DateTime
 perl-DateTime-Calendar-Mayan
 perl-DateTime-Format-Builder
+perl-DateTime-Format-DateParse
 perl-DateTime-Format-HTTP
 perl-DateTime-Format-IBeat
 perl-DateTime-Format-Mail
@@ -3046,6 +3062,7 @@ perl-Devel-CallParser
 perl-Devel-CheckBin
 perl-Devel-CheckCompiler
 perl-Devel-CheckLib
+perl-Devel-Cover
 perl-Devel-Cycle
 perl-Devel-Declare
 perl-Devel-EnforceEncapsulation
@@ -3118,6 +3135,7 @@ perl-File-Find-Rule-Perl
 perl-File-Flat
 perl-FileHandle-Fmode
 perl-File-HomeDir
+perl-File-Inplace
 perl-File-Listing
 perl-File-MimeInfo
 perl-File-Path
@@ -3149,6 +3167,7 @@ perl-Git
 perl-Glib
 perl-Graph
 perl-GraphViz
+perl-GTop
 perl-Guard
 perl-Hash-Merge
 perl-Hash-Util-FieldHash-Compat
@@ -3156,10 +3175,15 @@ perl-Heap
 perl-Hook-LexWrap
 perl-HTML-Element-Extended
 perl-HTML-Formatter
+perl-HTML-FormatText-WithLinks
+perl-HTML-FormatText-WithLinks-AndTables
 perl-HTML-Parser
 perl-HTML-TableExtract
 perl-HTML-Tagset
+perl-HTML-Template
 perl-HTML-Tree
+perl-HTML-WikiConverter
+perl-HTML-WikiConverter-Markdown
 perl-HTTP-Cookies
 perl-HTTP-Daemon
 perl-HTTP-Date
@@ -3198,6 +3222,8 @@ perl-IO-Zlib
 perl-IPC-Cmd
 perl-IPC-Run
 perl-IPC-Run3
+perl-IPC-SharedCache
+perl-IPC-ShareLite
 perl-IPC-System-Simple
 perl-IPC-SysV
 perl-Jcode
@@ -3213,11 +3239,19 @@ perl-libnet
 perl-libs
 perl-libwww-perl
 perl-libxml-perl
+perl-Lingua-EN-Fathom
 perl-Lingua-EN-Inflect
+perl-Lingua-EN-Sentence
+perl-Lingua-EN-Syllable
 perl-List-MoreUtils
+perl-Locale-Codes
 perl-Locale-gettext
 perl-Locale-Maketext
+perl-Locale-Maketext-Gettext
+perl-Locale-Maketext-Lexicon
 perl-Locale-Maketext-Simple
+perl-Locale-Msgfmt
+perl-Locale-PO
 perl-Locale-US
 perl-local-lib
 perl-Log-Message
@@ -3326,6 +3360,7 @@ perl-Package-Variant
 perl-PadWalker
 perl-Paper-Specs
 perl-Parallel-ForkManager
+perl-Parallel-Iterator
 perl-Params-Check
 perl-Params-Classify
 perl-Params-Coerce
@@ -3427,6 +3462,7 @@ perl-Storable
 perl-strictures
 perl-String-Format
 perl-String-RewritePrefix
+perl-String-Similarity
 perl-Struct-Dumb
 perl-Sub-Exporter
 perl-Sub-Exporter-ForMethods
@@ -3439,6 +3475,7 @@ perl-SUPER
 perl-Switch
 perl-Symbol-Util
 perl-syntax
+perl-Syntax-Highlight-Engine-Kate
 perl-Syntax-Keyword-Junction
 perl-Sys-Syslog
 perl-Taint-Runtime
@@ -3493,6 +3530,7 @@ perl-Test-Memory-Cycle
 perl-Test-MinimumVersion
 perl-TestML
 perl-Test-MockModule
+perl-Test-MockObject
 perl-Test-Mojibake
 perl-Test-Moose
 perl-Test-Needs
@@ -3545,6 +3583,7 @@ perl-Text-CSV
 perl-Text-CSV_XS
 perl-Text-Diff
 perl-Text-Glob
+perl-Text-Haml
 perl-Text-Iconv
 perl-Text-ParseWords
 perl-Text-RecordParser
@@ -3581,6 +3620,8 @@ perl-Unicode-Map8
 perl-Unicode-Normalize
 perl-Unicode-String
 perl-Unicode-UTF8
+perl-UNIVERSAL-can
+perl-UNIVERSAL-isa
 perl-UNIVERSAL-moniker
 perl-UNIVERSAL-require
 perl-URI
@@ -3589,10 +3630,13 @@ perl-utf8-all
 perl-Variable-Magic
 perl-version
 perl-WWW-RobotRules
+perl-XML-Catalog
 perl-XML-DOM
+perl-XML-Dumper
 perl-XML-Filter-BufferText
 perl-XML-Handler-YAWriter
 perl-XML-LibXML
+perl-XML-LibXSLT
 perl-XML-NamespaceSupport
 perl-XML-Parser
 perl-XML-RegExp
@@ -3600,6 +3644,8 @@ perl-XML-SAX
 perl-XML-SAX-Base
 perl-XML-SAX-Writer
 perl-XML-Simple
+perl-XML-TokeParser
+perl-XML-TreeBuilder
 perl-XML-Twig
 perl-XML-Writer
 perl-XML-XPath
@@ -3723,6 +3769,7 @@ psutils
 psutils-perl
 pth
 pth-devel
+publican
 publicsuffix-list
 pulseaudio-libs
 pulseaudio-libs-devel
@@ -3842,9 +3889,11 @@ python3-decorator
 python3-devel
 python3-dnf
 python3-docutils
+python3-enchant
 python3-extras
 python3-firewall
 python3-fixtures
+python3-flake8
 python3-flask
 python3-funcsigs
 python3-gflags
@@ -3869,8 +3918,10 @@ python3-librepo
 python3-libs
 python3-linecache2
 python3-lxml
+python3-magic
 python3-mallard-ducktype
 python3-markupsafe
+python3-mccabe
 python3-mimeparse
 python3-mock
 python3-netaddr
@@ -3878,6 +3929,7 @@ python3-nose
 python3-numpy
 python3-paste-deploy
 python3-pbr
+python3-pep8
 python3-pillow
 python3-pip
 python3-ply
@@ -3987,6 +4039,7 @@ python-linecache2
 python-magic
 python-mako
 python-markupsafe
+python-mccabe
 python-mimeparse
 python-mox
 python-netaddr
@@ -4198,6 +4251,7 @@ rpm-build-libs
 rpm-devel
 rpmdevtools
 rpm-libs
+rpmlint
 rpm-mpi-hooks
 rpm-plugin-selinux
 rpm-plugin-systemd-inhibit
@@ -4294,6 +4348,7 @@ rubygem-rack-cache
 rubygem-rack-protection
 rubygem-rack-test
 rubygem-rails
+rubygem-rails-controller-testing
 rubygem-rails-dom-testing
 rubygem-rails-html-sanitizer
 rubygem-railties
