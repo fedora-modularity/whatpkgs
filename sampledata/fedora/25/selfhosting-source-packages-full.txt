@@ -2396,7 +2396,7 @@
 0:PyYAML-3.11-13.fc25.src
 0:qca-2.1.1-8.fc25.src
 0:qdox-2.0-0.5.M3.fc24.src
-0:qemu-sanity-check-1.1.5-5.fc24.src
+0:qemu-sanity-check-1.1.5-5.fc26.0.baseruntime.1.src
 0:qhull-2015.2-1.fc25.src
 0:qjson-0.8.1-16.20150318.d0f62e6git.fc24.src
 0:qpdf-6.0.0-3.fc25.src
@@ -2980,6 +2980,7 @@
 1:rubygem-rails-5.0.0.1-1.fc25.src
 1:rubygem-sinatra-1.4.7-1.fc25.src
 1:scl-utils-2.0.1-10.fc25.src
+1:sgabios-0.20110622svn-9.fc24.src
 1:sisu-0.3.2-4.fc24.src
 1:tcl-8.6.6-1.fc25.src
 1:telnet-0.17-66.fc26.src

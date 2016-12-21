@@ -2767,6 +2767,7 @@ serp
 setools
 setup
 SFML
+sgabios
 sgml-common
 sgpio
 shadow-utils

@@ -488,6 +488,7 @@
 0:eclipse-tm-terminal-connectors-4.1.0-3.fc25.noarch
 0:eclipse-xsd-2.12.0-1.fc25.noarch
 0:ed-1.13-1.fc25.x86_64
+0:edk2-ovmf-20160418gita8c39ba-5.fc25.noarch
 0:edk2-tools-20160418gita8c39ba-5.fc25.x86_64
 0:efivar-devel-30-4.fc25.x86_64
 0:efivar-libs-30-4.fc25.x86_64
@@ -4169,6 +4170,7 @@
 0:SDL2_mixer-devel-2.0.1-2.fc24.x86_64
 0:SDL-devel-1.2.15-21.fc24.x86_64
 0:seabios-bin-1.9.3-1.fc25.noarch
+0:seavgabios-bin-1.9.3-1.fc25.noarch
 0:sed-4.2.2-15.fc24.x86_64
 0:selinux-policy-3.13.1-224.fc25.noarch
 0:selinux-policy-devel-3.13.1-224.fc25.noarch
@@ -4808,6 +4810,7 @@
 1:rubygem-rails-5.0.0.1-1.fc25.noarch
 1:rubygem-sinatra-1.4.7-1.fc25.noarch
 1:scl-utils-build-2.0.1-10.fc25.x86_64
+1:sgabios-bin-0.20110622svn-9.fc24.noarch
 1:sisu-inject-0.3.2-4.fc24.noarch
 1:sisu-plexus-0.3.2-4.fc24.noarch
 1:tcl-8.6.6-1.fc25.x86_64
@@ -4854,7 +4857,9 @@
 2:perl-Module-Pluggable-5.2-3.fc25.noarch
 2:phonon-backend-gstreamer-4.9.0-1.fc25.x86_64
 2:phonon-qt5-backend-gstreamer-4.9.0-1.fc25.x86_64
+2:qemu-common-2.7.0-7.fc25.x86_64
 2:qemu-img-2.7.0-7.fc25.x86_64
+2:qemu-system-x86-2.7.0-7.fc25.x86_64
 2:rmt-1.5.3-6.fc24.x86_64
 2:samba-client-libs-4.5.0-3.fc25.x86_64
 2:samba-common-4.5.0-3.fc25.noarch

@@ -543,6 +543,7 @@ eclipse-tm-terminal
 eclipse-tm-terminal-connectors
 eclipse-xsd
 ed
+edk2-ovmf
 edk2-tools
 efivar-devel
 efivar-libs
@@ -4089,8 +4090,10 @@ PyYAML
 qca
 qca-devel
 qdox
+qemu-common
 qemu-img
 qemu-sanity-check-nodeps
+qemu-system-x86
 qhull-devel
 qjson
 qjson-devel
@@ -4439,6 +4442,7 @@ SDL2_mixer
 SDL2_mixer-devel
 SDL-devel
 seabios-bin
+seavgabios-bin
 sed
 selinux-policy
 selinux-policy-devel
@@ -4451,6 +4455,7 @@ setools-libs
 setup
 SFML
 SFML-devel
+sgabios-bin
 sgml-common
 sgpio
 shadow-utils
