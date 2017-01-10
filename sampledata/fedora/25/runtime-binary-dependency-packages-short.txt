@@ -76,6 +76,7 @@ grub2-efi
 grub2-tools
 guile
 gzip
+hmaccalc
 info
 iptables-libs
 isl
@@ -171,6 +172,9 @@ pkgconfig
 popt
 procps-ng
 psmisc
+pth
+pth-devel
+publicsuffix-list
 python-srpm-macros
 qrencode-libs
 qt5-srpm-macros

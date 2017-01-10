@@ -60,6 +60,7 @@ groff
 grub2
 guile
 gzip
+hmaccalc
 iptables
 isl
 kernel
@@ -131,6 +132,8 @@ pkgconfig
 popt
 procps-ng
 psmisc
+pth
+publicsuffix-list
 python3
 python-rpm-macros
 qrencode

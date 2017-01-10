@@ -1495,7 +1495,7 @@
 0:opus-1.1.3-1.fc25.src
 0:ORBit2-2.14.19-15.fc24.src
 0:orc-0.4.26-1.fc25.src
-0:osgi-annotation-6.0.0-3.fc24.src
+0:osgi-annotation-6.0.0-4.fc25.src
 0:os-maven-plugin-1.2.3-6.fc25.src
 0:os-prober-1.71-1.fc25.src
 0:overpass-fonts-2.1-2.fc24.src
@@ -2406,7 +2406,7 @@
 0:qscintilla-2.9.3-1.fc25.src
 0:qt3-3.3.8b-68.fc25.src
 0:qt5-5.7.0-9.fc25.src
-0:qt5-qtbase-5.7.0-3.fc25.src
+0:qt5-qtbase-5.7.0-9.fc26.src
 0:qt5-qtconnectivity-5.7.0-2.fc25.src
 0:qt5-qtdeclarative-5.7.0-2.fc25.src
 0:qt5-qtlocation-5.7.0-2.fc25.src
@@ -2426,7 +2426,7 @@
 0:qt-assistant-adp-4.6.3-12.fc24.src
 0:qt-mobility-1.2.2-0.23.20140317git169da60c.fc24.src
 0:qtsoap-2.7-13.fc24.src
-0:qtwebkit-2.3.4-11.fc24.src
+0:qtwebkit-2.3.4-12.fc25.src
 0:quartz-2.2.1-5.fc24.src
 0:R-3.3.1-2.fc25.src
 0:rabbitmq-java-client-3.6.3-1.fc25.src

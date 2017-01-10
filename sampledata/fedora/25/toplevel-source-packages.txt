@@ -21,6 +21,7 @@
 0:gnupg2-2.1.13-2.fc25.src
 0:grep-2.26-2.fc25.src
 0:gzip-1.8-1.fc25.src
+0:hmaccalc-0.9.14-4.fc24.src
 0:kernel-4.8.6-300.fc25.src
 0:m4-1.4.17-9.fc24.src
 0:man-db-2.7.5-3.fc25.src
@@ -29,6 +30,8 @@
 0:patch-2.7.5-3.fc24.src
 0:procps-ng-3.3.10-11.fc24.src
 0:psmisc-22.21-8.fc24.src
+0:pth-2.0.7-27.fc24.src
+0:publicsuffix-list-20160805-1.fc25.src
 0:redhat-rpm-config-44-1.fc25.src
 0:rpm-4.13.0-8.fc26.src
 0:sed-4.2.2-15.fc24.src

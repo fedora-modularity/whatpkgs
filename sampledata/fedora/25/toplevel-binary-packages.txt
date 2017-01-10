@@ -25,6 +25,7 @@ grep
 grub2
 grub2-efi
 gzip
+hmaccalc
 info
 kernel-core
 m4
@@ -35,6 +36,8 @@ ncurses
 patch
 procps-ng
 psmisc
+pth-devel
+publicsuffix-list
 redhat-rpm-config
 rpm
 rpm-build
