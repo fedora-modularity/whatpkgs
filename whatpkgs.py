@@ -367,8 +367,8 @@ def recurse_package_deps(pkg, dependencies, ambiguities,
 
 
 def recurse_self_host(binary_pkg, binaries, sources,
-                      ambiguities, query,
-                      hints, pick_first, follow_recommends):
+                      ambiguities, query, hints, filters,
+                      pick_first, follow_recommends):
     """
     Recursively determine all build dependencies for this package
     """
@@ -382,11 +382,11 @@ def recurse_self_host(binary_pkg, binaries, sources,
 
     # Process strict Requires:
     deps = get_requirements(binary_pkg, binary_pkg.requires, binaries,
-                            ambiguities, query, hints, None, pick_first)
+                            ambiguities, query, hints, filters, pick_first)
 
     # Process Requires(pre|post):
     prereqs = get_requirements(binary_pkg, binary_pkg.requires_pre,
-                               binaries, ambiguities, query, hints, None,
+                               binaries, ambiguities, query, hints, filters,
                                pick_first)
     deps.extend(prereqs)
 
@@ -394,7 +394,7 @@ def recurse_self_host(binary_pkg, binaries, sources,
         # Process Recommends:
         recommends = get_requirements(binary_pkg, binary_pkg.recommends,
                                       binaries, ambiguities, query, hints,
-                                      None, pick_first)
+                                      filters, pick_first)
         deps.extend(recommends)
 
     # Now get the build dependencies for this package
@@ -407,12 +407,12 @@ def recurse_self_host(binary_pkg, binaries, sources,
         # Get the BuildRequires for this Source RPM
         buildreqs = get_requirements(source_pkg, source_pkg.requires,
                                      binaries, ambiguities, query, hints,
-                                     None, pick_first)
+                                     filters, pick_first)
         deps.extend(buildreqs)
 
     for dep in deps:
         recurse_self_host(dep, binaries, sources, ambiguities, query, hints,
-                          pick_first, follow_recommends)
+                          filters, pick_first, follow_recommends)
 
 
 def print_package_name(pkgname, dependencies, full):
@@ -622,6 +622,14 @@ fulfill the requirement, automatically select one from the list.
 Note: this result may differ between runs depending upon how the list is
 sorted. It is recommended to use --hint instead, where practical.
 """)
+@click.option('--filter', multiple=True,
+              help="""
+Specify a package to be skipped during processing. This option may be
+specified multiple times.
+
+This is useful when some packages are provided by a lower-level module
+already contains the package and its dependencies.
+""")
 @click.option('--system/--no-system', default=False,
               help="If --system is specified, use the 'fedora', 'updates', "
                    "'source' and 'updates-source' repositories from the local "
@@ -632,7 +640,7 @@ sorted. It is recommended to use --hint instead, where practical.
                    "give back results from the RHEL sample data. Otherwise, "
                    "Fedora sample data will be used.")
 def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
-                     pick_first, sources, system, rhel):
+                     pick_first, filter, sources, system, rhel):
     """
     Look up the build dependencies for each specified package
     and all of their dependencies, recursively and display them
@@ -647,6 +655,10 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
     for fullpkgname in pkgnames:
         (pkgname, arch) = _split_pkgname(fullpkgname)
 
+        if pkgname in filter:
+            # Skip this if we explicitly filtered it out
+            continue
+
         pkg = get_pkg_by_name(query, pkgname, arch)
 
         if not merge:
@@ -655,8 +667,8 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
             ambiguities = []
 
         recurse_self_host(pkg, binary_pkgs, source_pkgs,
-                          ambiguities, query,
-                          hint, pick_first, recommends)
+                          ambiguities, query, hint, filter,
+                          pick_first, recommends)
 
         # Check for unresolved deps in the list that are present in the
         # dependencies. This happens when one package has an ambiguous dep but
