@@ -2688,7 +2688,7 @@
 0:orc-0.4.26-1.fc25.x86_64
 0:orc-compiler-0.4.26-1.fc25.x86_64
 0:orc-devel-0.4.26-1.fc25.x86_64
-0:osgi-annotation-6.0.0-3.fc24.noarch
+0:osgi-annotation-6.0.0-4.fc25.noarch
 0:os-maven-plugin-1.2.3-6.fc25.noarch
 0:os-prober-1.71-1.fc25.x86_64
 0:overpass-fonts-2.1-2.fc24.noarch
@@ -3866,11 +3866,11 @@
 0:qt5-linguist-5.7.0-3.fc25.x86_64
 0:qt5-qdoc-5.7.0-3.fc25.x86_64
 0:qt5-qhelpgenerator-5.7.0-3.fc25.x86_64
-0:qt5-qtbase-5.7.0-3.fc25.x86_64
-0:qt5-qtbase-common-5.7.0-3.fc25.noarch
-0:qt5-qtbase-devel-5.7.0-3.fc25.x86_64
-0:qt5-qtbase-gui-5.7.0-3.fc25.x86_64
-0:qt5-qtbase-static-5.7.0-3.fc25.x86_64
+0:qt5-qtbase-5.7.0-9.fc26.x86_64
+0:qt5-qtbase-common-5.7.0-9.fc26.noarch
+0:qt5-qtbase-devel-5.7.0-9.fc26.x86_64
+0:qt5-qtbase-gui-5.7.0-9.fc26.x86_64
+0:qt5-qtbase-static-5.7.0-9.fc26.x86_64
 0:qt5-qtconnectivity-5.7.0-2.fc25.x86_64
 0:qt5-qtconnectivity-devel-5.7.0-2.fc25.x86_64
 0:qt5-qtdeclarative-5.7.0-2.fc25.x86_64
@@ -3931,8 +3931,8 @@
 0:qt-settings-25-2.fc25.noarch
 0:qtsoap-2.7-13.fc24.x86_64
 0:qtsoap-devel-2.7-13.fc24.x86_64
-0:qtwebkit-2.3.4-11.fc24.x86_64
-0:qtwebkit-devel-2.3.4-11.fc24.x86_64
+0:qtwebkit-2.3.4-12.fc25.x86_64
+0:qtwebkit-devel-2.3.4-12.fc25.x86_64
 0:quartz-2.2.1-5.fc24.noarch
 0:rabbitmq-java-client-3.6.3-1.fc25.noarch
 0:rabbitmq-server-3.6.5-1.fc25.noarch
