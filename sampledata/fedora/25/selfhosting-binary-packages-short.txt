@@ -294,6 +294,10 @@ bouncycastle-mail
 bouncycastle-pg
 bouncycastle-pkix
 breeze-icon-theme
+bridge-utils
+brlapi
+brlapi-devel
+brltty
 bsf
 bsh
 btrfs-progs
@@ -330,6 +334,7 @@ cdparanoia-devel
 cdparanoia-libs
 celt051
 celt051-devel
+ceph-devel-compat
 cfitsio
 cfitsio-devel
 cflow
@@ -385,6 +390,8 @@ cppunit
 cppunit-devel
 cracklib
 cracklib-devel
+crash
+crash-devel
 crda
 cronie
 cronie-noanacron
@@ -415,6 +422,7 @@ curvesapi
 cyrus-sasl
 cyrus-sasl-devel
 cyrus-sasl-lib
+cyrus-sasl-md5
 dain-snappy
 datefudge
 dblatex
@@ -443,6 +451,7 @@ dejavu-serif-fonts
 deltarpm
 derby
 desktop-file-utils
+dev86
 device-mapper
 device-mapper-devel
 device-mapper-event
@@ -462,6 +471,7 @@ diffstat
 diffutils
 dirac-devel
 dirac-libs
+discount
 disruptor
 djvulibre-devel
 djvulibre-libs
@@ -473,6 +483,7 @@ dmraid-events
 dnf
 dnf-conf
 dnsjava
+dnsmasq
 docbook5-schemas
 docbook5-style-xsl
 docbook-dtds
@@ -483,10 +494,13 @@ docker-client
 dom4j
 dos2unix
 dosfstools
+dotconf
+dotconf-devel
 doxygen
 doxygen-latex
 dracut
 dwz
+dyninst
 e2fsprogs
 e2fsprogs-devel
 e2fsprogs-libs
@@ -529,6 +543,7 @@ eclipse-tm-terminal
 eclipse-tm-terminal-connectors
 eclipse-xsd
 ed
+edk2-ovmf
 edk2-tools
 efivar-devel
 efivar-libs
@@ -622,6 +637,8 @@ erlang-wx
 erlang-xmerl
 esound-devel
 esound-libs
+espeak
+espeak-devel
 exec-maven-plugin
 execstack
 exempi
@@ -692,6 +709,8 @@ flac-devel
 flac-libs
 flex
 flex-devel
+flite
+flite-devel
 fltk
 fltk-devel
 fluid-soundfont-common
@@ -861,6 +880,7 @@ glib
 glib2
 glib2-devel
 glib2-doc
+glib2-static
 glibc
 glibc32
 glibc-all-langpacks
@@ -907,6 +927,7 @@ gnome-online-accounts-devel
 gnome-vfs2
 gnome-vfs2-common
 gnome-vfs2-devel
+gnu-efi
 gnu-getopt
 gnulib-devel
 gnupg
@@ -981,6 +1002,7 @@ groovy-xml
 grub2
 grub2-efi
 grub2-tools
+grubby
 gsettings-desktop-schemas
 gsettings-desktop-schemas-devel
 gsl
@@ -1144,6 +1166,7 @@ iptables
 iptables-devel
 iptables-libs
 iputils
+ipxe-roms-qemu
 ironjacamar
 iscsi-initiator-utils
 iscsi-initiator-utils-devel
@@ -1464,6 +1487,7 @@ kdelibs-ktexteditor
 kdelibs-webkit
 kde-settings
 kernel-core
+kernel-devel
 kernel-headers
 keyutils
 keyutils-libs
@@ -1512,6 +1536,8 @@ libacl
 libacl-devel
 libaio
 libaio-devel
+libao
+libao-devel
 libappstream-glib
 libarchive
 libarchive-devel
@@ -1577,6 +1603,8 @@ libcdio-paranoia
 libcdio-paranoia-devel
 libcephfs1
 libcephfs1-devel
+libcephfs_jni1
+libcephfs_jni1-devel
 libcgroup
 libcgroup-devel
 libchromaprint
@@ -1626,6 +1654,8 @@ libdvdnav
 libdvdnav-devel
 libdvdread
 libdvdread-devel
+libdwarf
+libdwarf-devel
 libecb-devel
 libedit
 libedit-devel
@@ -1653,6 +1683,8 @@ libexif-devel
 libfabric
 libfabric-devel
 libfdisk
+libfdt
+libfdt-devel
 libffado
 libffado-devel
 libffi
@@ -1733,6 +1765,8 @@ libinput-devel
 libipt
 libiptcdata
 libiptcdata-devel
+libiscsi
+libiscsi-devel
 libjpeg-turbo
 libjpeg-turbo-devel
 libkadm5
@@ -1860,10 +1894,14 @@ librabbitmq
 librabbitmq-devel
 librados2
 librados2-devel
+libradosstriper1
+libradosstriper1-devel
 LibRaw
 libraw1394
 libraw1394-devel
 LibRaw-devel
+librbd1
+librbd1-devel
 librdmacm
 librdmacm-devel
 libref_array
@@ -1909,6 +1947,8 @@ libsmartcols
 libsmbclient
 libsmbclient-devel
 libSM-devel
+libsmi
+libsmi-devel
 libsndfile
 libsndfile-devel
 libsolv
@@ -2005,6 +2045,8 @@ libvdpau-devel
 libverto
 libverto-devel
 libverto-libev
+libvirt-devel
+libvirt-libs
 libvisual
 libvisual-devel
 libvoikko
@@ -2030,6 +2072,8 @@ libwpd
 libwpd-devel
 libwpg
 libwpg-devel
+libwsman1
+libwsman-devel
 libX11
 libX11-common
 libX11-devel
@@ -2379,6 +2423,7 @@ mojo-keytool-api
 mojo-keytool-api-1.7
 mojo-keytool-maven-plugin
 mojo-parent
+mokutil
 mongo-java-driver
 mono-core
 mono-data
@@ -2436,6 +2481,8 @@ nekohtml
 netcdf
 netcdf-devel
 netcdf-java
+netcf-devel
+netcf-libs
 netpbm
 netpbm-devel
 netpbm-progs
@@ -2460,6 +2507,7 @@ nghttp2
 nginx-filesystem
 ninja-build
 nkf
+nmap-ncat
 nodejs
 nodejs-abbrev
 nodejs-ansi-font
@@ -2730,13 +2778,19 @@ nss-util-devel
 nss_wrapper
 ntfs-3g
 ntfsprogs
+numactl-devel
 numactl-libs
+numad
 objectweb-asm
 objectweb-asm3
 objectweb-pom
 objenesis
 ocaml
+ocaml-camlp4
+ocaml-camlp4-devel
 ocaml-compiler-libs
+ocaml-findlib
+ocaml-ocamldoc
 ocaml-runtime
 ocaml-srpm-macros
 octave
@@ -2793,6 +2847,8 @@ openssl-devel
 openssl-libs
 openwebbeans-impl
 openwebbeans-spi
+openwsman-client
+openwsman-server
 options
 optipng
 opus
@@ -2838,8 +2894,13 @@ pciutils
 pciutils-devel
 pciutils-libs
 pcre
+pcre2
+pcre2-devel
+pcre2-utf16
+pcre2-utf32
 pcre-cpp
 pcre-devel
+pcre-static
 pcre-utf16
 pcre-utf32
 pcsc-lite
@@ -4029,6 +4090,10 @@ PyYAML
 qca
 qca-devel
 qdox
+qemu-common
+qemu-img
+qemu-sanity-check-nodeps
+qemu-system-x86
 qhull-devel
 qjson
 qjson-devel
@@ -4129,6 +4194,7 @@ quota-devel
 quota-nls
 rabbitmq-java-client
 rabbitmq-server
+radvd
 ragel
 randomizedtesting
 randomizedtesting-junit4-ant
@@ -4359,6 +4425,8 @@ saxpath
 sbc
 sbc-devel
 sbinary
+sblim-sfcc
+sblim-sfcc-devel
 sbt
 scala
 schroedinger
@@ -4366,12 +4434,15 @@ schroedinger-devel
 scl-utils-build
 scons
 screen
+scrub
 SDL
 SDL2
 SDL2-devel
 SDL2_mixer
 SDL2_mixer-devel
 SDL-devel
+seabios-bin
+seavgabios-bin
 sed
 selinux-policy
 selinux-policy-devel
@@ -4384,11 +4455,13 @@ setools-libs
 setup
 SFML
 SFML-devel
+sgabios-bin
 sgml-common
 sgpio
 shadow-utils
 shared-mime-info
 sharutils
+sheepdog
 shrinkwrap
 shrinkwrap-bom
 shrinkwrap-descriptors
@@ -4454,6 +4527,9 @@ soxr-devel
 spatial4j
 spax
 spec-version-maven-plugin
+speech-dispatcher
+speech-dispatcher-devel
+speech-dispatcher-espeak
 speex
 speex-devel
 speexdsp
@@ -4516,6 +4592,11 @@ systemd-pam
 systemd-udev
 system-python
 system-python-libs
+systemtap
+systemtap-client
+systemtap-devel
+systemtap-runtime
+systemtap-sdt-devel
 t1lib
 t1lib-devel
 t1utils
@@ -5881,6 +5962,8 @@ upower
 uriparser
 uriparser-devel
 urw-fonts
+usbredir
+usbredir-devel
 userspace-rcu
 userspace-rcu-devel
 ustr
@@ -5899,11 +5982,16 @@ velocity
 velocity-tools
 vim-filesystem
 vim-minimal
+virglrenderer
+virglrenderer-devel
 volume_key-devel
 volume_key-libs
 vorbis-java
 vorbis-java-tika
 vsftpd
+vte3
+vte3-devel
+vte-profile
 w3m
 wavpack
 wavpack-devel
@@ -5922,6 +6010,7 @@ webrtc-audio-processing-devel
 weld-api
 weld-core
 weld-parent
+wget
 which
 wildfly-common
 wildfly-core
@@ -5934,6 +6023,9 @@ wildmidi-devel
 wildmidi-libs
 wireless-tools
 wireless-tools-devel
+wireshark
+wireshark-cli
+wireshark-devel
 woodstox-core
 words
 ws-commons-util
@@ -5980,6 +6072,9 @@ xemacs-packages-base
 xemacs-packages-base-el
 xemacs-packages-extra
 xemacs-packages-extra-el
+xen-devel
+xen-libs
+xen-licenses
 xerces-c
 xerces-c-devel
 xerces-j2
@@ -5987,6 +6082,7 @@ xerces-j2-javadoc
 xfig
 xfsprogs
 xfsprogs-devel
+xhtml1-dtds
 xkeyboard-config
 xkeyboard-config-devel
 xmlbeans
