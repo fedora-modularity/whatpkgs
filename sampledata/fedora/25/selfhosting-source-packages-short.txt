@@ -178,6 +178,7 @@ chrpath
 cifs-utils
 cjkuni-uming-fonts
 clang
+classloader-leak-test-framework
 classmate
 cli-parser
 cloog

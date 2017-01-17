@@ -350,6 +350,7 @@ cjkuni-uming-fonts
 clang
 clang-devel
 clang-libs
+classloader-leak-test-framework
 classmate
 cli-parser
 cloog
