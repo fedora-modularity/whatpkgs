@@ -852,8 +852,8 @@
 0:gmetrics-0.6-15.fc25.noarch
 0:gnat-srpm-macros-4-1.fc25.noarch
 0:gnome-common-3.18.0-2.fc24.noarch
-0:gnome-doc-utils-0.20.10-9.fc25.noarch
-0:gnome-doc-utils-stylesheets-0.20.10-9.fc25.noarch
+0:gnome-doc-utils-0.20.10-10.fc25.noarch
+0:gnome-doc-utils-stylesheets-0.20.10-10.fc25.noarch
 0:gnome-online-accounts-3.22.1-1.fc25.x86_64
 0:gnome-online-accounts-devel-3.22.1-1.fc25.x86_64
 0:gnome-vfs2-2.24.4-20.fc24.x86_64
@@ -1102,7 +1102,7 @@
 0:istack-commons-runtime-2.21-4.fc24.noarch
 0:istack-commons-tools-2.21-4.fc24.noarch
 0:itext-core-2.1.7-33.fc25.noarch
-0:itstool-2.0.2-4.fc24.noarch
+0:itstool-2.0.2-5.fc25.noarch
 0:ivy-local-4.7.0-6.fc25.noarch
 0:iw-4.1-2.fc24.x86_64
 0:jack-audio-connection-kit-1.9.10-5.fc24.x86_64
