@@ -2441,7 +2441,7 @@
 0:re2-20160401-2.fc25.src
 0:re2c-0.14.3-2.fc24.src
 0:readline-6.3-8.fc24.src
-0:realmd-0.16.2-5.fc25.src
+0:realmd-0.16.2-8.fc25.src
 0:recode-3.6-42.fc24.src
 0:redhat-lsb-4.1-32.fc25.src
 0:redhat-menus-12.0.2-10.fc24.src

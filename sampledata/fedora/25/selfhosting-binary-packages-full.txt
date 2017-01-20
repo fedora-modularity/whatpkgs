@@ -3956,7 +3956,7 @@
 0:re2-devel-20160401-2.fc25.x86_64
 0:readline-6.3-8.fc24.x86_64
 0:readline-devel-6.3-8.fc24.x86_64
-0:realmd-0.16.2-5.fc25.x86_64
+0:realmd-0.16.2-8.fc25.x86_64
 0:recode-3.6-42.fc24.x86_64
 0:recode-devel-3.6-42.fc24.x86_64
 0:redhat-lsb-core-4.1-32.fc25.x86_64
