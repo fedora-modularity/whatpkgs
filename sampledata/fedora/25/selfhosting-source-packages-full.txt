@@ -997,7 +997,7 @@
 0:libX11-1.6.4-1.fc25.src
 0:libXau-1.0.8-6.fc24.src
 0:libXaw-1.0.13-4.fc25.src
-0:libxcb-1.12-1.fc25.src
+0:libxcb-1.12-2.fc26.src
 0:libXcomposite-0.4.4-8.fc24.src
 0:libXcursor-1.1.14-6.fc24.src
 0:libXdamage-1.1.4-8.fc24.src
@@ -2427,7 +2427,7 @@
 0:qt-assistant-adp-4.6.3-12.fc24.src
 0:qt-mobility-1.2.2-0.23.20140317git169da60c.fc24.src
 0:qtsoap-2.7-13.fc24.src
-0:qtwebkit-2.3.4-12.fc25.src
+0:qtwebkit-2.3.4-13.fc25.src
 0:quartz-2.2.1-5.fc24.src
 0:R-3.3.1-2.fc25.src
 0:rabbitmq-java-client-3.6.3-1.fc25.src
