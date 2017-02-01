@@ -246,7 +246,7 @@ def get_srpm_for_package_name(query, pkgname):
 
     return get_srpm_for_package(query, pkg)
 
-def append_requirement(reqs, pkg, filters):
+def append_requirement(reqs, parent, pkg, filters):
     """
     Check if this package is in the filter list. If it is, then
     do not add it to the list of packages to recurse into.
@@ -293,7 +293,7 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
                     if rpkg.name == choice:
                         # This has been disambiguated; use this one
                         found = True
-                        append_requirement(requirements, rpkg, filters)
+                        append_requirement(requirements, parent, rpkg, filters)
                         break
                 if found:
                     # Don't keep looking once we find a match
@@ -311,7 +311,7 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
                     for rpkg in required_packages:
                         if rpkg.arch == 'noarch' or rpkg.arch == \
                                 primary_arch or rpkg.arch == multi_arch:
-                            append_requirement(requirements, rpkg, filters)
+                            append_requirement(requirements, parent, rpkg, filters)
                             break
                     continue
                 # Packages not solved by 'hints' list
@@ -324,7 +324,7 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
             continue
 
         # Exactly one package matched, so proceed down into it.
-        append_requirement(requirements, required_packages[0], filters)
+        append_requirement(requirements, parent, required_packages[0], filters)
 
     return requirements
 
