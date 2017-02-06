@@ -2563,7 +2563,6 @@ R
 rabbitmq-java-client
 rabbitmq-server
 radvd
-ragel
 randomizedtesting
 raptor2
 rarian
