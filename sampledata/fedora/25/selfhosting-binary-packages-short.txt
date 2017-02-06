@@ -4196,7 +4196,6 @@ quota-nls
 rabbitmq-java-client
 rabbitmq-server
 radvd
-ragel
 randomizedtesting
 randomizedtesting-junit4-ant
 randomizedtesting-runner

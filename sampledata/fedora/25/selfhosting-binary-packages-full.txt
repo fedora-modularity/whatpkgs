@@ -3938,7 +3938,6 @@
 0:rabbitmq-java-client-3.6.3-1.fc25.noarch
 0:rabbitmq-server-3.6.5-1.fc25.noarch
 0:radvd-2.14-1.fc25.x86_64
-0:ragel-6.8-5.fc23.x86_64
 0:randomizedtesting-2.3.1-2.fc24.noarch
 0:randomizedtesting-junit4-ant-2.3.1-2.fc24.noarch
 0:randomizedtesting-runner-2.3.1-2.fc24.noarch
@@ -4049,7 +4048,7 @@
 0:rubygem-haml-4.0.7-1.fc25.noarch
 0:rubygem-hashery-2.1.2-1.fc25.noarch
 0:rubygem-hoe-3.15.2-1.fc25.noarch
-0:rubygem-hpricot-0.8.6-12.fc24.x86_64
+0:rubygem-hpricot-0.8.6-15.fc26.x86_64
 0:rubygem-http_connection-1.4.1-11.fc24.noarch
 0:rubygem-i18n-0.7.0-3.fc24.noarch
 0:rubygem-introspection-0.0.3-5.fc24.noarch
