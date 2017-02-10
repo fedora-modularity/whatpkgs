@@ -2660,10 +2660,10 @@
 0:openjpeg2-devel-2.1.2-1.fc25.x86_64
 0:openjpeg-devel-1.5.1-16.fc24.x86_64
 0:openjpeg-libs-1.5.1-16.fc24.x86_64
-0:openldap-2.4.44-2.fc25.x86_64
-0:openldap-clients-2.4.44-2.fc25.x86_64
-0:openldap-devel-2.4.44-2.fc25.x86_64
-0:openldap-servers-2.4.44-2.fc25.x86_64
+0:openldap-2.4.44-7.fc25.x86_64
+0:openldap-clients-2.4.44-7.fc25.x86_64
+0:openldap-devel-2.4.44-7.fc25.x86_64
+0:openldap-servers-2.4.44-7.fc25.x86_64
 0:openmpi-1.10.4-4.fc25.x86_64
 0:openmpi-devel-1.10.4-4.fc25.x86_64
 0:opennlp-maxent-1.5.3-3.fc24.noarch

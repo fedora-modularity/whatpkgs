@@ -1482,7 +1482,7 @@
 0:openjpa-2.4.1-2.fc25.src
 0:openjpeg-1.5.1-16.fc24.src
 0:openjpeg2-2.1.2-1.fc25.src
-0:openldap-2.4.44-2.fc25.src
+0:openldap-2.4.44-7.fc25.src
 0:openmpi-1.10.4-4.fc25.src
 0:opennlp-1.5.3-3.fc24.src
 0:opensc-0.16.0-1.fc25.src
