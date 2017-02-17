@@ -87,7 +87,7 @@ def _setup_static_repo(base, reponame, path):
     repo._md_expire_cache()
 
 
-def setup_repo(use_system, use_rhel):
+def setup_repo(use_system, use_rhel, version="25"):
     """
     Enable only the official Fedora repositories
 
@@ -119,7 +119,9 @@ def setup_repo(use_system, use_rhel):
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/%s/os/" %
                                  primary_arch)
-        _setup_static_repo(base, "static-rhel7.3beta-optional-binary", repo_path)
+        _setup_static_repo(base,
+                           "static-rhel7.3beta-optional-binary",
+                           repo_path)
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server/source/tree/")
@@ -127,42 +129,47 @@ def setup_repo(use_system, use_rhel):
 
         repo_path = os.path.join(dir_path,
             "sampledata/repodata/RHEL-7/7.3-Beta/Server-optional/source/tree/")
-        _setup_static_repo(base, "static-rhel7.3beta-optional-source", repo_path)
+        _setup_static_repo(base,
+                           "static-rhel7.3beta-optional-source",
+                           repo_path)
 
     else:
         # Load the static data for Fedora
         dir_path = os.path.dirname(os.path.realpath(__file__))
         repo_path = os.path.join(dir_path,
-           "sampledata/repodata/fedora/linux/development/25/Everything/%s/os"
-           "/" % primary_arch)
-        _setup_static_repo(base, "static-f25-beta-binary", repo_path)
+           "sampledata/repodata/fedora/linux/development/%s/Everything/%s/"
+           "/os" % (version, primary_arch))
+        _setup_static_repo(base, "static-f%s-beta-binary" % version, repo_path)
 
         repo_path = os.path.join(dir_path,
-           "sampledata/repodata/fedora/linux/development/25/Everything/source/tree/")
-        _setup_static_repo(base, "static-f25-beta-source", repo_path)
+           "sampledata/repodata/fedora/linux/development/%s/Everything/source"
+           "/tree/" % version)
+        _setup_static_repo(base, "static-f%s-beta-source" % version, repo_path)
 
         # Add override repositories for modularity
         repo_path = os.path.join(dir_path,
-           "sampledata/repodata/fedora/linux/development/25/gencore-override"
-           "/%s/os" % primary_arch)
-        _setup_static_repo(base, "static-gencore-override-binary", repo_path)
+           "sampledata/repodata/fedora/linux/development/%s/gencore-override"
+           "/%s/os" % (version, primary_arch))
+        _setup_static_repo(base,
+                           "static-gencore-override-f%s-binary" % version,
+                           repo_path)
 
         repo_path = os.path.join(dir_path,
-           "sampledata/repodata/fedora/linux/development/25/gencore-override"
-           "/source/tree/")
+           "sampledata/repodata/fedora/linux/development/%s/gencore-override"
+           "/source/tree/" % version)
         _setup_static_repo(base, "static-gencore-override-source", repo_path)
 
     base.fill_sack(load_system_repo=False, load_available_repos=True)
     return base
 
 
-def get_query_object(use_system, use_rhel):
+def get_query_object(use_system, use_rhel, version):
     """
     Get query objects for binary packages and source packages
 
     Returns: query object for source and binaries
     """
-    base = setup_repo(use_system, use_rhel)
+    base = setup_repo(use_system, use_rhel, version)
 
     return base.sack.query()
 
@@ -500,14 +507,17 @@ sorted. It is recommended to use --hint instead, where practical.
               help="If --system is not specified, the use of --rhel will "
                    "give back results from the RHEL sample data. Otherwise, "
                    "Fedora sample data will be used.")
+@click.option('--version', default="25",
+              help="Specify the version of the OS sampledata to compare "
+                   "against.")
 def neededby(pkgnames, hint, filter, recommends, merge, full_name, pick_first,
-             system, rhel):
+             system, rhel, version):
     """
     Look up the dependencies for each specified package and
     display them in a human-parseable format.
     """
 
-    query = get_query_object(system, rhel)
+    query = get_query_object(system, rhel, version)
 
     dependencies = {}
     ambiguities = []
@@ -578,13 +588,16 @@ def neededby(pkgnames, hint, filter, recommends, merge, full_name, pick_first,
               help="If --system is not specified, the use of --rhel will "
                    "give back results from the RHEL sample data. Otherwise, "
                    "Fedora sample data will be used.")
-def getsourcerpm(pkgnames, full_name, system, rhel):
+@click.option('--version', default="25",
+              help="Specify the version of the OS sampledata to compare "
+                   "against.")
+def getsourcerpm(pkgnames, full_name, system, rhel, version):
     """
     Look up the SRPMs from which these binary RPMs were generated.
 
     This list will be displayed deduplicated and sorted.
     """
-    query = get_query_object(system, rhel)
+    query = get_query_object(system, rhel, version)
 
     srpm_names = {}
     for fullpkgname in pkgnames:
@@ -639,15 +652,18 @@ already contains the package and its dependencies.
               help="If --system is not specified, the use of --rhel will "
                    "give back results from the RHEL sample data. Otherwise, "
                    "Fedora sample data will be used.")
+@click.option('--version', default="25",
+              help="Specify the version of the OS sampledata to compare "
+                   "against.")
 def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
-                     pick_first, filter, sources, system, rhel):
+                     pick_first, filter, sources, system, rhel, version):
     """
     Look up the build dependencies for each specified package
     and all of their dependencies, recursively and display them
     in a human-parseable format.
     """
 
-    query = get_query_object(system, rhel)
+    query = get_query_object(system, rhel, version)
 
     binary_pkgs = {}
     source_pkgs = {}
@@ -733,8 +749,11 @@ def neededtoselfhost(pkgnames, hint, recommends, merge, full_name,
               help="If --system is not specified, the use of --rhel will "
                    "give back results from the RHEL sample data. Otherwise, "
                    "Fedora sample data will be used.")
-def debugprovides(requires, system, rhel):
-    query = get_query_object(system, rhel)
+@click.option('--version', default="25",
+              help="Specify the version of the OS sampledata to compare "
+                   "against.")
+def debugprovides(requires, system, rhel, version):
+    query = get_query_object(system, rhel, version)
 
     required_packages = query.filter(provides=requires, latest=True,
                                      arch=primary_arch)
