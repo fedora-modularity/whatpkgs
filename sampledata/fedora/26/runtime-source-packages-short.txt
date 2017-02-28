@@ -55,7 +55,9 @@ gmp
 gnat-srpm-macros
 gnupg2
 gnutls
+gobject-introspection
 go-srpm-macros
+gpgme
 grep
 groff
 grub2
@@ -76,6 +78,7 @@ libcap
 libcap-ng
 libcroco
 libdb
+libdnf
 libffi
 libgcrypt
 libgpg-error
@@ -86,15 +89,18 @@ libksba
 libmetalink
 libmpc
 libpcap
+libpeas
 libpipeline
 libpng
 libpsl
 libpwquality
+librepo
 libseccomp
 libselinux
 libsemanage
 libsepol
 libsigsegv
+libsolv
 libssh2
 libtasn1
 libtool
@@ -110,6 +116,7 @@ lzo
 m4
 make
 man-db
+microdnf
 mpfr
 ncompress
 ncurses

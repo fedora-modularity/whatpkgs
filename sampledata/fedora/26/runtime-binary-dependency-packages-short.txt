@@ -70,7 +70,9 @@ gmp
 gnat-srpm-macros
 gnupg2
 gnutls
+gobject-introspection
 go-srpm-macros
+gpgme
 grep
 groff-base
 grub2
@@ -104,6 +106,7 @@ libcrypt
 libcurl
 libdb
 libdb-utils
+libdnf
 libfdisk
 libffi
 libgcc
@@ -119,17 +122,20 @@ libmount
 libmpc
 libnghttp2
 libpcap
+libpeas
 libpipeline
 libpkgconf
 libpng
 libpsl
 libpwquality
+librepo
 libseccomp
 libselinux
 libsemanage
 libsepol
 libsigsegv
 libsmartcols
+libsolv
 libssh2
 libstdc++
 libstdc++-devel
@@ -147,6 +153,7 @@ lzo
 m4
 make
 man-db
+microdnf
 mpfr
 ncompress
 ncurses

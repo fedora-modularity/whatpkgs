@@ -16,6 +16,7 @@ cat sampledata/fedora/26/toplevel-binary-packages.txt|xargs \
                        --hint=libcrypt \
                        --hint=python-libs \
                        --hint=pkgconf-pkg-config \
+                       --hint=libdnf \
 | sort | tee sampledata/fedora/26/runtime-binary-dependency-packages-short.txt
 
 
@@ -28,6 +29,7 @@ cat sampledata/fedora/26/toplevel-binary-packages.txt|xargs \
                        --hint=libcrypt \
                        --hint=python-libs \
                        --hint=pkgconf-pkg-config \
+                       --hint=libdnf \
 | sort | tee sampledata/fedora/26/runtime-binary-dependency-packages-full.txt
 
 
@@ -60,6 +62,7 @@ cat sampledata/fedora/26/toplevel-binary-packages.txt \
                                --hint=libcrypt \
                                --hint=libverto-libev \
                                --hint=pkgconf-pkg-config \
+                               --hint=libdnf \
                                --hint=perl-Archive-Extract-bz2-bunzip2 \
                                --hint=perl-Archive-Extract-gz-gzip \
                                --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
@@ -94,6 +97,7 @@ cat sampledata/fedora/26/toplevel-binary-packages.txt \
                                --hint=libcrypt \
                                --hint=libverto-libev \
                                --hint=pkgconf-pkg-config \
+                               --hint=libdnf \
                                --hint=perl-Archive-Extract-bz2-bunzip2 \
                                --hint=perl-Archive-Extract-gz-gzip \
                                --hint=perl-Archive-Extract-lzma-Compress-unLZMA \
