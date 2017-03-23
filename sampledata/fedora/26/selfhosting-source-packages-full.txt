@@ -267,6 +267,7 @@
 0:dos2unix-7.3.4-2.fc26.src
 0:dosfstools-4.1-2.fc26.src
 0:dotconf-1.3-13.fc26.src
+0:dpkg-1.18.22-2.fc26.src
 0:dracut-044-177.fc26.src
 0:dtc-1.4.2-2.fc26.src
 0:dwz-0.12-3.fc26.src
@@ -296,7 +297,7 @@
 0:ed-1.14.1-2.fc26.src
 0:edk2-20170209git296153c5-2.fc26.src
 0:efibootmgr-14-3.fc26.src
-0:efivar-30-4.fc26.src
+0:efivar-31-1.fc27.src
 0:efl-1.18.4-2.fc26.src
 0:ehcache-core-2.6.11-3.fc26.src
 0:ehcache-parent-2.3-13.fc26.src
@@ -811,6 +812,7 @@
 0:kf5-ki18n-5.31.0-1.fc26.src
 0:kmod-24-1.fc26.src
 0:kohsuke-pom-14-3.fc26.src
+0:koji-1.11.0-6.fc26.src
 0:krb5-1.15-6.fc26.src
 0:kryo-3.0.3-3.fc26.src
 0:ksh-20120801-30.fc26.src
@@ -831,6 +833,7 @@
 0:leveldb-1.18-1.fc26.src
 0:leveldb-java-0.7-6.fc26.src
 0:leveldbjni-1.8-15.fc26.src
+0:libabigail-1.0-0.9.rc6.4.fc26.src
 0:libaio-0.3.110-7.fc26.src
 0:libao-1.2.0-7.fc26.src
 0:libappstream-glib-0.6.9-1.fc26.src
@@ -2416,8 +2419,10 @@
 0:python-itsdangerous-0.24-9.fc26.src
 0:python-jinja2-2.9.5-2.fc26.src
 0:python-jsonschema-2.5.1-5.fc26.src
+0:python-kerberos-1.2.5-3.fc26.src
 0:python-keyczar-0.71c-8.fc26.src
 0:python-keyring-9.0-7.fc26.src
+0:python-krbV-1.0.90-13.fc26.src
 0:python-linecache2-1.0.0-9.fc26.src
 0:python-lxml-3.7.2-2.fc26.src
 0:python-mako-1.0.6-3.fc26.src
@@ -2473,6 +2478,7 @@
 0:python-reportlab-3.3.0-4.fc26.src
 0:python-repoze-lru-0.4-13.fc26.src
 0:python-requests-2.13.0-1.fc26.src
+0:python-requests-kerberos-0.10.0-4.fc26.src
 0:python-restkit-4.2.2-6.fc26.src
 0:python-rpm-macros-3-19.fc26.src
 0:python-scour-0.35-4.fc26.src
@@ -2504,6 +2510,7 @@
 0:python-ttystatus-0.34-2.fc26.src
 0:python-twisted-16.4.1-3.fc26.src
 0:python-unittest2-1.1.0-9.fc26.src
+0:python-urlgrabber-3.10.1-11.fc26.src
 0:python-urllib3-1.20-1.fc26.src
 0:python-virtualenv-15.0.3-6.fc26.src
 0:python-waitress-1.0.2-1.fc26.src

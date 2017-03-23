@@ -23,7 +23,7 @@
 0:dracut-044-177.fc26.x86_64
 0:dwz-0.12-3.fc26.x86_64
 0:efibootmgr-14-3.fc26.x86_64
-0:efivar-libs-30-4.fc26.x86_64
+0:efivar-libs-31-1.fc27.x86_64
 0:elfutils-0.168-5.fc26.x86_64
 0:elfutils-default-yama-scope-0.168-5.fc26.noarch
 0:elfutils-libelf-0.168-5.fc26.x86_64

@@ -533,6 +533,7 @@ dotconf
 dotconf-devel
 doxygen
 doxygen-latex
+dpkg
 dracut
 dwz
 dyninst
@@ -1569,6 +1570,7 @@ kmod
 kmod-devel
 kmod-libs
 kohsuke-pom
+koji
 kpartx
 krb5-devel
 krb5-libs
@@ -1604,6 +1606,7 @@ leveldb
 leveldb-devel
 leveldb-java
 leveldbjni
+libabigail
 libacl
 libacl-devel
 libaio
@@ -4005,6 +4008,7 @@ python2-iniparse
 python2-iso8601
 python2-jinja2
 python2-jsonschema
+python2-kerberos
 python2-keyring
 python2-ldb
 python2-ldb-devel
@@ -4056,6 +4060,7 @@ python2-pyxdg
 python2-rdflib
 python2-reportlab
 python2-requests
+python2-requests-kerberos
 python2-rpm
 python2-rpm-macros
 python2-scipy
@@ -4146,6 +4151,7 @@ python3-itsdangerous
 python3-javapackages
 python3-jinja2
 python3-jsonschema
+python3-kerberos
 python3-keyring
 python3-libcomps
 python3-librepo
@@ -4288,6 +4294,7 @@ python-IPy-python3
 python-isodate
 python-itsdangerous
 python-keyczar
+python-krbV
 python-ldb-devel-common
 python-libxml2
 python-linecache2
@@ -4325,6 +4332,7 @@ python-tempita
 python-testscenarios
 python-testtools
 python-ttystatus
+python-urlgrabber
 python-webob
 python-webtest
 python-werkzeug

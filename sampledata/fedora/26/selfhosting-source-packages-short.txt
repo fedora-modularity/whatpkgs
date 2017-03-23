@@ -287,6 +287,7 @@ dos2unix
 dosfstools
 dotconf
 doxygen
+dpkg
 dracut
 dtc
 dwz
@@ -856,6 +857,7 @@ kf5-kdoctools
 kf5-ki18n
 kmod
 kohsuke-pom
+koji
 krb5
 kryo
 ksh
@@ -877,6 +879,7 @@ lettuce
 leveldb
 leveldb-java
 leveldbjni
+libabigail
 libaio
 libao
 libappstream-glib
@@ -2547,8 +2550,10 @@ python-isodate
 python-itsdangerous
 python-jinja2
 python-jsonschema
+python-kerberos
 python-keyczar
 python-keyring
+python-krbV
 python-linecache2
 python-lxml
 python-mako
@@ -2604,6 +2609,7 @@ python-rdflib
 python-reportlab
 python-repoze-lru
 python-requests
+python-requests-kerberos
 python-restkit
 python-rpm-macros
 python-scour
@@ -2635,6 +2641,7 @@ python-traceback2
 python-ttystatus
 python-twisted
 python-unittest2
+python-urlgrabber
 python-urllib3
 python-virtualenv
 python-waitress

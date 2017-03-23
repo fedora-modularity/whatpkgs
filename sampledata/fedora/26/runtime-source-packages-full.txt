@@ -21,7 +21,7 @@
 0:dwz-0.12-3.fc26.src
 0:e2fsprogs-1.43.4-2.fc26.src
 0:efibootmgr-14-3.fc26.src
-0:efivar-30-4.fc26.src
+0:efivar-31-1.fc27.src
 0:elfutils-0.168-5.fc26.src
 0:expat-2.2.0-2.fc26.src
 0:fedora-logos-26.0.0-2.fc26.src
