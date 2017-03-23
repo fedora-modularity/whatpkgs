@@ -364,7 +364,6 @@ cdparanoia-libs
 celt051
 celt051-devel
 ceph-devel-compat
-cflow
 cglib
 check
 check-devel
@@ -583,6 +582,7 @@ eclipse-xsd
 ed
 edk2-ovmf
 edk2-tools
+efibootmgr
 efivar-devel
 efivar-libs
 efl
@@ -2313,6 +2313,7 @@ m17n-lib-devel
 m17n-lib-tools
 m2crypto
 m4
+mactel-boot
 mailcap
 mailx
 make
@@ -4723,6 +4724,8 @@ shibboleth-java-support
 shiboken
 shiboken-devel
 shiboken-libs
+shim
+shim-unsigned
 shrinkwrap
 shrinkwrap-bom
 shrinkwrap-descriptors
@@ -4858,6 +4861,8 @@ swig
 swt-chart
 symlinks
 syslinux
+syslinux-extlinux
+syslinux-extlinux-nonlinux
 syslinux-nonlinux
 syslinux-perl
 systemd

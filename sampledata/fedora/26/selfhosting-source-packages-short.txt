@@ -180,7 +180,6 @@ cdparanoia
 cdrkit
 celt051
 ceph
-cflow
 cglib
 check
 checkpolicy
@@ -320,6 +319,7 @@ eclipse-tm-terminal
 eclipse-xsd
 ed
 edk2
+efibootmgr
 efivar
 efl
 ehcache-core
@@ -1160,6 +1160,7 @@ m17n-db
 m17n-lib
 m2crypto
 m4
+mactel-boot
 mailcap
 mailx
 make
@@ -2908,6 +2909,8 @@ sheepdog
 shibboleth-java-parent-v3
 shibboleth-java-support
 shiboken
+shim
+shim-signed
 shrinkwrap
 shrinkwrap-descriptors
 shrinkwrap-resolver
