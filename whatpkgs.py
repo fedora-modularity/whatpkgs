@@ -11,12 +11,26 @@ import sys
 import pprint
 import dnf
 import click
+from collections import namedtuple
+from queue import Queue
+from threading import Thread
 from colorama import Fore, Back, Style
+
+NUM_PROCS = os.sysconf("SC_NPROCESSORS_ONLN")
 
 multi_arch = None
 primary_arch = platform.machine()
 if primary_arch == "x86_64":
     multi_arch = "i686"
+
+PackageContext = namedtuple("DepContext", ["dependencies",
+                                           "ambiguities",
+                                           "query",
+                                           "hints",
+                                           "filters",
+                                           "whatreqs",
+                                           "do_pick_first",
+                                           "do_recommends"])
 
 def splitFilename(filename):
     """
@@ -265,33 +279,35 @@ def append_requirement(reqs, parent, pkg, filters, whatreqs):
     if filters is None or pkg.name not in filters:
         reqs.append(pkg)
 
-def get_requirements(parent, reqs, dependencies, ambiguities,
-                     query, hints, filters, whatreqs, pick_first):
+def get_requirements(parent, reqs, pkg_ctx):
     """
     Share code for recursing into requires or recommends
     """
     requirements = []
 
     for require in reqs:
-        required_packages = query.filter(provides=require, latest=True,
-                                         arch=primary_arch)
+        required_packages = pkg_ctx.query.filter(provides=require,
+                                                 latest=True,
+                                                 arch=primary_arch)
 
         # Check for multi-arch packages satisfying it
         if len(required_packages) == 0 and multi_arch:
-            required_packages = query.filter(provides=require, latest=True,
-                                             arch=multi_arch)
+            required_packages = pkg_ctx.query.filter(provides=require,
+                                                     latest=True,
+                                                     arch=multi_arch)
 
         # Check for noarch packages satisfying it
         if len(required_packages) == 0:
-            required_packages = query.filter(provides=require, latest=True,
-                                             arch='noarch')
+            required_packages = pkg_ctx.query.filter(provides=require,
+                                                     latest=True,
+                                                     arch='noarch')
 
         # If there are no dependencies, just return
         if len(required_packages) == 0:
             print("No package for [%s] required by [%s-%s-%s.%s]" % (
-                str(require),
-                parent.name, parent.version,
-                parent.release, parent.arch),
+                    str(require),
+                    parent.name, parent.version,
+                    parent.release, parent.arch),
                   file=sys.stderr)
             continue
 
@@ -299,23 +315,26 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
         if len(required_packages) > 1:
             # Handle 'hints' list
             found = False
-            for choice in hints:
+            for choice in pkg_ctx.hints:
                 for rpkg in required_packages:
                     if rpkg.name == choice:
                         # This has been disambiguated; use this one
                         found = True
-                        append_requirement(requirements, parent, rpkg,
-                                           filters, whatreqs)
+                        append_requirement(requirements,
+                                           parent,
+                                           rpkg,
+                                           pkg_ctx.filters,
+                                           pkg_ctx.whatreqs)
                         break
                 if found:
                     # Don't keep looking once we find a match
                     break
 
             if not found:
-                if pick_first:
+                if pkg_ctx.do_pick_first:
                     # First try to use something we've already discovered
                     for rpkg in required_packages:
-                        if rpkg.name in dependencies:
+                        if rpkg.name in pkg_ctx.dependencies:
                             return
 
                     # The user instructed processing to just take the first
@@ -323,8 +342,11 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
                     for rpkg in required_packages:
                         if rpkg.arch == 'noarch' or rpkg.arch == \
                                 primary_arch or rpkg.arch == multi_arch:
-                            append_requirement(requirements, parent, rpkg,
-                                               filters, whatreqs)
+                            append_requirement(requirements,
+                                               parent,
+                                               rpkg,
+                                               pkg_ctx.filters,
+                                               pkg_ctx.whatreqs)
                             break
                     continue
                 # Packages not solved by 'hints' list
@@ -332,13 +354,13 @@ def get_requirements(parent, reqs, dependencies, ambiguities,
                 unresolved = {}
                 for rpkg in required_packages:
                     unresolved["%s#%s" % (rpkg.name, rpkg.arch)] = rpkg
-                ambiguities.append(unresolved)
+                pkg_ctx.ambiguities.append(unresolved)
 
             continue
 
         # Exactly one package matched, so proceed down into it.
         append_requirement(requirements, parent, required_packages[0],
-                           filters, whatreqs)
+                           pkg_ctx.filters, pkg_ctx.whatreqs)
 
     return requirements
 
@@ -478,6 +500,92 @@ def _split_pkgname(name):
     return (pkgname, arch)
 
 
+def get_all_requirements(pkg_ctx, pkg_queue):
+    while True:
+        # Get all requested dependencies
+        pkg = pkg_queue.get()
+        if pkg is None:
+            break;
+
+        depname = "%s#%s" % (pkg.name, pkg.arch)
+        if depname in pkg_ctx.dependencies:
+            # Don't recurse the same dependency twice
+            pkg_queue.task_done()
+            continue
+        pkg_ctx.dependencies[depname] = pkg
+
+        #print("Processing [%s]" % depname, file=sys.stderr)
+
+        # Process Requires:
+        deps = get_requirements(pkg, pkg.requires, pkg_ctx)
+
+        try:
+            # Process Requires(pre|post)
+            prereqs = get_requirements(pkg, pkg.requires_pre, pkg_ctx)
+            deps.extend(prereqs)
+        except AttributeError:
+            print("DNF 2.x required.", file=sys.stderr)
+            sys.exit(1)
+
+        if pkg_ctx.do_recommends:
+            recommends = get_requirements(pkg, pkg.recommends, pkg_ctx)
+            deps.extend(recommends)
+
+        for dep in deps:
+            pkg_queue.put(dep);
+
+        pkg_queue.task_done();
+
+def get_parallel_deps(pkgs, dependencies, ambiguities, query, hint,
+                      filter, whatreqs, pick_first, recommends):
+
+    # Store all of the options here in a namedtuple to make it easier to
+    # pass around.
+    pkg_ctx = PackageContext(dependencies=dependencies,
+                             ambiguities=ambiguities,
+                             query=query,
+                             hints=hint,
+                             filters=filter,
+                             whatreqs=whatreqs,
+                             do_pick_first=pick_first,
+                             do_recommends=recommends)
+
+    # Create a Queue of packages to look up
+    package_queue = Queue()
+
+    # Spin up threads for processing the dependencies
+    # TODO: add command-line argument to set this. For now, select threads
+    # equal to the number of available processors.
+    threads = []
+    for i in range(NUM_PROCS):
+        worker = Thread(target=get_all_requirements,
+                        args=(pkg_ctx, package_queue,))
+        worker.setDaemon(True)
+        worker.start()
+        threads.append(worker)
+
+    # initialized the Queue with the top-level packages.
+    for pkg in pkgs:
+        package_queue.put(pkg);
+
+    # Wait for all the magic to happen
+    package_queue.join();
+
+    # Terminate worker threads
+    for i in range(NUM_PROCS):
+        package_queue.put(None);
+    for worker in threads:
+        worker.join()
+
+    # Check for unresolved deps in the list that are present in the
+    # dependencies. This happens when one package has an ambiguous dep but
+    # another package has an explicit dep on the same package.
+    # This list comprehension just returns the set of dictionaries that
+    # are not resolved by other entries
+    ambiguities = [x for x in ambiguities
+                   if not resolve_ambiguity(dependencies, x)]
+
+
 @click.group()
 def main():
     pass
@@ -506,7 +614,6 @@ Specify a package that you want to identify what pulls it into the complete
 set. This option may be specified multiple times.
 """)
 @click.option('--recommends/--no-recommends', default=True)
-@click.option('--merge/--no-merge', default=False)
 @click.option('--full-name/--no-full-name', default=False)
 @click.option('--pick-first/--no-pick-first', default=False,
               help="""
@@ -528,7 +635,7 @@ sorted. It is recommended to use --hint instead, where practical.
 @click.option('--version', default="25",
               help="Specify the version of the OS sampledata to compare "
                    "against.")
-def neededby(pkgnames, hint, filter, whatreqs, recommends, merge, full_name,
+def neededby(pkgnames, hint, filter, whatreqs, recommends, full_name,
              pick_first, system, rhel, version):
     """
     Look up the dependencies for each specified package and
@@ -539,6 +646,7 @@ def neededby(pkgnames, hint, filter, whatreqs, recommends, merge, full_name,
 
     dependencies = {}
     ambiguities = []
+    pkgs = []
     for fullpkgname in pkgnames:
         (pkgname, arch) = _split_pkgname(fullpkgname)
 
@@ -546,53 +654,22 @@ def neededby(pkgnames, hint, filter, whatreqs, recommends, merge, full_name,
             # Skip this if we explicitly filtered it out
             continue
 
-        pkg = get_pkg_by_name(query, pkgname, arch)
+        pkgs.append(get_pkg_by_name(query, pkgname, arch))
 
-        if not merge:
-            # empty the dependencies list and start over
-            dependencies = {}
-            ambiguities = []
 
-        recurse_package_deps(pkg, dependencies, ambiguities, query, hint,
-                             filter, whatreqs, pick_first, recommends)
+    get_parallel_deps(pkgs, dependencies, ambiguities, query, hint,
+                      filter, whatreqs, pick_first, recommends)
 
-        # Check for unresolved deps in the list that are present in the
-        # dependencies. This happens when one package has an ambiguous dep but
-        # another package has an explicit dep on the same package.
-        # This list comprehension just returns the set of dictionaries that
-        # are not resolved by other entries
-        ambiguities = [x for x in ambiguities
-                       if not resolve_ambiguity(dependencies, x)]
 
-        if not merge:
-            # If we're printing individually, create a header
-            print(Fore.GREEN + Back.BLACK + "=== %s.%s ===" % (
-                pkg.name, pkg.arch) + Style.RESET_ALL)
+    # Print the complete set of dependencies together
+    for key in sorted(dependencies, key=dependencies.get):
+        print_package_name(key, dependencies, full_name)
 
-            # Print just this package's dependencies
-            for key in sorted(dependencies, key=dependencies.get):
-                # Skip the initial package
-                if key == pkgname:
-                    continue
-                print_package_name(key, dependencies, full_name)
-
-            if len(ambiguities) > 0:
-                print(Fore.RED + Back.BLACK + "=== Unresolved Requirements ===" +
-                      Style.RESET_ALL)
-                pp = pprint.PrettyPrinter(indent=4)
-                pp.pprint(ambiguities)
-
-    if merge:
-        # Print the complete set of dependencies together
-        for key in sorted(dependencies, key=dependencies.get):
-            print_package_name(key, dependencies, full_name)
-
-        if len(ambiguities) > 0:
-            print(Fore.RED + Back.BLACK + "=== Unresolved Requirements ===" +
-                  Style.RESET_ALL)
-            pp = pprint.PrettyPrinter(indent=4)
-            pp.pprint(ambiguities)
-
+    if len(ambiguities) > 0:
+        print(Fore.RED + Back.BLACK + "=== Unresolved Requirements ===" +
+              Style.RESET_ALL)
+        pp = pprint.PrettyPrinter(indent=4)
+        pp.pprint(ambiguities)
 
 @main.command(short_help="Get Source RPM")
 @click.argument('pkgnames', nargs=-1)
