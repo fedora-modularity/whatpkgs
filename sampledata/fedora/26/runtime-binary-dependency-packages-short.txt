@@ -45,6 +45,7 @@ findutils
 flex
 fpc-srpm-macros
 freetype
+fuse-libs
 gawk
 gc
 gcc
@@ -98,6 +99,7 @@ libcurl
 libdb
 libdb-utils
 libdnf
+libev
 libfdisk
 libffi
 libgcc
@@ -175,6 +177,8 @@ pkgconf-m4
 pkgconf-pkg-config
 popt
 procps-ng
+pth
+pth-devel
 publicsuffix-list-dafsa
 python3
 python3-appdirs

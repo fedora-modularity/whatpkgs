@@ -37,6 +37,7 @@ findutils
 flex
 fpc-srpm-macros
 freetype
+fuse
 gawk
 gc
 gcc
@@ -71,6 +72,7 @@ libcap-ng
 libcroco
 libdb
 libdnf
+libev
 libffi
 libgcrypt
 libgpg-error
@@ -132,6 +134,7 @@ perl-srpm-macros
 pkgconf
 popt
 procps-ng
+pth
 publicsuffix-list
 pyparsing
 python3

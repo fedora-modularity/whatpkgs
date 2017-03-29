@@ -7,6 +7,7 @@ efibootmgr
 fedora-release
 fedpkg-minimal
 flex
+fuse-libs
 gawk
 gcc
 gcc-c++
@@ -15,11 +16,13 @@ grub2
 grub2-efi
 gzip
 kernel-core
+libev
 m4
 mactel-boot
 make
 microdnf
 patch
+pth-devel
 redhat-rpm-config
 rpm
 rpm-build
