@@ -8,6 +8,7 @@ binutils
 byacc
 bzip2
 ca-certificates
+c-ares
 chkconfig
 coreutils
 cpio
@@ -151,6 +152,7 @@ redhat-rpm-config
 rpm
 sed
 setup
+sgml-common
 shadow-utils
 shim-signed
 sqlite

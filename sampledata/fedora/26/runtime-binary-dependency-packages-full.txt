@@ -7,6 +7,7 @@
 0:bzip2-1.0.6-22.fc26.x86_64
 0:bzip2-libs-1.0.6-22.fc26.x86_64
 0:ca-certificates-2017.2.11-5.fc26.noarch
+0:c-ares-1.12.0-2.fc26.x86_64
 0:chkconfig-1.9-1.fc26.x86_64
 0:coreutils-8.26-7.fc26.x86_64
 0:coreutils-common-8.26-7.fc26.x86_64
@@ -203,6 +204,7 @@
 0:ustr-1.0.4-22.fc26.x86_64
 0:util-linux-2.29.1-2.fc26.x86_64
 0:which-2.21-2.fc26.x86_64
+0:xml-common-0.6.3-45.fc26.noarch
 0:xz-5.2.3-2.fc26.x86_64
 0:xz-libs-5.2.3-2.fc26.x86_64
 0:zip-3.0-18.fc26.x86_64

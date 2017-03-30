@@ -7,6 +7,7 @@ byacc
 bzip2
 bzip2-libs
 ca-certificates
+c-ares
 chkconfig
 coreutils
 coreutils-common
@@ -219,6 +220,7 @@ unzip
 ustr
 util-linux
 which
+xml-common
 xz
 xz-libs
 zip

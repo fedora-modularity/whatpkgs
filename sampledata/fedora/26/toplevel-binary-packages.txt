@@ -2,6 +2,7 @@ bash
 binutils
 byacc
 bzip2
+c-ares
 coreutils
 efibootmgr
 fedora-release
@@ -32,4 +33,5 @@ syslinux-extlinux
 tar
 unzip
 util-linux
+xml-common
 xz
