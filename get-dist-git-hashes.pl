@@ -19,12 +19,8 @@ MCE::Loop::init { max_workers => 16 };
 mce_loop {
     my ($mce, $cref, $cid) = @_;
     for (@$cref) {
-        my $hash;
-        for (my $i = 0; $i < 3; $i++) {
-            my $output = `koji buildinfo $_`;
-            ($hash) = ($output =~ /\/rpms\/[^:]+:([a-f0-9]+)/);
-            last if $hash;
-        }
-        MCE->say($_ . ': ' . ($hash // ''));
+        my $output = `koji buildinfo $_`;
+        $output =~ /\/[^:]+:([a-f0-9]+)/;
+        MCE->say($_ . ": $1");
     }
 } @pkgs;
